@@ -12,6 +12,14 @@ p{
   color: #69696a;
 }
 
+nav a {
+  display: block;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 800;
+  margin: 10px;
+  position: relative;
+}
+
 a:link {
   color: #69696a;
   text-decoration: none;
@@ -21,6 +29,10 @@ a:link {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+}
+
+.top-header {
+  display: inline;
 }
 
 .main-paragraph {
@@ -77,6 +89,7 @@ a:link {
   }
 
   nav a {
+    display: inline;
     font-family: 'Open Sans', sans-serif;
     font-weight: 800;
     margin: 10px;
@@ -86,6 +99,10 @@ a:link {
   a:link {
     color: #69696a;
     text-decoration: none;
+  }
+
+  .top-bar {
+    display: inline;
   }
 
   .top-header {
