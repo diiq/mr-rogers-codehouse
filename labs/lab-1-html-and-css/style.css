@@ -1,4 +1,59 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+  }
+
 main {
   font-family: 'Open Sans', sans-serif;
   background-color: #f9fafc;
+}
+
+#home {
+  float: left;
+}
+}
+.nav-list ul {
+
+}
+.nav-list li {
+  display: inline-block;
+  float: right;
+  padding: 10px;
+}
+
+.nav-item > a {
+  text-decoration: none;
+  color: black;
+}
+
+.company {
+  display: inline-block;
+  text-align: left;
+  font-weight: 800;
+}
+.circle-image {
+/* position: absolute; */
+}
+
+.biggest-circle {
+ height: 200px;
+ width: 200px;
+ background-color: rgba(247, 136, 167, 0.6);
+ border-radius: 100%;
+}
+
+
+.medium-circle {
+  height: 150px;
+  width: 150px;
+  border-radius: 100%;
+  background-color: orange;
+  /* background-color: rgba(247,​ ​193,​ ​162,​ ​0.7); */
+  /* position: absolute; */
+}
+
+.smallest-circle {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  background-color: rgba(207, 130, 213, 0.6);
 }
