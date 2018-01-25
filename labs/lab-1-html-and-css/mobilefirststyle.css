@@ -119,6 +119,7 @@ a:link {
   .main-content {
     margin-top: 100px;
     display: flex;
+    position: relative;
   }
 
   .main-header {
@@ -133,7 +134,7 @@ a:link {
   }
 
   .circles {
-    display: relative;
+    position: relative;
     width: 50%;
     height: 400px;
   }
@@ -142,7 +143,6 @@ a:link {
     position: absolute;
     width: 300px;
     height: 300px;
-    top: 175px;
     border: none;
     border-radius: 50%;
     background-color: rgba(247, 136, 167, 0.6);
@@ -158,8 +158,8 @@ a:link {
     border-radius: 50%;
     background-color: rgba(247, 193, 162, 0.7);
     z-index: 3;
-    top: 330px;
-    left: 80%;
+    left: 140px;
+    top: 100px;
 
   }
 
@@ -171,8 +171,8 @@ a:link {
     border-radius: 50%;
     background-color: rgba(207, 130, 213, 0.6);
     z-index: 2;
-    top: 230px;
-    left: 84%;
+    top: 50px;
+    left: 200px;
 
   }
 
