@@ -26,8 +26,9 @@ main {
 }
 
 .company {
-  display: inline-block;
-  text-align: left;
+  display: flex;
+  justify-content: flex-start;
+  /* text-align: left; */
   font-weight: 800;
 }
 .circle-image {
@@ -46,8 +47,7 @@ main {
   height: 150px;
   width: 150px;
   border-radius: 100%;
-  background-color: orange;
-  /* background-color: rgba(247,​ ​193,​ ​162,​ ​0.7); */
+  background-color: rgba(247, 193, 162, 0.7);
   /* position: absolute; */
 }
 
