@@ -2,6 +2,9 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: 800;
 }
+
+@media (max-width: 600px){
+
 body {
   background-color: #f9fafc;
 }
@@ -65,8 +68,8 @@ a:link {
   width: 90%;
   margin: auto;
 
+  }
 }
-
 @media (min-width: 600px) {
   body{
     background-color: #f9fafc;
@@ -115,6 +118,7 @@ a:link {
 
   .main-content {
     margin-top: 100px;
+    display: flex;
   }
 
   .main-header {
@@ -124,16 +128,21 @@ a:link {
   .main-paragraph {
     border-left: 3px solid #69696a;
     padding-left: 10px;
-    width: 50%;
+    width: 80%;
     margin: 20px;
   }
 
+  .circles {
+    display: relative;
+    width: 50%;
+    height: 400px;
+  }
+
   .circle-red {
-    position: relative;
-    bottom: 150px;
-    left: 826px;
+    position: absolute;
     width: 300px;
     height: 300px;
+    top: 175px;
     border: none;
     border-radius: 50%;
     background-color: rgba(247, 136, 167, 0.6);
@@ -144,26 +153,26 @@ a:link {
   .circle-orange {
     width: 200px;
     height: 200px;
-    position: relative;
-    bottom: 300px;
-    left: 992px;
+    position: absolute;
     border: none;
     border-radius: 50%;
     background-color: rgba(247, 193, 162, 0.7);
-    z-index: 3
+    z-index: 3;
+    top: 330px;
+    left: 80%;
 
   }
 
   .circle-purple {
     width: 150px;
     height: 150px;
-    position: relative;
-    left: 1050px;
-    bottom: 600px;
+    position: absolute;
     border: none;
     border-radius: 50%;
     background-color: rgba(207, 130, 213, 0.6);
-    z-index: 2
+    z-index: 2;
+    top: 230px;
+    left: 84%;
 
   }
 
@@ -180,12 +189,14 @@ a:link {
   }
 
   #scroll-down {
-    position: relative;
-    bottom: 350px;
+    position: absolute;
     margin: auto;
+    top: 600px;
+    left: 500px;
     background-color: black;
     border-radius: 40px;
     width: 100px;
+    height: 20px;
     padding: 10px 15px;
     color: white;
     font-size: 14px;

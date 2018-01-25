@@ -46,6 +46,10 @@ a:link {
   margin: 20px;
 }
 
+.circles {
+  display: relative;
+}
+
 .main-paragraph {
   border-left: 3px solid #69696a;
   padding-left: 10px;
