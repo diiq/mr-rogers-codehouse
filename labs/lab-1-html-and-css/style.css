@@ -1,9 +1,65 @@
 .logo {
-  position:absolute;
-  top:0;
-  left:0;
+    position: absolute ;
+    top: 0;
+    left: 0;
 }
-.links{
-  display:flex;
-  justify-content: flex-start;
+.links {
+    margin-top:10px;
+    width:20%;
+    display:block;
+}
+
+@media (min-device-width: 768px) {
+
+}
+
+.circle1{
+    display: block;
+	width: 100px;
+	height: 100px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+}
+
+.circle2{
+
+	width: 100px;
+	height: 100px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+
+}
+
+.circle3{
+	width: 100px;
+	height: 100px;
+	background: red;
+	-moz-border-radius: 50px;
+	-webkit-border-radius: 50px;
+	border-radius: 50px;
+
+}
+
+
+
+
+.links a {
+    background-color: #eee;
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.links a:hover {
+    background-color: #ccc;
+}
+
+.links a.active {
+    background-color: #4CAF50;
+    color: white;
 }
