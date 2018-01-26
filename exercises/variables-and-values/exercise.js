@@ -10,3 +10,10 @@ const sam = {
 };
 
 const names = ["Sam", "Eli", "Hanna", "Michael", "Emily", "Malcom", "Bree", "Jim", "Noble", "Vik"];
+
+const emily = {
+  firstName: "Emily",
+  lastName: "Westenbroek",
+  luckyNumber: 16,
+  favoriteColor: "green"
+};
