@@ -9,11 +9,24 @@ const sam = {
   favoriteColor: "blue"
 };
 
-const michael = {
-  firstName: "Michael",
-  lastName: "Coluzzi",
-  luckyNumber: 7,
-  favoriteColor: "red"
+const names = ["Sam", "Eli", "Hanna", "Michael", "Emily", "Malcom", "Bree", "Jim", "Noble", "Vik"];
+
+
+const emily = {
+  firstName: "Emily",
+  lastName: "Westenbroek",
+  luckyNumber: 16,
+  favoriteColor: "green"
 };
 
-const names = ["Sam", "Eli", "Hanna", "Michael", "Emily", "Malcom", "Bree", "Jim", "Noble", "Vik"];
+const noble = {
+    firstname: "noble",
+    lastname: "johnson",
+  ssn:"nothing to see here"};
+  
+  const michael = {
+    firstName: "Michael",
+    lastName: "Coluzzi",
+    luckyNumber: 7,
+    favoriteColor: "red"
+  };
