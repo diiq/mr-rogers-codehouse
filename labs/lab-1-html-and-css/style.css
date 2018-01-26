@@ -1,6 +1,6 @@
 body {
 	background-color: #f9fafc;
-	font-family: ;
+	font-family: 'Open Sans' , sans-serif ;
 	color: #69696a;
 
 
@@ -10,6 +10,7 @@ body {
 
 nav {
 	display: inline;
+
 }
 
 .nav {
@@ -17,19 +18,24 @@ nav {
 	width: auto;
 	margin: 25px;
 	padding: 0;
-	margin-right: 0
+	margin-right: 0;
+
+	
 
 }
 
 .header {
-	margin-right: 45%;
+	margin-right: 40%;
 	color: #000;
 
 }
 
 li {
 	display: inline;
-	padding: 10px
+	padding: 10px;
+
+
+
 }
 
 
@@ -40,6 +46,11 @@ li {
 	color: #f9fafc;
 	border-radius: 2em;
 	padding: 5px 20px 5px 20px;
+	position: static;
+
+	
+
+
 }
 
 /* body */
@@ -51,56 +62,90 @@ li {
 
 }
 
-#left-box {
+.left-box {
 	display: flex;
 	margin-left: 25px;
 	flex-direction: row;
 	width: auto;
-	height: 500px
+	height: 500px;
+	flex-wrap: wrap;
 	
 }
 
 
 
 p {
-	display: flex;
-	flex-wrap: wrap;
-	width: 400px;
-	align-items: flex-start;
+	width: 40%;
+	align-self: flex-start;
+	margin-left: 10px;
 	
 	}
 
 .line {
-	display: flex;
-	height: 125px;
-	width: 5px;
+	height: 30%;
+	width: 3px;
 	background-color: #69696a;
-	justify-content: flex-start;
-	flex-wrap: wrap;
+	align-self: flex-start;
+	margin-top: 15px;
+	
 
 }
 
 .right-box {
+	flex-basis: 500px;
 	display: flex;
+	justify-content: center;
+
 	
-	justify-content: flex-end;
 }
 
 
 .big {
-	display: flex;
-	width: 249px;
-	height: 249px;
+	width: 250px;
+	height: 250px;
 	background-color: rgba(247,136,167, .6 );
 	border-radius: 100%;
 	border: 1px  rgba(247,136,167, .6);
 	position: relative;
-	justify-content: flex-end;	
+	margin-right: 100px;
+}
+
+.medium {
+	width: 175px;
+	height: 175px;
+	background-color: rgba(247,193,162, 0.7);
+	border-radius: 100%;
+	border: 1px  rgba(247,193,162, 0.7);
+	position: absolute;
+	margin-left: 100px;
+	margin-top: 100px;
+	z-index: 1;
+}
+
+.small {
+	width: 120px;
+	height: 120px;
+	background-color: rgba(207,130,213,0.6);
+	border-radius: 100%;
+	border: 1px  rgba(207,130,213,0.6);
+	position: absolute;
+	margin-left: 80px;
+	margin-top: 10px;
 	
+}
+
+
+ .footer {
+	align-self: center;
+	margin-left: 40%;
+
 
 }
 
-.footer , .ovel {
-
+.scroll {
+	width: 200px;
+	margin: 0
 }
+
+
 
