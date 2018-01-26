@@ -2,7 +2,7 @@
   box-sizing: border-box;
   }
 
-main {
+body {
   font-family: 'Open Sans', sans-serif;
   background-color: #f9fafc;
 }
@@ -26,18 +26,26 @@ main {
 .company {
   display: block;
   font-weight: 800;
+  margin-left: 60px;
 }
 .content {
   display: flex;
 }
+
+.content p {
+  width: 70%;
+  margin-left: 80px;
+}
+
 .circle-image {
-position: relative;
+  position: relative;
+  right: 200px;
 }
 
 .biggest-circle {
   postition: absolute;
- height: 200px;
- width: 200px;
+ height: 300px;
+ width: 300px;
  background-color: rgba(247, 136, 167, 0.6);
  border-radius: 100%;
 }
@@ -45,10 +53,10 @@ position: relative;
 
 .medium-circle {
   position: absolute;
-  left: 10px;
-  top: 20px;
-  height: 150px;
-  width: 150px;
+  left: 200px;
+  top: 150px;
+  height: 200px;
+  width: 200px;
   border-radius: 100%;
   background-color: rgba(247, 193, 162, 0.7);
 
@@ -56,10 +64,24 @@ position: relative;
 
 .smallest-circle {
   position: absolute;
-  left: 10px;
-  top: 20px;
-  height: 80px;
-  width: 80px;
+  left: 220px;
+  top: 30px;
+  height: 150px;
+  width: 150px;
   border-radius: 100%;
   background-color: rgba(207, 130, 213, 0.6);
+}
+
+.button {
+  background-color: #000;
+  color: #f9fafc;
+  border-radius: 50px;
+}
+
+.scroll {
+  display: flex;
+  align-items: center;
+  width: 100px;
+  height: 30px;
+  text-align: center;
 }
