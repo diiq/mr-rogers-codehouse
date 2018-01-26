@@ -9,8 +9,12 @@ const sam = {
   favoriteColor: "blue"
 };
 
-const names = ["Sam", "Eli", "Hanna", "Michael", "Emily", "Malcom", "Bree", "Jim", "Noble", "Vik"];
-
+const vikram = {
+  firstName: "Vikram",
+  lastName: "Badarinath",
+  luckyNumber: 23,
+  favoriteColor: "Honolulu Blue"
+};
 
 const emily = {
   firstName: "Emily",
@@ -22,7 +26,8 @@ const emily = {
 const noble = {
     firstname: "noble",
     lastname: "johnson",
-  ssn:"nothing to see here"};
+  ssn:"nothing to see here"
+};
 
 const michael = {
   firstName: "Michael",
@@ -30,7 +35,6 @@ const michael = {
   luckyNumber: 7,
   favoriteColor: "red"
 };
-
 
 const eli = {
   firstName: "Eli"
@@ -46,8 +50,6 @@ const bree = {
   favoriteColor: "Millennial Pink"
 };
 
-
-
 const Malcolm = {
 	firstName: "Malcolm",
 	lastName:"Cusack",
@@ -55,3 +57,4 @@ const Malcolm = {
 	favoriteColor: "blue",
 };
 
+const names = ["Sam", "Eli", "Hanna", "Michael", "Emily", "Malcom", "Bree", "Jim", "Noble", "Vik"];
