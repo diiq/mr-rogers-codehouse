@@ -39,12 +39,12 @@ body {
 .content {
   display: flex;
 }
-.circle-image {
-  position: relative;
-  right: 200px;
+@ media (max-width 900px) {
+  .circle-image {
+  display: none;
 }
 
-.biggest-circle {
+/* .biggest-circle {
   postition: absolute;
   height: 250px;
   width: 250px;
@@ -72,7 +72,7 @@ body {
   width: 130px;
   border-radius: 100%;
   background-color: rgba(207, 130, 213, 0.6);
-}
+} */
 
 .nav-button a {
   color: #f9fafc;
