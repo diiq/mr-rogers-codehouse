@@ -9,4 +9,11 @@ const sam = {
   favoriteColor: "blue"
 };
 
+const vikram = {
+  firstName: "Vikram",
+  lastName: "Badarinath",
+  luckyNumber: 23,
+  favoriteColor: "Honolulu Blue"
+};
+
 const names = ["Sam", "Eli", "Hanna", "Michael", "Emily", "Malcom", "Bree", "Jim", "Noble", "Vik"];
