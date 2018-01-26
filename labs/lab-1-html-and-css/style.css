@@ -85,12 +85,17 @@ body {
 }
 
 .scroll {
+  display: flex;
+  justify-content: center;
+}
+.button {
   display: inline-block;
   align-items: center;
-  width: 100px;
+  width: 115px;
   height: 30px;
   background-color: #000;
   color: #f9fafc;
   border-radius: 50px;
-  align: center;
+  text-align: center;
+  font-size: 16px;
 }
