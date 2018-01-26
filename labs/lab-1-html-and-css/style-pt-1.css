@@ -1,30 +1,110 @@
-<!DOCTYPE html>
-<html>
+body {
+  background-color: #f9fafc;
+  font-family: 'Open Sans', sans-serif;
+  padding: 50px;
+}
 
-  <head>
-    <head>
-      <title>chirpus inc.</title>
-      <link href="style-pt-1.css" rel="stylesheet" type="text/css">
-      <meta name="viewport" content="width=device width, initial-scale=1">
-    </head>
-  </head>
+h1 {
+  font-weight: normal;
+  font-size: 40px;
+}
 
-  <body>
+p {
+  color: #69696a;
+}
 
-    <nav>
-      <a class="nav" href="index.html">Home</a>
-      <a>Work</a>
-      <a>About Us</a>
-      <a>Contact</a>
-      <a class="button">Hire Us</a>
-    </nav>
+.logo {
+  text-align: left;
+  position: absolute;
+  top: 30px;
+}
 
-    <h1>chirpus inc.</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+nav {
+  text-align: right;
+  font-weight: normal;
+}
 
-    <div class="button">
+.nav {
+  padding: 10px;
+  color: #69696a;
+  text-decoration: none;
+}
 
-  </body>
+.button {
+  background-color: black;
+  color: #f9fafc;
+  padding: 10px 30px;
+  border-radius: 50px;
+  margin-left: 20px;
+  width: auto;
+}
 
+.main {
+  display: flex;
+}
 
-</html>
+.intro {
+  width: 50%;
+  position: relative;
+  padding-top: 125px;
+}
+
+.intro-copy {
+  padding-left: 30px;
+  border-left: solid 1px #69696a;
+}
+
+.circles {
+  display: block;
+  position: relative;
+  width: 50%;
+}
+
+.pink-circle {
+  width: 350px;
+  height: 350px;
+  background-color: rgba(247, 136, 167, 0.6);
+  border-radius: 50%;
+  opacity: 50%;
+  position: absolute;
+  right: 150px;
+  top: 160px;
+}
+
+.purple-circle {
+  width: 200px;
+  height: 200px;
+  background-color: rgba(207, 130, 213, 0.6);
+  border-radius: 50%;
+  opacity: 50%;
+  position: absolute;
+  right: 20px;
+  top: 200px;
+}
+
+.orange-circle {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(247, 193, 162, 0.7);
+  border-radius: 50%;
+  opacity: 50%;
+  position: absolute;
+  top: 350px;
+  right: 20px;
+  z-index: 1;
+}
+
+.scroll-button {
+  background-color: black;
+  color: #f9fafc;
+  padding: 10px 30px;
+  border-radius: 50px;
+  width: 50px;
+  text-align: center;
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -25px;
+  /* margin-left: auto;
+  margin-right: auto; ----- could not get scroll button to be exactly centered, landed on left: 50%; margin-left: -25px; being the closest */
+}
