@@ -20,7 +20,7 @@ body {
 
 .nav-item > a {
   text-decoration: none;
-  color: #000;
+  color: #69696a;
 }
 
 .company {
@@ -38,6 +38,7 @@ body {
 
 .content {
   display: flex;
+  color: #69696a;
 }
 .circle-image {
   position: relative;
@@ -89,10 +90,8 @@ body {
   justify-content: center;
 }
 .button {
-  display: inline-block;
-  align-items: center;
+  height: 50px;
   width: 115px;
-  height: 30px;
   background-color: #000;
   color: #f9fafc;
   border-radius: 50px;
