@@ -23,4 +23,10 @@ const noble = {
     firstname: "noble",
     lastname: "johnson",
   ssn:"nothing to see here"};
-t
+  
+  const michael = {
+    firstName: "Michael",
+    lastName: "Coluzzi",
+    luckyNumber: 7,
+    favoriteColor: "red"
+  };
