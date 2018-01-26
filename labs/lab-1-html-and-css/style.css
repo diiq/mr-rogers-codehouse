@@ -1,0 +1,106 @@
+body {
+	background-color: #f9fafc;
+	font-family: ;
+	color: #69696a;
+
+
+}
+
+/*nav */
+
+nav {
+	display: inline;
+}
+
+.nav {
+	list-style-type: none;
+	width: auto;
+	margin: 25px;
+	padding: 0;
+	margin-right: 0
+
+}
+
+.header {
+	margin-right: 45%;
+	color: #000;
+
+}
+
+li {
+	display: inline;
+	padding: 10px
+}
+
+
+.ovel {
+	width: 75px;
+	border: solid #000 5px;
+	background-color: #000;
+	color: #f9fafc;
+	border-radius: 2em;
+	padding: 5px 20px 5px 20px;
+}
+
+/* body */
+
+.title {
+	color: #000;
+	margin-top: 150px;
+	margin-left: 25px;
+
+}
+
+#left-box {
+	display: flex;
+	margin-left: 25px;
+	flex-direction: row;
+	width: auto;
+	height: 500px
+	
+}
+
+
+
+p {
+	display: flex;
+	flex-wrap: wrap;
+	width: 400px;
+	align-items: flex-start;
+	
+	}
+
+.line {
+	display: flex;
+	height: 125px;
+	width: 5px;
+	background-color: #69696a;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+
+}
+
+.right-box {
+	display: flex;
+	
+	justify-content: flex-end;
+}
+
+
+.big {
+	display: flex;
+	width: 249px;
+	height: 249px;
+	background-color: rgba(247,136,167, .6 );
+	border-radius: 100%;
+	border: 1px  rgba(247,136,167, .6);
+	position: relative;
+	justify-content: flex-end;	
+	
+
+}
+
+.footer , .ovel {
+
+}
+
