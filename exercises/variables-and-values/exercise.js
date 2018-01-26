@@ -11,7 +11,6 @@ const sam = {
 
 const names = ["Sam", "Eli", "Hanna", "Michael", "Emily", "Malcom", "Bree", "Jim", "Noble", "Vik"];
 
-
 const emily = {
   firstName: "Emily",
   lastName: "Westenbroek",
@@ -30,3 +29,12 @@ const noble = {
     luckyNumber: 7,
     favoriteColor: "red"
   };
+
+  
+const eli = {
+  firstName: "Eli"
+  lastName: "Cecil"
+  luckyNumber: 97,
+  favoriteColor: "blood red"
+};
+
