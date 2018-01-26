@@ -22,15 +22,15 @@ const noble = {
     firstname: "noble",
     lastname: "johnson",
   ssn:"nothing to see here"};
-  
-  const michael = {
-    firstName: "Michael",
-    lastName: "Coluzzi",
-    luckyNumber: 7,
-    favoriteColor: "red"
-  };
 
-  
+const michael = {
+  firstName: "Michael",
+  lastName: "Coluzzi",
+  luckyNumber: 7,
+  favoriteColor: "red"
+};
+
+
 const eli = {
   firstName: "Eli"
   lastName: "Cecil"
@@ -38,3 +38,11 @@ const eli = {
   favoriteColor: "blood red"
 };
 
+const bree = {
+  firstName: "Bree"
+  lastName: "Tanner"
+  luckyNumber: 7,
+  favoriteColor: "Millennial Pink"
+}
+
+const names = ["Sam", "Eli", "Hanna", "Michael", "Emily", "Malcom", "Bree", "Jim", "Noble", "Vik"];
