@@ -9,7 +9,7 @@ const sam = {
   favoriteColor: "blue"
 };
 
-const vikram = {
+const vik = {
   firstName: "Vikram",
   lastName: "Badarinath",
   luckyNumber: 23,
@@ -50,7 +50,7 @@ const bree = {
   favoriteColor: "Millennial Pink"
 };
 
-const Malcolm = {
+const malcolm = {
 	firstName: "Malcolm",
 	lastName:"Cusack",
 	luckyNumber: 7,
@@ -64,4 +64,4 @@ const jim = {
   favoriteColor: "grey"
 };
 
-const people = [sam, eli, hanna, michael, emily, malcom, bree, jim, noble, vik];
+const people = [sam, eli, michael, emily, malcolm, bree, jim, noble, vik];
