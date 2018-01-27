@@ -1,14 +1,9 @@
-var counter = 0;
-const numberOfPeople = 9;
-let message = "Message!";
-
 const sam = {
   firstName: "Sam",
   lastName: "Bleckley",
   luckyNumber: 2,
   favoriteColor: "blue"
 };
-
 
 const vikram = {
   firstName: "Vikram",
@@ -38,15 +33,15 @@ const michael = {
 };
 
 const eli = {
-  firstName: "Eli"
-  lastName: "Cecil"
+  firstName: "Eli",
+  lastName: "Cecil",
   luckyNumber: 97,
   favoriteColor: "blood red"
 };
 
 const bree = {
-  firstName: "Bree"
-  lastName: "Tanner"
+  firstName: "Bree",
+  lastName: "Tanner",
   luckyNumber: 7,
   favoriteColor: "Millennial Pink"
 };
@@ -65,4 +60,4 @@ const jim = {
   favoriteColor: "grey"
 };
 
-const names = ["Sam", "Eli", "Hanna", "Michael", "Emily", "Malcom", "Bree", "Jim", "Noble", "Vik"];
+const people = [sam, eli, hanna, michael, emily, malcom, bree, jim, noble, vik];
