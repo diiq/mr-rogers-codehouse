@@ -122,46 +122,10 @@ a:link, a:visited {
   justify-content: center;
 }
 
-@media (min-width:769px) {
-  /* keeps the scroll down button at the bottom
+/* keeps the scroll down button at the bottom
     while in desktop view*/
-  .scroll {
-    position: fixed;
-    bottom: 20px;
-  }
-}
 
-@media (max-width:768px) {
-  .menu, .navbar, .pageBottom {
-    flex-direction: column;
-  }
-  .navbar {
-    margin: 20px 0px 0px 0px;
-    width: auto;
-  }
-  .tab {
-    padding-left: 0px;
-    border: none;
-  }
-  .special {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 20px;
-  }
-  .content {
-    margin-top: auto;
-    margin-bottom: 20px;
-  }
-  .circles {
-    display: none;
-  }
-  .pageBottom {
-    margin-top: auto;
-    margin-left: 20px;
-    margin-right: 20px;
-  }
-  .scroll {
-    position: static;
-    bottom: auto;
-  }
+.scroll {
+  position: fixed;
+  bottom: 20px;
 }
