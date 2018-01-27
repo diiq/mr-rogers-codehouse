@@ -6,8 +6,77 @@
 body {
     background-color: #eee;
 }
- 
- 
+
+@media (max-width: 600px){
+
+
+.logo {
+    position: absolute ;
+    top: 0;
+    left: 0;
+}
+.links {
+    margin-top:10px;
+    width:22%;
+    display:block;
+}
+
+#hireButton {
+    position: relative;
+    bottom: 0px;
+    margin: 30px;
+    background-color: #000;
+    border-radius: 40px;
+    width: 95%;
+    padding: 10px 0px;
+    color: #f9fafc;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+
+#scrollButton {
+    position: relative;
+    bottom: 0px;
+    margin: 30px;
+    background-color: #000;
+    border-radius: 40px;
+    width: 95%;
+    padding: 10px 0px;
+    color: #f9fafc;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+.links a {
+    background-color: #eee; 
+    color: black;
+    display: block; 
+    padding: 12px; 
+    text-decoration: none;
+}
+
+.links a:hover {
+    background-color: #ccc;
+}
+
+.links a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.main-text {
+    border-left: 4px solid #69696a;
+    padding-left: 10px;
+    margin: 15px;
+}
+
+}
+@media (min-width: 600px) {
+    
+    
     #hireButton {
     position:relative;
     left:1150px;
@@ -110,5 +179,7 @@ body {
     border-radius: 50%;
     background-color: rgba(247, 193, 162, 0.7);
     z-index: 3
+
+}
 
 }
