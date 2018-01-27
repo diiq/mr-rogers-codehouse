@@ -6,7 +6,7 @@ body {
 
 .main{
   position: relative;
-  background-color: green;
+  /* background-color: green; */
   height: 80px;
 }
 
@@ -30,8 +30,6 @@ header {
   list-style-type: none;
   /* margin: auto; */
   padding: 10px 20px;
-  background-color: white;
-
 }
 
 .main-menu .hire-us {
@@ -49,23 +47,24 @@ header {
 }
 .main-li a {
   text-decoration: none;
-  color: black;
+  color: #69696a;
 
 }
 
 .main {
-  background-color: lime;
+  position: relative;
 }
 
 .main-content {
-  background-color: gray;
+  /* background-color: gray; */
   padding-top: 200px;
   display: flex;
+  position: relative;
 }
 
 .content {
-  background-color: pink;
-  width: 600px;
+
+  width: 500px;
 }
 
 .text-name {
@@ -78,21 +77,24 @@ header {
   font-size: 14px;
   border-left: 5px gray solid;
   padding-left: 20px;
-  width: 500px;
+  width: 475px;
+  word-wrap: normal;
   color: #69696a;
 }
 
 .circles {
-  background-color: blue;
+  /* background-color: blue; */
   width: 300px;
   height: 300px;
-  position: relative;
+  position: absolute;
+  top: 230px;
+  right: 0px;
 }
 
 .circle-lrg {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 30px;
+  left: 25px;
   background: rgba(247,136,167, 0.6);
   width: 200px;
   height: 200px;
@@ -101,8 +103,8 @@ header {
 
 .circle-med {
   position: absolute;
-  left: 0px;
-  top: 0px;
+  left: 150px;
+  top: 120px;
   background: rgba(247,193,162, 0.7);
   width: 150px;
   height: 150px;
@@ -111,8 +113,8 @@ header {
 
 .circle-sml {
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: 45px;
+  left: 200px;
   background: rgba(207,130,213, 0.6);
   width: 100px;
   height: 100px;
@@ -140,5 +142,59 @@ footer a {
   margin: auto;
   text-decoration: none;
   color: white;
+}
+
+@media (max-width: 775px) {
+  .circles{
+    visibility: hidden;
+  }
+
+  .content {
+    word-break: normal;
+	}
+
+  .main{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .main-li {
+    padding-left: 0;
+  }
+
+  .main-menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 50px;
+    left: 0px;
+    padding-left: 0;
+  }
+
+  .hire-us {
+    margin: auto;
+  }
+
+  .footer {
+    width: 100;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .content{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 100%
+  }
+
+  .text{
+    word-wrap: normal;
+  }
+
+  .footer {
+    width: 320px;
+  }
+
 
 }
