@@ -9,9 +9,15 @@ body {
 
 nav {
     display: flex;
+    flex-direction: column;
     justify-content: flex-end;
     margin-top: 15px;
 }
+
+@media only screen and (min-width: 700px) and (max-width: 1400px) {
+    .nav {
+        flex-direction: row;
+    }
 
 a:hover {
     color: #000
@@ -31,6 +37,11 @@ nav a {
     margin-top: 10px;
 }
 
+@media only screen and (max-width: 1400px) {
+    button {
+        width: 150px;
+    }
+
 button {
     color: white;
     background-color: #000;
@@ -38,14 +49,7 @@ button {
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 30px;
-}
-
-.sublogo {
-    margin-top: 125px;
-}
-
-.main {
-    display: flex;
+    margin-top: 10px;
 }
 
 .intro {
@@ -53,9 +57,12 @@ button {
     color: #69696a;
     border-left: 5px solid #69696a;
     padding-left: 10px;
-    width: 50%;
-    margin-right: 50px;
 }
+
+@media only screen and (max-width: 700px) {
+    .circles {
+        display: none;
+    }
 
 .circles {
     position: relative;
@@ -93,5 +100,9 @@ button {
 footer {
     display: flex;
     justify-content: center;
-    margin-top: 300px;
+    margin-top: 20px;
+}
+
+.scroll{
+    width: 100%;
 }
