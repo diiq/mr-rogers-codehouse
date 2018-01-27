@@ -129,7 +129,7 @@ a:link {
   .main-paragraph {
     border-left: 3px solid #69696a;
     padding-left: 10px;
-    width: 80%;
+    width: 50%;
     margin: 20px;
   }
 
@@ -158,8 +158,8 @@ a:link {
     border-radius: 50%;
     background-color: rgba(247, 193, 162, 0.7);
     z-index: 3;
-    left: 140px;
-    top: 100px;
+    left: 220px;
+    top: 140px;
 
   }
 
@@ -171,8 +171,8 @@ a:link {
     border-radius: 50%;
     background-color: rgba(207, 130, 213, 0.6);
     z-index: 2;
-    top: 50px;
-    left: 200px;
+    top: 30px;
+    left: 250px;
 
   }
 
