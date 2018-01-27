@@ -2,7 +2,7 @@ const myNumber = 5;
 const mySquare = myNumber * myNumber;
 
 const anotherNumber = 32;
-const anotherSquare = anotherNumber * anotheNumber;
+const anotherSquare = anotherNumber * anotherNumber;
 
 function square(aNumber) {
   console.log("I am squaring", aNumber);
@@ -22,30 +22,18 @@ function guessGoodEnough(guess, x) {
   // good enough means within .0001 of right
   return (x <= guessSquare + .0001) && (x <= guessSquare - .001)
 }
-function betterGuess(guess, x) {
-   // x / guess === x;
-   //  if x / guess !=== x
-   const otherGuess = x / guess;
-   //  We know the real answer is BETWEEN guess and otherGuess
-   retuen (guess = otherGuess) / 2;
-}
 
 function squareRoot(x) {
-  debugger
   var guess = 1;
-  while (!guessGoodEnough(guess, x)) {
-    console.log("Improved guess:", guess);
-    guess = betterGuess(guess, x);
+  const betterGuess = function() {
+    const otherGuess = x / guess;
+    return (guess = otherGuess) / 2;
+  }
+  
+  while (!guessGoodEnough()) {
+    guess = betterGuess();
   }
   return guess;
 }
 
-const betterGuess = function() {
-  const otherGuess = x / guess;
-  return (guess = otherGuess) / 2;
-}
-var guess = 1;
-while (!guessGoodEnough()) {
-  guess = betterGuess();
-}
-return guess;
+
