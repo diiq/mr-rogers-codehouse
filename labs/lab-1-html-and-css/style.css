@@ -1,0 +1,100 @@
+*, *:after, *:before {
+  box-sizing: border-box;
+  }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f9fafc;
+}
+
+.banner {
+  display: flex;
+}
+.middle-space {
+  flex: 1;
+}
+.nav-list li {
+  display: inline-block;
+  padding: 10px;
+}
+
+.nav-item > a {
+  text-decoration: none;
+  color: #69696a;
+}
+
+.company {
+  display: block;
+  font-weight: 800;
+  margin-left: 60px;
+}
+
+.content p {
+  width: 50%;
+  margin-left: 80px;
+  border-left: 3px solid #69696a;
+  padding-left: 10px;
+}
+
+.content {
+  display: flex;
+  color: #69696a;
+}
+.circle-image {
+  position: relative;
+  right: 200px;
+}
+
+.biggest-circle {
+  postition: absolute;
+  height: 250px;
+  width: 250px;
+  background-color: rgba(247, 136, 167, 0.6);
+  border-radius: 100%;
+}
+
+
+.medium-circle {
+  position: absolute;
+  left: 180px;
+  top: 100px;
+  height: 170px;
+  width: 170px;
+  border-radius: 100%;
+  background-color: rgba(247, 193, 162, 0.7);
+
+}
+
+.smallest-circle {
+  position: absolute;
+  left: 220px;
+  top: 30px;
+  height: 130px;
+  width: 130px;
+  border-radius: 100%;
+  background-color: rgba(207, 130, 213, 0.6);
+}
+
+.nav-button a {
+  color: #f9fafc;
+  text-decoration: none;
+}
+
+.nav-button {
+  background-color: #000;
+  border-radius: 50px;
+}
+
+.scroll {
+  display: flex;
+  justify-content: center;
+}
+.button {
+  height: 50px;
+  width: 115px;
+  background-color: #000;
+  color: #f9fafc;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 16px;
+}
