@@ -1,0 +1,158 @@
+body {
+  background-color: #f9fafc;
+  font-family: 'Open Sans', sans-serif;
+  padding: 50px;
+}
+
+h1 {
+  font-weight: normal;
+  font-size: 40px;
+}
+
+p {
+  color: #69696a;
+}
+
+.logo {
+  text-align: left;
+  position: absolute;
+  top: 30px;
+}
+
+nav {
+  text-align: left;
+  font-weight: normal;
+  display: flex;
+  flex-direction: column;
+}
+
+.nav {
+  padding-top: 15px;
+  color: #69696a;
+  text-decoration: none;
+}
+
+.button {
+  background-color: black;
+  color: #f9fafc;
+  padding: 10px 30px;
+  border-radius: 50px;
+  width: auto;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro {
+  position: relative;
+  z-index: 1;
+}
+
+.intro-copy {
+  padding-left: 30px;
+  border-left: solid 1px #69696a;
+}
+
+.circles {
+  display: none;
+}
+
+.scroll-button {
+  background-color: black;
+  color: #f9fafc;
+  padding: 10px 30px;
+  border-radius: 50px;
+  width: auto;
+  text-align: center;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  margin-left: -25px;
+  z-index: 1;
+  /* margin-left: auto;
+  margin-right: auto; ----- could not get scroll button to be exactly centered, landed on left: 50%; margin-left: -25px; being the closest */
+}
+
+@media (min-width: 620px) {
+
+  nav {
+    display: block;
+    text-align: right;
+    right: 0px;
+    width: auto;
+  }
+
+  .nav {
+    padding: 10px;
+    color: #69696a;
+    text-decoration: none;
+  }
+
+  .button {
+    background-color: black;
+    color: #f9fafc;
+    padding: 10px 30px;
+    border-radius: 50px;
+    margin-left: 20px;
+    width: auto;
+  }
+
+  .main {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .intro {
+    width: 50%;
+    position: relative;
+    padding-top: 125px;
+  }
+
+  .intro-copy {
+    padding-left: 30px;
+    border-left: solid 1px #69696a;
+  }
+
+  .circles {
+    display: block;
+    position: relative;
+    width: 50%;
+  }
+
+  .pink-circle {
+    width: 350px;
+    height: 350px;
+    background-color: rgba(247, 136, 167, 0.6);
+    border-radius: 50%;
+    opacity: 50%;
+    position: absolute;
+    right: 150px;
+    top: 160px;
+  }
+
+  .purple-circle {
+    width: 200px;
+    height: 200px;
+    background-color: rgba(207, 130, 213, 0.6);
+    border-radius: 50%;
+    opacity: 50%;
+    position: absolute;
+    right: 20px;
+    top: 200px;
+  }
+
+  .orange-circle {
+    width: 250px;
+    height: 250px;
+    background-color: rgba(247, 193, 162, 0.7);
+    border-radius: 50%;
+    opacity: 50%;
+    position: absolute;
+    top: 350px;
+    right: 20px;
+    z-index: 1;
+  }
