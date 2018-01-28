@@ -1,0 +1,140 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 800;
+}
+
+body {
+    background-color: #eee;
+}
+
+.logo {
+    position: absolute;
+    text-align: left;
+    top: 0px;
+
+}
+
+.main-content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+    margin-bottom: 150px;
+    margin-left: 30px;
+}
+
+.page-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.menu {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+
+}
+
+#hireButton {
+
+    justify-content: center;
+    margin: 30px;
+    background-color: #000;
+    border-radius: 80px;
+    width: 140px;
+    padding: 10px 0px;
+    color: #f9fafc;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+
+#scrollButton {
+    position: fixed;
+    justify-content: center;
+    bottom: 20px;
+    margin: 30px;
+    background-color: #000;
+    border-radius: 40px;
+    width: 140px;
+    padding: 10px 0px;
+    color: #f9fafc;
+    font-size: 16px;
+    text-align: center;
+
+}
+
+
+
+.nav-link a {
+
+    background-color: #eee;
+    color: black;
+    display: inline;
+    padding: 12px;
+    text-decoration: none;
+
+}
+
+.nav-link a:hover {
+    background-color: #ccc;
+}
+
+.nav-link a.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.main-text {
+    border-left: 4px solid #69696a;
+    padding-left: 10px;
+    margin: 15px;
+    width: 600px;
+}
+
+.circles {
+    float: left;
+    display: flex;
+    flex: 1;
+
+}
+
+
+
+.circle1 {
+    position: absolute;
+    background-color: rgba(207, 130, 213, 0.6);
+    width: 150px;
+    height: 150px;
+    right: 30px;
+    border-radius: 100%;
+    margin-top: 70px;
+    right: 25px;
+
+}
+
+.circle2 {
+    position: absolute;
+    right: 130px;
+    width: 300px;
+    height: 300px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(247, 136, 167, 0.6);
+    z-index: 2
+}
+
+.circle3 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    right: 30px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(247, 193, 162, 0.7);
+    z-index: 3
+}
