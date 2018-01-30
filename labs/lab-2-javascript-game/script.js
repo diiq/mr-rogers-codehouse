@@ -12,6 +12,18 @@ function getDamage() {
   return (Math.floor(Math.random() * (max - min + 1) + min));
 }
 
+function battleResults(name, userHP, winCount) {
+  if (userHP <= 0 && winCount === 3) {
+    console.log("The game ends in a draw.");
+  } else if (userHP <= 0) {
+    console.log(name + " has lost the game.");
+  } else if (winCount === 4) {
+    console.log(name + " has quit the game.");
+  } else if (winCount === 3) {
+    console.log(name + " has defeated Grant the Mighty Chicken!");
+  }
+}
+
 function startCombat(name) {
   var winCount = 0;
   var userHP = 40;
@@ -26,7 +38,7 @@ function startCombat(name) {
       console.log(name + " has " + userHP + " health left.");
       console.log("Grant the Mighty Chicken has " + grantHP + " health left.");
     } else if (choice === "quit") {
-      winCount = 4;
+      winCount = 4; //Arbitrary number greater than 3 used to exit the while loop.
     }
     if (grantHP <= 0) {
       winCount++;
@@ -36,15 +48,5 @@ function startCombat(name) {
       }
     }
   }
-
-  // Battle results
-  if (userHP <= 0 && winCount === 3) {
-    console.log("The game ends in a draw.");
-  } else if (userHP <= 0) {
-    console.log(name + " has lost the game.");
-  } else if (winCount === 4) {
-    console.log(name + " has quit the game.");
-  } else if (winCount === 3) {
-    console.log(name + " has defeated Grant the Mighty Chicken!");
-  }
+  battleResults(name, userHP, winCount);
 }
