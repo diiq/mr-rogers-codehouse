@@ -3,20 +3,16 @@ var grantHealth = 10;
 var winCount = 0;
 
 function getDamage() {
-    damage = Math.floor(Math.random() * 5) + 1
-    return damage
+    return Math.floor(Math.random() * 5) + 1
 }
 
 function startCombat(damage) {
-   damage = getDamage();
    console.log("You took ", damage, "damage!");
-   playerHealth = playerHealth - damage;
+   playerHealth = playerHealth - getDamage();
    console.log("You have health ", playerHealth, "left.");
 
-  damage = getDamage();
-
    console.log("Grant took ", damage, "damage!");
-   grantHealth = grantHealth - damage;
+   grantHealth = grantHealth - getDamage();
    console.log("Grant has health ", grantHealth, "left.");
 }
 
@@ -26,7 +22,7 @@ function startGame() {
 
   if (play === "Yes") {
     var playerName = prompt("What is your name?");
-    while (play === "Yes") {
+    while (winCount < 3) {
         startCombat();
         if (grantHealth <= 0 && winCount < 3) {
           winCount++;
@@ -34,7 +30,7 @@ function startGame() {
           console.log("You have defeated Grant ", winCount,"times.");
         } else if (playerHealth <= 0) {
           console.log("You have been defeated.");
-        } else if (winCount == 3) {
+        } else if (winCount === 3) {
           console.log("You have won the game!");
           return
         }
