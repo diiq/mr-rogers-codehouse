@@ -1,9 +1,10 @@
-//function startGame() {}
+function startGame() {
 const play = prompt("Would you like to play?");
   if (play === "yes") {
     const playerName = prompt("Enter you player name");
     function startCombat()
   }
+}
 
 var grantHP = 10
 var playerHP = 40
