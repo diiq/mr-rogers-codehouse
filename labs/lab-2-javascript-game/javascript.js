@@ -8,13 +8,18 @@ var battleName = "";
 function startGame() {
   var playGame = confirm("Shall we battle!");
   if (playGame === true) {
-    var battleName = prompt("Enter your battle name!");
-    startCombat(battleName);
+    battleTitle();
+    startCombat();
   } else alert("Return when you have obtained the courage to battle!!");
 }
 startGame();
 
-function getDamage(max) {
+function battleTitle() {
+  var name = prompt("Enter your battle name!");
+  return battleName = name;
+}
+
+function getDamage() {
   return Math.floor(Math.random() * 5) + 1;
 }
 
@@ -24,8 +29,8 @@ function attack(battleAnswer) {
 }
 
 function battleLog() {
-  console.log(battleName + ", Your health is now " + userHealth);
-  console.log("Grants health is now " + grantHealth);
+  console.log(battleName + " now has " + userHealth + " health");
+  console.log("Grant now has " + grantHealth + " health");
 }
 
 function battleTally() {
@@ -39,20 +44,17 @@ function battleTally() {
   }
 }
 
-function startCombat(battleName) {
+function startCombat() {
   while (playGame === true) {
     var battleAnswer = confirm("OK for attack, Cancel for retreat");
     if (battleAnswer === true) {
       if (wins === 3) {
-        console.log("You beat Grant 3 times, and won the game!");
+        console.log(battleName + " beat Grant 3 times, and won the game!");
         break;
       } else
       attack(battleAnswer);
-
       battleLog();
-
       battleTally();
-
     } else {
       alert("Coward! Grant has destroyed you!");
       console.log("Coward! Grant has destroyed you!");
