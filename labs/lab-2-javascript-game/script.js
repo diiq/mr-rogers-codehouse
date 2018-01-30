@@ -24,6 +24,13 @@ function battleResults(name, userHP, winCount) {
   }
 }
 
+function winRound(winCount) {
+  grantHP = 10;
+  if (winCount !== 3) { // Note: Does not show if game has finished.
+    console.log("You beat Grant! You need to win " + (3 - winCount) + " more round(s).");
+  }
+}
+
 function startCombat(name) {
   var winCount = 0;
   var userHP = 40;
@@ -42,11 +49,9 @@ function startCombat(name) {
     }
     if (grantHP <= 0) {
       winCount++;
-      grantHP = 10;
-      if (winCount !== 3) { // Note: Does not show if game has finished.
-        console.log("You beat Grant! You need to win " + (3 - winCount) + " more round(s).");
-      }
+      winRound(winCount);
     }
   }
-  battleResults(name, userHP, winCount);
+}
+battleResults(name, userHP, winCount);
 }
