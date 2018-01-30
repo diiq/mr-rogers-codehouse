@@ -2,7 +2,7 @@ var grantHealth = 10;
 var userHealth = 40; 
 var winCount = 0;
 
-function battleSystem() {   
+const battleTime = function battleSystem() {   
     const damageRoll = function rollDamage() {
         var damage = Math.round(Math.random() + 1);
         return damage;
@@ -29,4 +29,8 @@ function battleSystem() {
         return grantHealth;
         return userHealth;
     }
+}
+
+function warTime() {
+    battleTime();
 }
