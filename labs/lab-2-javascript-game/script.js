@@ -3,9 +3,8 @@ function startGame() {
 
 	if (wouldYou === "yes") {
 		var playersName = prompt("What would you like to name your hero?");
+		startCombat();
 	}
-
-	startCombat();
 }
 
 
@@ -17,7 +16,7 @@ function getDamage() {
 }
 
 
-	function round(playersName) {
+function round(playersName, winCount) {
 		var playersNameHP = 40;
 		var grantHP = 10;
 		var round = 0;
@@ -30,21 +29,16 @@ function getDamage() {
 		grantHP = grantHP - getDamage();
 		console.log("Grant the Mighty Chicken has" + " " + grantHP + " " + "heath left");
 
-		 if (grantHP >= 0) {
-		 	return round = round + 1;
-			console.log(playersName + " " + "won a round");
-		} else {
-			console.log("you lost");
-			return startGame();
-		}
+		   winCount();
+		} 
 	}	
-}
+
 
 
 function winCount(grantHP, playersName) {
 	if (grantHP >= 0) {
 		console.log(playersName + " " + "won a round");
-		winCount = winCount + 1;
+		 return  winCount ++ ;
 		grantHP = 10;	
 	}
 }
@@ -61,7 +55,7 @@ function winner(playersName, winCount) {
 	
 function startCombat() {
 	while (winCount() <= 3) {
-		 round(winCount, winner);
+		 round();
 	}
 }
 
