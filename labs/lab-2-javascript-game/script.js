@@ -25,7 +25,6 @@ function battleResults(name, userHP, winCount) {
 }
 
 function winRound(winCount) {
-  grantHP = 10;
   if (winCount !== 3) { // Note: Does not show if game has finished.
     console.log("You beat Grant! You need to win " + (3 - winCount) + " more round(s).");
   }
@@ -35,9 +34,10 @@ function startCombat(name) {
   var winCount = 0;
   var userHP = 40;
   var grantHP = 10;
+  var quit = false;
   var choice;
 
-  while ((winCount < 3) && (userHP > 0)) {
+  while ((winCount < 3) && (userHP > 0) && (quit === false)) {
     choice = window.prompt("Would you like to attack or quit?");
     if (choice === "attack") {
       userHP = userHP - getDamage();
@@ -45,13 +45,13 @@ function startCombat(name) {
       console.log(name + " has " + userHP + " health left.");
       console.log("Grant the Mighty Chicken has " + grantHP + " health left.");
     } else if (choice === "quit") {
-      winCount = 4; //Arbitrary number greater than 3 used to exit the while loop.
+      quit = true;
     }
     if (grantHP <= 0) {
-      winCount++;
+      winCount = winCount + 1;
       winRound(winCount);
+      grantHP = 10;
     }
   }
-}
-battleResults(name, userHP, winCount);
+  battleResults(name, userHP, winCount);
 }
