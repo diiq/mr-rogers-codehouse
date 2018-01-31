@@ -5,6 +5,8 @@
 // - Explain what an event handler is, and list several
 // - Attach event handler to any element on the page
 
+// STUDENTS: CHANGE THE NAME OF THIS FILE TO exercise-yourname.js
+// AND THEN FIX exercise.html TO USE exercise-yourname.js INSTEAD.
 
 // A function that returns the value of the input
 
