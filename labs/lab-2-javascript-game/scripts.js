@@ -13,22 +13,24 @@ function getDamage(damage) {
 function startCombat(userName) {
   var grantPoints = 10;
   var userPoints = 40;
-  var numberWins = 0;
-  while (numberWins < 3) {
+  var grantNumberWins = 0;
+  var userNumberWins = 0;
+  while (userNumberWins < 3 || grantNumberWins < 3) {
     while (grantPoints > 0 && userPoints > 0) {
     grantPoints = grantPoints - getDamage();
     userPoints = userPoints - getDamage();
     console.log("Grant has " + grantPoints + " health left." );
     console.log(userName + " has " + userPoints + " health left." );
-    var attack = prompt("Do you want to quit or attack again?");
-    } if (grantPoints <= 0) {
-      numberWins++;
+    var attack = prompt("Do you want to quit or attack?");
+  } if (grantPoints <= 0) {
+      userNumberWins++;
       grantPoints = 10;
-      if (numberWins >= 3) {
-        console.log("You have won!") //How to display each of the players if they win? What if Grant wins?
+    } if (userPoints <= 0) {
+        grantNumberWins++;
+    } else if (userNumberWins >= 3) {
+          console.log("You have won!");
+    } else if (grantNumberWins >= 3) {
+          console.log("Grant has won!");
       }
-    } else if (attack !== "attack") {
-      console.log ("");
-    }
-  }
+}
 }
