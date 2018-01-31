@@ -10,6 +10,10 @@ function startGame() {
         startCombat(name);
     }
 
+    else if (play === "no"){
+      return console.log("Why don't you want to play?");
+    }
+
     function startCombat() {
         var winTotal = 0;
         var grantHP = 10;
