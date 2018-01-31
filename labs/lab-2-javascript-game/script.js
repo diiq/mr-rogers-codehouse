@@ -7,8 +7,10 @@ function gameStart(){
 
 }
 
+function getDamage(damage) {
+    return Math.floor(Math.random() * 10);
 
-
+}
 
 function startFight(){
     var winTotal = 0;
