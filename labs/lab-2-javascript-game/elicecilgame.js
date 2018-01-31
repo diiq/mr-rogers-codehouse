@@ -43,9 +43,10 @@ const startCombat = function() {
     while((userHealth > 0) && (winCount !== 3)) {
         oneDeath();
         wins();
-        grantHealth = 10;
+        // grantHealth = 10;
         // var again = prompt("Would you like to attack once more or show mercy?")
         // if(again = "yes") {
+        //     continue
         // }
     }
     console.log(name, "has defeated Champion Grant, and shall take his place in history!");
