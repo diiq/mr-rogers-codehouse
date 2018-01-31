@@ -11,6 +11,15 @@ html, body {
   margin: 32px;
   border: 1px solid #ddd;
   padding: 32px;
+  min-height: 50px;
+}
+
+input[type=text] {
+  padding: 10px;
+  margin: 0 10px;
+  font-size: 18px;
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .2);
+  border: 1px solid #ddd;
 }
 
 .border-label {
@@ -24,6 +33,9 @@ html, body {
 }
 
 #go-button {
+  display: block;
+  min-width: 300px;
+  margin: 0 auto;
   padding: 16px;
   border-radius: 2px;
   box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
