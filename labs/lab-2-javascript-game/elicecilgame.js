@@ -2,35 +2,51 @@ var grantHealth = 10;
 var userHealth = 40; 
 var winCount = 0;
 
-const battleTime = function battleSystem() {   
-    const damageRoll = function rollDamage() {
+const startGame = function() {
+    var start = prompt("Would you like to fight the Champion?");
+    if(start === "yes") {
+        name = prompt("Tell us your name.");
+    }
+    startCombat();
+}
+
+const startCombat = function() {   
+    const damageRoll = function() {
         var damage = Math.round(Math.random() + 1);
         return damage;
     }
-    const grantHit = function grantDamage() {
+    const grantHit = function() {
         grantHealth = (grantHealth - damageRoll());
         console.log("Grant is now at", grantHealth, "HP!");  
     }
-    const userHit = function userDamager() {
+    const userHit = function() {
         userHealth = (userHealth - damageRoll());
-        console.log("User is now at", userHealth, "HP!");
+        console.log(name, "is now at", userHealth, "HP!");
     }
-    const wins = function winCounter() {
+    const wins = function() {
         if (grantHealth === 0) {
             winCount = (winCount + 1);
-            console.log("User has", winCount, "wins!");
+            console.log(name, "has", winCount, "wins!");
         }
     }
-    while((grantHealth <= 10) && (grantHealth !== 0) && (winCount !== 3)) {
-        grantHit();
-        userHit();
-        wins();
-        return winCount;
-        return grantHealth;
-        return userHealth;
+    const loss = function() {
+        if (userHealth === 0) {
+            console.log(name, "has been defeated!");
+        }
     }
-}
-
-function warTime() {
-    battleTime();
+    const oneDeath = function() {
+        while((grantHealth > 0) && (userHealth > 0 )) {
+            userHit();
+            grantHit();
+        }
+    }
+    while((userHealth > 0) && (winCount !== 3)) {
+        oneDeath();
+        wins();
+        grantHealth = 10;
+        // var again = prompt("Would you like to attack once more or show mercy?")
+        // if(again = "yes") {
+        // }
+    }
+    console.log(name, "has defeated Champion Grant, and shall take his place in history!");
 }
