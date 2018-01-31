@@ -1,0 +1,39 @@
+html, body {
+  font-size: 18px;
+  font-family: sans-serif;
+  color: #666;
+  margin: 0;
+  padding: 0;
+}
+
+.bordered {
+  position: relative;
+  margin: 32px;
+  border: 1px solid #ddd;
+  padding: 32px;
+}
+
+.border-label {
+  position: absolute;
+  top: -13px;
+  left: 5px;
+  background-color: #fff;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#go-button {
+  padding: 16px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+  background-color: #336699;
+  color: #fff;
+  font-size: 18px;
+}
+
+#go-button:hover {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, .2);
+  background-color: #4477AA;
+  cursor: pointer;
+}
