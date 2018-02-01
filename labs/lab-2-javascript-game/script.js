@@ -20,7 +20,8 @@ function startCombat() {
 		 battle();
 	}
 	if (grantDeaths === 3) {
-	declareWinner(); 
+	declareWinner();
+
    }else if (playerHP <=0) {
 	declareWinner();
 	}
@@ -54,6 +55,7 @@ function round() {
 
 		}
 	} else if (attack === 'quit') {
+		console.log(playersName + "quit");
 		startGame();
 	}
 }	
@@ -61,9 +63,13 @@ function round() {
 function declareWinner() {
 	if (grantDeaths === 3) {
 		console.log(playersName + ' has won!!!');
+		playerHP = 40;
+		grantDeaths = 0;
 		startGame();
 	} else if (playerHP <= 0) {
 		console.log('Grant the Almighty has won ');
+		playerHP = 40;
+		grantDeaths = 0;
 		startGame();
 	}
 }
