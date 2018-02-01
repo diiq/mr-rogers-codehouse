@@ -32,7 +32,7 @@ input[type=text] {
   font-weight: bold;
 }
 
-#go-button {
+button {
   display: block;
   min-width: 300px;
   margin: 0 auto;
@@ -44,8 +44,13 @@ input[type=text] {
   font-size: 18px;
 }
 
-#go-button:hover {
+button:hover {
   box-shadow: 0px 0px 1px rgba(0, 0, 0, .2);
   background-color: #4477AA;
   cursor: pointer;
+}
+
+#greeting {
+  font-size: 24px;
+  font-weight: bold;
 }
