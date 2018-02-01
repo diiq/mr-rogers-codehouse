@@ -4,12 +4,12 @@ var playersName = "";
 var grantDeaths = 0;
 
 function startGame() {
-	 wouldYou = prompt("Would you like to play?");
+	wouldYou = prompt("Would you like to play?");
 
 	if (wouldYou === "yes") {
-		playersName = prompt("What would you like to name your hero?");
+	playersName = prompt("What would you like to name your hero?");
 		
-		startCombat();
+	startCombat();
 	}
 }
 
@@ -17,15 +17,15 @@ function startCombat() {
 	playerHP = 40;
 	grantDeaths = 0;
 	while (grantDeaths <= 3 && playerHP >= 0) {
-		 battle();
-	}
+		battle();
+	
 	if (grantDeaths === 3) {
-	declareWinner();
+		declareWinner();
 
-   }else if (playerHP <=0) {
-	declareWinner();
+  } else if (playerHP <= 0) {
+		declareWinner();
 	}
-
+}
 }
 
 function battle() {
@@ -34,18 +34,14 @@ function battle() {
 		round();
 	}
  	if (grantHP <= 0) {
-	grantDeaths = grantDeaths + 1;
-	console.log(playersName + ' has won a round');
+		grantDeaths = grantDeaths + 1;
+		console.log(playersName + ' has won a round');
 	}
-
 }
 
 function round() {
-	
 	attack = prompt('Do you want to attack? or quit?')
 	if (attack === 'attack') {
-
-		while (playerHP >= 0 && grantHP >= 0) {
 
 			playerHP = playerHP - getDamage();
 			console.log(playersName + " " + "has" + " " + playerHP + " " + "health left");
@@ -53,12 +49,11 @@ function round() {
 			grantHP = grantHP - getDamage();
 			console.log("Grant the Mighty Chicken has" + " " + grantHP + " " + "heath left");
 
-		}
-	} else if (attack === 'quit') {
-		console.log(playersName + "quit");
-		startGame();
+ } else if (attack === 'quit') {
+		console.log(playersName + "quit :(");
+		playerHP = 0;
 	}
-}	
+}
 
 function declareWinner() {
 	if (grantDeaths === 3) {
