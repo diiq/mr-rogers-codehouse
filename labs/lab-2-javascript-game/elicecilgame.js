@@ -2,9 +2,14 @@ var grantHealth = 10;
 var userHealth = 40; 
 var winCount = 0;
 
-// class User {
-//     constructor()
-// }
+class Player {
+    constructor(name, health, healsRemaining, wins) {
+        this.name = name;
+        this.health = health;
+        this.healsRemaining = healsRemaining;
+        this.wins = wins;
+    }
+}
 
 const startGame = function() {
     var start = prompt("Would you like to fight the Champion?");
