@@ -1,0 +1,132 @@
+#mainContainer {
+  background-color: #8797AF;
+  display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#startContainer {
+  background-color: #8797AF;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#start {
+  height: 100px;
+  width: 25%
+}
+
+.playerStats {
+  border: solid;
+  border-color: #FFF;
+  border-radius: 15px;
+  border-width: 9px;
+  width: 40%;
+  height: 375px;
+  margin: 20px;
+
+}
+
+.statsContainer {
+  border: solid;
+  border-color: #FFF;
+  border-radius: 15px;
+  border-width: 3px;
+  height: auto;
+  margin: 10px;
+}
+
+.healthText {
+  font-family: helvetica;
+  color: #FFF;
+  font-size: 20pt;
+}
+
+.healthText h4{
+  margin: 5;
+  position: relative;
+  left: 15px;
+  margin: 15px 0px;
+}
+
+.healthTextContainer h4 {
+  font-family: helvetica;
+  color: #FFF;
+  font-size: 20pt;
+  margin: 12px;
+}
+
+.namePlate {
+  border: solid;
+  border-color: #FFF;
+  border-radius: 15px;
+  border-width: 3px;
+  height: 50px;
+  margin: 10px;
+}
+
+.healthBarContainer, .healthTextContainer, .statusTextContainer {
+  border: solid;
+  border-color: #FFF;
+  border-radius: 15px;
+  border-width: 3px;
+  height: 50px;
+  margin: 15px;
+
+}
+
+.statusTextContainer h4 {
+  font-family: helvetica;
+  color: #FFF;
+  font-size: 16pt;
+  margin: 14px;
+}
+
+#playerName, #enemyName {
+  font-family: helvetica;
+  color: #FFF;
+  font-size: 20pt;
+  margin: 15px 0px;
+  position: relative;
+  left: 15px;
+
+}
+
+#enemyHealthBar, #playerHealthBar {
+  background-color: green;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+
+}
+
+.healthTextContainer h4{
+  text-align: center;
+}
+
+#actionMainContainer {
+ width: 100%;
+ height: 150px;
+}
+
+#actionContainer {
+  display: flex;
+  width: 60%;
+  height: 75%;
+  margin: auto;
+}
+
+button {
+  width: 30%;
+  height: 90%;
+  margin: 20px;
+  background-color: #8FAD88;
+  font-family: helvetica;
+  color: #FFF;
+  font-size: 20pt;
+  border-radius: 15px;
+  border: none;
+}

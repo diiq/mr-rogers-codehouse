@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="script.js"></script>
+</head>
+<body>
+<div id="startContainer">
+	<button id="start" type="button" name="button">Start</button>
+</div>
+
+<div id="mainContainer">
+	<div class="playerStats">
+		<div class="namePlate">
+			<h3 id="playerName">Player Name</h3>
+		</div>
+		<div class="statsContainer">
+			<div class="healthText">
+				<h4>Health:</h4>
+			</div>
+			<div class="healthBarContainer">
+
+				<div id="playerHealthBar">
+				</div>
+		  </div>
+			<div class="healthTextContainer">
+				<h4 id="playerHealthText">40/40</h4>
+			</div>
+			<div class="statusTextContainer">
+				<h4 id="playerStatusText"></h4>
+			</div>
+		</div>
+	</div>
+
+	<div class="playerStats">
+		<div class="namePlate">
+			<h3 id="enemyName">Grant</h3>
+		</div>
+		<div class="statsContainer">
+			<div class="healthText">
+				<h4>Health:</h4>
+			</div>
+			<div class="healthBarContainer">
+				<div id="enemyHealthBar">
+				</div>
+		  </div>
+			<div class="healthTextContainer">
+				<h4 id="enemyHealthText">10/10</h4>
+			</div>
+			<div class="statusTextContainer">
+				<h4 id="enemyStatusText"></h4>
+			</div>
+		</div>
+	</div>
+	<div id="actionMainContainer">
+
+		<div id="actionContainer">
+			<button id="attack">Attack</button>
+			<button id="heal">Heal</button>
+			<button id="quit">Quit</button>
+    </div>
+	</div>
+</div>
+
+</body>
+</html>
