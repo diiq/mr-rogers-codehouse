@@ -8,7 +8,7 @@ class Character {
 }
 
 var grant = new Character("Grant", 40, 2, 0);
-var user = new Character(userName, 40, 2, 0);
+var user = new Character(userName, 40, 2, 0); //How to get it to recognize userName as response to prompt?
 
 function generateAttackDamage() {
   const min = 1;
@@ -45,8 +45,8 @@ function startCombat(userName) {
   var userNumberWins = 0;
   while (userNumberWins < 3 && grantNumberWins < 3) {
     while (grantPoints > 0 && userPoints > 0) {
-      grantPoints = grantPoints - getDamage();
-      userPoints = userPoints - getDamage();
+      grantPoints = grantPoints - generateAttackDamage();
+      userPoints = userPoints - generateAttackDamage();
       console.log("Grant has " + grantPoints + " health left." );
       console.log(userName + " has " + userPoints + " health left." );
       var attack = confirm("Would you like to attack again?");
