@@ -26,6 +26,7 @@ class Player {
 
 
 function startGame() {
+    var attack = true;
     userName = "user";
     var user = new Player(userName, 40, 2, 0);
     const grant = new Player("Grant", 10, 0, 0);
@@ -48,19 +49,14 @@ function startGame() {
             console.log(user.name, "has", user.wins, "wins!");
         } else {
             console.log(user.name, "has been defeated!");
-        }
+        } 
     }
 
-    while((user.health > 0) && (user.wins !== 3) && (attack !== false)) {
+    while((user.health > 0) && (user.wins !== 3) && (attack === true)) {
         oneDeath();
         checkIfWin();
         var attack = confirm("Would you like to attack once more or show mercy?")
-        if(attack = attack === "attack") {
-            attack = true;
-            grant.health = 10;
-        } else {
-            false;
-        }
+        grant.health = 10;
     } 
 }
 
