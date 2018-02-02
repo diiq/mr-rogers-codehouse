@@ -1,21 +1,27 @@
-function makeCell(content, active) {
-  return makeWrapper("cell" + (active ? " active" : ""), [
-    document.createTextNode(content)
-  ]);
-}
+class Tape {
+  constructor(tape) {
+    this.tape = tape;
+  }
 
-function makeTape(tape, activeCell) {
-  return makeWrapper("tape",
-    tape.map((c, i) => makeCell(c, i == activeCell))
-  );
-}
+  makeCell(content, active) {
+    return makeWrapper("cell" + (active ? " active" : ""), [
+      document.createTextNode(content)
+    ]);
+  }
 
-function clearTape() {
-  document.getElementById("tape").innerHTML = "";
-}
+  makeTape(activeCell) {
+    return makeWrapper("tape",
+      this.tape.map((c, i) => this.makeCell(c, i == activeCell))
+    );
+  }
 
-function showTape(tape, activeCell) {
-  clearTape();
-  document.getElementById("tape")
-    .appendChild(makeTape(tape, activeCell));
+  clear() {
+    document.getElementById("tape").innerHTML = "";
+  }
+
+  show(activeCell) {
+    this.clear();
+    document.getElementById("tape")
+      .appendChild(this.makeTape(activeCell));
+  }
 }
