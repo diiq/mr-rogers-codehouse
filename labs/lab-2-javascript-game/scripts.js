@@ -16,6 +16,12 @@ function generateAttackDamage() {
   return (Math.floor(Math.random() * (max - min + 1) + min));
 }
 
+function heal() {
+  const min = 1;
+  const max = 10;
+  return (Math.floor(Math.random() * (max - min + 1) + min));
+}
+
 function startGame() {
   var start = prompt("Would you like to play a game against the Almighty Grant?").toLowerCase();
   if (start === "yes") {
