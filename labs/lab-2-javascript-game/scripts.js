@@ -5,18 +5,20 @@ class Character {
     this.healsRemaining = healsRemaining;
     this.wins = wins;
   }
+  generateAttackeDamage() {
+    this.health = this.health - getDamage();
 }
 
 var grant = new Character("Grant", 40, 0, 0);
 var user = new Character(userName, 40, 2, 0); //How to get it to recognize userName as response to prompt?
 
-function generateAttackDamage() {
+function getDamage() {
   const min = 1;
   const max = 3;
   return (Math.floor(Math.random() * (max - min + 1) + min));
 }
 
-function heal() {
+function getHeal() {
   if (healsRemaining > 0) {
     const min = 1;
     const max = 10;
@@ -26,13 +28,14 @@ function heal() {
   }
 }
 
+
 function startGame() {
   var userName = prompt("What is your name, Warrior?");
   document.getElementById("game-container").style.display = "flex";
   document.getElementById("start-button").style.display = "none";
   document.getElementById("player-name").innerText = userName;
-  }
 }
+
 
 function chooseWinner(grantNumberWins, userNumberWins) {
   if (userNumberWins >= 3) {
@@ -49,8 +52,8 @@ function startCombat(userName) {
   var userNumberWins = 0;
   while (userNumberWins < 3 && grantNumberWins < 3) {
     while (grantPoints > 0 && userPoints > 0) {
-      grantPoints = grantPoints - generateAttackDamage();
-      userPoints = userPoints - generateAttackDamage();
+      grantPoints = grantPoints - getDamage();
+      userPoints = userPoints - getDamage();
       console.log("Grant has " + grantPoints + " health left." );
       console.log(userName + " has " + userPoints + " health left." );
       var attack = confirm("Would you like to attack again?");
