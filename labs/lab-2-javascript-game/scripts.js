@@ -1,13 +1,27 @@
+class Character {
+  constructor(name, health, healsRemaining, wins) {
+    this.name = name;
+    this.health = health;
+    this.healsRemaining = healsRemaining;
+    this.wins = wins;
+  }
+}
+
+var grant = new Character("Grant", 40, 2, 0);
+var user = new Character(userName, 40, 2, 0);
+
+function generateAttackDamage() {
+  const min = 1;
+  const max = 3;
+  return (Math.floor(Math.random() * (max - min + 1) + min));
+}
+
 function startGame() {
   var start = prompt("Would you like to play a game against the Almighty Grant?").toLowerCase();
   if (start === "yes") {
     var userName = prompt("What is your name, Warrior?");
     startCombat(userName);
   }
-}
-
-function getDamage(damage) {
-  return Math.floor(Math.random() * 5) + 1;
 }
 
 function chooseWinner(grantNumberWins, userNumberWins) {
