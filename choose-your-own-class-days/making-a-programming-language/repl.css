@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;  
+}
+
+html, body {
+  font-size: 18px;
+  font-family: monospace;
+  color: #666;
+  margin: 0;
+  padding: 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 20px 32px 15px;
+  font-size: 20px;
+}
+
+.interpreter {
+  border: 1px solid #ddd;
+  padding-bottom: calc(30vh + 95px);
+  position: relative;
+  margin: 32px;
+  margin-top: 0;
+}
+
+.input {  
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 18px;
+  border-top: 1px solid #ddd;
+}
+
+#program-input {
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-top: 2px solid #ddd;
+  background-color: rgb(246, 252, 255);
+  font-size: 18px;
+  font-family: monospace;
+  height: 30vh;
+  resize: none;
+}
+
+
+.chevron {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: monospace;
+  margin-right: 8px;
+}
+
+.output-chevron {
+  color: #ddd;
+}
+
+.active-prompt {
+  color: rgb(0, 205, 242);
+}
+
+#history {
+  margin-top: 47px;
+  height: calc(100vh - 30vh - 280px);
+  padding-top: calc(100vh - 30vh - 280px);
+  overflow: auto;
+}
+
+.history-prompt {
+  position: relative;
+  padding: 9px;
+  padding-left: 30px;
+}
+
+.history-output {
+  position: relative;
+  padding: 9px;
+  padding-left: 30px;
+  white-space: pre;
+}
+
+#repl-input {
+  width: 100%;
+  display: block;
+  border: none;
+  box-shadow: none;
+  font-size: 18px;
+  font-family: monospace;
+  padding: 10px;
+  padding-left: 30px;
+  background-color: transparent;
+  color: rgb(0, 90, 169);
+}
+
+#repl-input:focus, #program-input:focus {
+  outline: none;
+}
+
+.border-label {
+  position: absolute;
+  top: -13px;
+  left: 5px;
+  background-color: #fff;
+  padding: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.tape {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow-x: auto;
+}
+
+.tape::-webkit-scrollbar-track, #history::-webkit-scrollbar-track {
+  background-color: #ddd;
+}
+
+.tape::-webkit-scrollbar, #history::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  background-color: #999;
+}
+
+.tape::-webkit-scrollbar-thumb, #history::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+  background-color: #999;
+}
+
+.cell {
+  min-width: 40px;
+  height: 40px;
+  line-height: 0;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  text-align: center;
+}
+
+.cell.active {
+  background-color: rgb(0, 205, 242);
+  color: #fff;
+  font-weight: bold;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  border: 0;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+  background-color: #336699;
+  color: #fff;
+  font-size: 18px;
+}
+
+button:hover {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, .2);
+  background-color: #4477AA;
+  cursor: pointer;
+}
