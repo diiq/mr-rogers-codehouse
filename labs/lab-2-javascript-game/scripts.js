@@ -7,7 +7,7 @@ class Character {
   }
 }
 
-var grant = new Character("Grant", 40, 2, 0);
+var grant = new Character("Grant", 40, 0, 0);
 var user = new Character(userName, 40, 2, 0); //How to get it to recognize userName as response to prompt?
 
 function generateAttackDamage() {
@@ -17,16 +17,20 @@ function generateAttackDamage() {
 }
 
 function heal() {
-  const min = 1;
-  const max = 10;
-  return (Math.floor(Math.random() * (max - min + 1) + min));
+  if (healsRemaining > 0) {
+    const min = 1;
+    const max = 10;
+    return (Math.floor(Math.random() * (max - min + 1) + min));
+  } else {
+    document.getElementById("player-heal-count").innerText = "You have no remaing heals."
+  }
 }
 
 function startGame() {
-  var start = prompt("Would you like to play a game against the Almighty Grant?").toLowerCase();
-  if (start === "yes") {
-    var userName = prompt("What is your name, Warrior?");
-    startCombat(userName);
+  var userName = prompt("What is your name, Warrior?");
+  document.getElementById("game-container").style.display = "flex";
+  document.getElementById("start-button").style.display = "none";
+  document.getElementById("player-name").innerText = userName;
   }
 }
 

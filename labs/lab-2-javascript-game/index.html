@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+`<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
@@ -7,34 +7,54 @@
 </head>
 <body>
 
-<div>
-	<button>Start</button>
-</div>
+	<div id="start-button">
+		<button>Start</button>
+	</div>
 
-<div>
-	<button>Attack</button>
-	<button>Heal</button>
-	<button>Quit</button>
-</div>
+	<section id="game-container">
+		<div id="action-choice-container">
+			<button class="attack-button">Attack</button>
+			<button class="heal-button">Heal</button>
+			<button class="quit-button">Quit</button>
+		</div>
+		<div id="player-update-note">
+			User has # health left. Grant has # health left.
+			<!-- How to get this to pull info from current stats.-->
+		</div>
 
-<div>
-	User has # health left. Grant has # health left.
-	<!-- How to get this to pull info from current stats.-->
-</div>
-
-<div>
-player stats
-name
-health
-heal count
-wins
-</div>
-
-<div>
-enemy stats
-name
-health
-</div>
+		<div class="stats-summary-container">
+			<h2>Player Stats</h2>
+			<div>
+				<div>
+					<p>Name</p>
+					<div id="player-name"></div>
+				</div>
+				<div>
+					<p>Health</p>
+					<div id="player-health-count"></div>
+				</div>
+				<div>
+					<p>Heal Count</p>
+					<div id="player-heal-count"></div>
+				</div>
+				<div>
+					<p>Wins</p>
+					<div id="player-win-count"></div>
+				</div>
+			</div>
+			<div>
+				<h2>Enemy Stats</h2>
+				<div>
+					<p>Name</p>
+					<p>Grant</p>
+				</div>
+				<div>
+					<p>Health</p>
+					<div id="grant-health-count"></div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 </body>
 </html>
