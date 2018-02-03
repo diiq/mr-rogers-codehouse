@@ -1,42 +1,46 @@
-var playerHealth = 40;
-var enemyHealth = 10;
+class CharacterCreate {
+  constructor(name, health, healsRemaining) {
+    this.name = name;
+    this.health = health;
+    this.healsRemaining = healsRemaining;
+  }
+  generateAttackDamage() {
+    return Math.floor(Math.random() * 5) + 1;
+  }
+
+  heal() {
+    if (this.healsRemaining > 0){
+      return Math.floor(Math.random() * 10) + 1;
+      this.healsRemaining--;
+    } else {
+      document.getElementById("statusText").innerText = "You have no heals left";
+    }
+  }
+}
+
+const intPlayerHealth = 40;
+const intEnemyHealth = 10;
+const intHealsRemaining = 2;
 var winCount = 0;
-var healsRemaining = 2;
-var enemyName = "Grant";
-var playerName = "";
 var roundCount = 1;
+var player;
+var enemy;
 
-class characterCreate {
-  constructor(playerName) {
-    this.name = playerName;
-    this.playerHealth = 40;
-    this.healsRemaining = 2;
-  }
-}
-
-function getDamage() {
-  return Math.floor(Math.random() * 5) + 1;
-}
-
-function getHeal() {
-  if (healsRemaining > 0){
-    return Math.floor(Math.random() * 10) + 1;
-  } else {
-    document.getElementById("statusText").innerText = "You have no heals left"
-  }
-}
 
 function loadGame() {
-  playerName = document.getElementById("playerNameInput").value
-  const player = new characterCreate(playerName);
+  var playerName = document.getElementById("playerNameInput").value
+  player = new CharacterCreate(playerName, intPlayerHealth, intHealsRemaining);
+  enemy = new CharacterCreate("Grant", intEnemyHealth, 0);
   document.getElementById("mainContainer").style.display = "flex";
   document.getElementById("startContainer").style.display = "none";
-  document.getElementById("playerName").innerText = playerName;
+  document.getElementById("playerName").innerText = player.name;
 }
 
 function quitGame(){
   document.getElementById("mainContainer").style.display = "none";
   document.getElementById("startContainer").style.display = "flex";
+  document.getElementById("playerStatusText").innerText = "";
+  document.getElementById("enemyStatusText").innerText = "";
   gameReset();
 }
 
@@ -57,9 +61,10 @@ function gameReset(){
 function roundReset(){
   document.getElementById("playerStatusText").innerText = "";
   document.getElementById("enemyStatusText").innerText = "";
-  enemyHealth = 10;
+  enemy.health = intEnemyHealth;
   calPlayerHealth();
   calEnemyHealth();
+
 
 }
 
@@ -67,57 +72,56 @@ function checkWin() {
   if (winCount === 3) {
     quitGame();
     alert("You Won!")
-  } else if (playerHealth <= 0) {
+  } else if (player.health <= 0) {
     quitGame();
     alert("You lost!")
-  } else if (enemyHealth === 0 && winCount < 3){
+  } else if (enemy.health === 0 && winCount < 3){
     winCount++;
     roundCount++;
     roundReset();
-    checkWin();
     return
   }
 }
 
 function attack() {
-  var playerHealthPrevious = playerHealth;
-  var enemyHealthPrevious = enemyHealth;
-  enemyHealth = enemyHealth - getDamage();
-  document.getElementById("playerStatusText").innerText =  "You dealt " + (enemyHealthPrevious - enemyHealth) + " damage to " + enemyName + ".";
+  var playerHealthPrevious = player.health;
+  var enemyHealthPrevious = enemy.health;
+  enemy.health = enemy.health - player.generateAttackDamage();
+  document.getElementById("playerStatusText").innerText =  "You dealt " + (enemyHealthPrevious - enemy.health) + " damage to " + enemy.name + ".";
   calEnemyHealth();
-  playerHealth = playerHealth - getDamage();
-  document.getElementById("enemyStatusText").innerText =  enemyName + " dealt " + (playerHealthPrevious - playerHealth) + " damage to " + playerName + ".";
+  player.health = player.health - enemy.generateAttackDamage();
+  document.getElementById("enemyStatusText").innerText =  enemy.name + " dealt " + (playerHealthPrevious - player.health) + " damage to " + player.name + ".";
   calPlayerHealth();
   checkWin();
 }
 
 function heal() {
-  if (healsRemaining > 0 && playerHealth !== 40){
-    var playerHealthPrevious = playerHealth;
-    playerHealth = playerHealth + getHeal();
-    document.getElementById("playerStatusText").innerText = "You healed "+ (playerHealth - playerHealthPrevious) + " health.";
-    healsRemaining--;
+  if (player.healsRemaining > 0 && player.health !== 40){
+    var playerHealthPrevious = player.health;
+    player.health = player.health + player.heal();
+    document.getElementById("playerStatusText").innerText = "You healed "+ (player.health - playerHealthPrevious) + " health.";
+    player.healsRemaining--;
     calPlayerHealth();
-    playerHealthPrevious = playerHealth;
-    playerHealth = playerHealth - getDamage();
-    document.getElementById("enemyStatusText").innerText =  enemyName + " dealt " + (playerHealthPrevious - playerHealth) + " damage to " + playerName + ".";
+    playerHealthPrevious = player.health;
+    player.health = player.health - enemy.generateAttackDamage();
+    document.getElementById("enemyStatusText").innerText =  enemy.name + " dealt " + (playerHealthPrevious - player.health) + " damage to " + player.name + ".";
     calPlayerHealth();
     checkWin();
-  } else if (playerHealth === 40) {
+  } else if (player.health === 40) {
     document.getElementById("statusMessage").innerText = "Your health is full."
     return
-  } else if (healsRemaining === 0) {
+  } else if (player.healsRemaining === 0) {
     document.getElementById("statusMessage").innerText = "You have no heals left."
     return
   }
 }
 
 function calPlayerHealth() {
-  if (playerHealth < 0) {
-    playerHealth = 0;
+  if (player.health < 0) {
+    player.health = 0;
   }
-  var playerHealthPercentage = (playerHealth / 40) * 100;
-  document.getElementById("playerHealthText").innerText = playerHealth+"/40";
+  var playerHealthPercentage = (player.health / 40) * 100;
+  document.getElementById("playerHealthText").innerText = player.health+"/40";
   document.getElementById("playerHealthBar").style.width = playerHealthPercentage+"%";
   if (playerHealthPercentage > 75){
     document.getElementById("playerHealthBar").style.backgroundColor = "green";
@@ -130,11 +134,11 @@ function calPlayerHealth() {
 
 function calEnemyHealth() {
 
-  if (enemyHealth < 0) {
-    enemyHealth = 0;
+  if (enemy.health < 0) {
+    enemy.health = 0;
   }
-  var enemyHealthPercentage = (enemyHealth / 10) * 100;
-  document.getElementById("enemyHealthText").innerText = enemyHealth+"/10";
+  var enemyHealthPercentage = (enemy.health / 10) * 100;
+  document.getElementById("enemyHealthText").innerText = enemy.health+"/10";
   document.getElementById("enemyHealthBar").style.width = enemyHealthPercentage+"%";
   if (enemyHealthPercentage > 75){
     document.getElementById("enemyHealthBar").style.backgroundColor = "green";
