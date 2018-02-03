@@ -1,87 +1,87 @@
-var userHealth = 40;
-var grantHealth = 10;
-var wins = 0;
-var playGame = true;
-var battleName = "";
-var enemyName = "";
-var z = 0;
-
 
 window.addEventListener("load", () => {
   document.getElementById("initialize").addEventListener("click", startGame);
-
+  document.getElementById("attack").addEventListener("click", attack);
+  document.getElementById("heal").addEventListener("click", heal);
 });
 
-
-function yourName() {
-  return document.getElementById("first-input").value;
-}
-
-
 class Player {
-  constructor(name) {
+  constructor(name, health) {
     this.name = name;
-    this.score = 40;
+    this.score = health;
     this.heals = 2;
     this.wins = 0;
   }
   attackDamage() {
     this.score = this.score - getDamage();
+    console.log(this.score);
   }
-  heals() {
+  healing() {
     this.score = this.score + getHealing();
+    console.log(this.heals);
   }
 }
-
-
-class Enemy {
-	constructor(enemyName) {
-		this.name = enemyName;
-		this.score = 10;
-	}
-  attackDamage() {
-    this.score = this.score - getDamage();
-  }
-
-}
+var enemy;
+var user;
 
 function startGame() {
-  var playGame = confirm("Shall we battle!");
-  if (playGame === true) {
-    const battleName = battleTitle();
-	const enemyName = enemyTitle();
-    const userPlayer = new Player(battleName);
-	const enemyPlayer = new Enemy(enemyName);
-    console.log(userPlayer);
-	console.log(enemyPlayer);
-  } else alert("Return when you have obtained the courage to battle!!");
+  var name = document.getElementById("first-input").value;
+  var enemyName = document.getElementById("second-input").value;
+  user = new Player(name, 40);
+  enemy = new Player(enemyName, 10);
+  console.log(user);
+  console.log(enemy);
 }
 
 
-function battleTitle() {
-  return prompt("Enter your battle name!");
+function userResults(){
+  document.getElementById("first-input").value;
+  document.getElementById("player-name").innerText = user.name + " has " + user.score + " health";
 }
 
-function enemyTitle() {
-  return prompt("Who shall you battle!");
+function enemyResults(){
+  document.getElementById("second-input").value;
+  document.getElementById("enemy-name").innerText = enemy.name + " has " + enemy.score + " health";
 }
 
-// function getDamage() {
-  // return Math.floor(Math.random() * 5) + 1;
-// }
+function attack() {
+  user.attackDamage();
+  enemy.attackDamage();
+  enemyResults();
+  userResults();
+}
+
+function heal() {
+  user.healing();
+}
 
 getDamage = () => { return Math.floor(Math.random() * 3) + 1 };
 
 getHealing = () => { return Math.floor(Math.random() * 10) + 1} ;
 
-// function getHealing() {
-	// return Math.floor(Math.random() *2) +1;
-// }
-
-function attack(battleAnswer) {
-  grantHealth -= getDamage();
-  userHealth -= getDamage();
+function lifeRemaining() {
+  console.log(enemy.score);
 }
+
+
+function startCombat() {
+  if (playGame === true) {
+
+
+  } else alert("Return when you have obtained the courage to battle!!");
+}
+
+
+function battleTitle() {
+  return document.getElementById("first-input").value;
+}
+
+function enemyTitle() {
+  return document.getElementById("second-input").value;
+}
+
+
+
 
 function battleLog() {
   console.log(battleName + " now has " + userHealth + " health");
@@ -91,7 +91,7 @@ function battleLog() {
 function battleTally() {
   if (grantHealth <= 0 ){
     wins++;
-    grantHealth = 10;
+    grantHealth = enemyHealth;
     console.log(battleName + " won round " + wins);
   } else if (userHealth <= 0){
     playGame = false;
