@@ -11,24 +11,43 @@
 </head>
 
 <body>
-  <div class="intro">
+  <div id="intro">
     <div class="text">
       <h1>The Ultimate Battle</h1>
-      <input id="input" type="text" name="" value="">
-      <button type="button" name="button"></button>
+      Enter your name:
+      <input id="input">
+      <button id="start" type="button" name="button">Start</button>
     </div>
   </div>
   <div class="battle">
-    <div class="enemy">
-      <img src="images/chicken.jpg" alt="Chicken">
+    <div class="enemy-section">
+      <div class="enemy-icon">
+        <img src="images/chicken.jpg" alt="Chicken">
+      </div>
+      <div class="health-bar">
+        <div class="remaining-health">
+        </div>
+      </div>
+      <div class="enemy-data">
+        Name:
+      </div>
     </div>
-    <div class="user">
-      <img src="images/warrior.jpg" alt="warrior">
+    <div class="player-section">
+      <div class="player-icon">
+        <img src="images/warrior.jpg" alt="warrior">
+      </div>
+      <div class="health-bar">
+        <div class="remaining-health">
+        </div>
+      </div>
+      <div class="enemy-data">
+        Name:
+      </div>
     </div>
     <div class="commands">
-      <button type="button">Attack</button>
-      <button type="button">Heal</button>
-      <button type="button">Quit</button>
+      <button id="attack">Attack</button>
+      <button id="heal">Heal</button>
+      <button id="quit">Quit</button>
     </div>
   </div>
 

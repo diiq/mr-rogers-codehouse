@@ -4,7 +4,14 @@ body {
   color: rgb(255, 255, 255);
 }
 
-.intro, .text {
+#intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,29 +39,60 @@ img {
   padding: 4px;
 }
 
-.enemy, .user {
+.enemy-section {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.player-section {
+  display: flex;
+  flex-direction: row;
+}
+
+.enemy-icon, .player-icon {
   padding: 5px;
 }
 
-.warrior {
-
+.health-bar {
+  min-width: 300px;
+  height: 20px;
+  border: solid #000 1px;
+  border-radius: 20px;
+  background-color: #FFF;
+}
+.remaining-health {
+  height: 20px;
+  margin-left: 0px;
+  background-color: rgb(61, 242, 57);
+  width: 20%;
+  border-radius: 20px;
 }
 
 .commands {
   display: flex;
   align-content: space-around;
   justify-content: center;
+  flex-direction: row;
 }
+
+@media (max-width: 768px) {
+.commands {
+    flex-direction: column;
+  }
+}
+
 
 button {
   width: 150px;
   height: 50px;
   margin: 10px;
   font-size: 20px;
-  background-color: rgb(76, 145, 213);
-  border-color: rgb(76, 145, 213);
+  background-color: rgb(79, 152, 223);
+  border-color: rgb(107, 167, 227);
+  border-radius: 40%;
+  width: 150px;
 }
 
 div {
-  border: solid black 1px;
+  /* border: solid black 1px; */
 }
