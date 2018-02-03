@@ -1,3 +1,4 @@
+window.addEventListener("load", () => {
 class Character {
   constructor(name, health, healsRemaining, wins) {
     this.name = name;
@@ -5,17 +6,11 @@ class Character {
     this.healsRemaining = healsRemaining;
     this.wins = wins;
   }
-  generateAttackeDamage() {
-    this.health = this.health - getDamage();
-}
-
-var grant = new Character("Grant", 40, 0, 0);
-var user = new Character(userName, 40, 2, 0); //How to get it to recognize userName as response to prompt?
 
 function getDamage() {
   const min = 1;
   const max = 3;
-  return (Math.floor(Math.random() * (max - min + 1) + min));
+  return(Math.floor(Math.random() * (max - min + 1) + min));
 }
 
 function getHeal() {
@@ -28,14 +23,18 @@ function getHeal() {
   }
 }
 
-
-function startGame() {
-  var userName = prompt("What is your name, Warrior?");
-  document.getElementById("game-container").style.display = "flex";
-  document.getElementById("start-button").style.display = "none";
-  document.getElementById("player-name").innerText = userName;
+function flex() { //take the name in input, take name and start game, and make
+  document.getElementById("start-button").style.display="none";
+  document.getElementById("game-container").style.display="flex";
+  var grant = new Character("Grant", 40, 0, 0);
+  var user = new Character(userName(), 40, 2, 0);
 }
 
+document.getElementById("start-button").style.display = "none";
+document.getElementsById("start-button").addEventListener("click", flex);
+// document.getElementById("player-name").innerText = userName;
+
+//  .addeventlistener('click'),
 
 function chooseWinner(grantNumberWins, userNumberWins) {
   if (userNumberWins >= 3) {
@@ -43,6 +42,10 @@ function chooseWinner(grantNumberWins, userNumberWins) {
   } else if (grantNumberWins >= 3) {
     console.log("Grant has won!");
   }
+}
+
+function userName() {
+  return document.getElementById("first-input").value;
 }
 
 function startCombat(userName) {
@@ -57,7 +60,8 @@ function startCombat(userName) {
       console.log("Grant has " + grantPoints + " health left." );
       console.log(userName + " has " + userPoints + " health left." );
       var attack = confirm("Would you like to attack again?");
-    } if (grantPoints <= 0) {
+    }
+    if (grantPoints <= 0) {
       userNumberWins++;
       grantPoints = 10;
     }
@@ -67,3 +71,4 @@ function startCombat(userName) {
     }
     chooseWinner(grantNumberWins, userNumberWins);
   }
+)}
