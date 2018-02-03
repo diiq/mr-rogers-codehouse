@@ -12,32 +12,41 @@ window.addEventListener("load", () => {
       return(Math.floor(Math.random() * (max - min + 1) + min));
     }
     getHeal() {
-      if (healsRemaining > 0) {
         const min = 1;
         const max = 10;
         return (Math.floor(Math.random() * (max - min + 1) + min));
-      } else {
-        document.getElementById("player-heal-count").innerText = "You have no remaing heals."
+        this.healsRemaining = this.healsRemaining - 1;
       }
     }
-  }
 
-  function flex() {
+
+  const playerHP = 40;
+  const enemyHP = 40;
+  const healCount = 2;
+  const winsNeeded = 5;
+  var grant;
+  var user;
+
+  function hideStart() {
     // console.log("heyo");
     document.getElementById("start-button").style.display="none";
-    document.getElementById("game-container").style.display="flex";
-    var grant = new Character("Grant", 40, 0, 0);
-    var user = new Character(userName(), 40, 2, 0);
+    document.getElementById("game-container").style.display="block";
   }
 
-  document.getElementById("start-button").addEventListener("click", flex);
-  document.getElementById("attack-button").addEventListener("click", /*function*/);
-  document.getElementById("heal-button").addEventListener("click", /*function*/);
-  document.getElementById("quit-button").addEventListener("click", /*function*/);
-  document.
+  document.getElementById("start-button").addEventListener("click", startCombat);
 
-  function chooseWinner(user, grant) {
-    if (user.wins >= 5) {
+  function startCombat() {
+    hideStart();
+    grant = new Character("Grant", enemyHP);
+    user = new Character(userName(), playerHP, healCount, winsNeeded);
+    document.getElementById("attack-button").addEventListener("click", attack);
+    document.getElementById("heal-button").addEventListener("click", heal);
+    document.getElementById("quit-button").addEventListener("click", quitGame);
+  }
+
+  function chooseWinner() {
+    console.log("winner");
+    if (user.wins = 5) {
       console.log("You have won!");
     } else if (user.health = 0) {
       console.log("Grant has won!");
@@ -49,28 +58,20 @@ window.addEventListener("load", () => {
   }
 
   function attack() {
-    user.health = user.health - grant.getDamage;
-    grant.health = grant.health - user.getDamage;
+    user.health = user.health - grant.getDamage();
+    grant.health = grant.health - user.getDamage();
+    console.log("hello", user.health, grant.health);
   }
 
   function heal() {
-    user.health = user.health + grant.getHeal;
-    grant.health = grant.health + user.getHeal;
+    user.health = user.health + grant.getHeal();
+    grant.health = grant.health + user.getHeal();
+    console.log("hello", user.health, grant.health);
   }
 
-  function startCombat(player, enemy) {
-    while (player.wins < 3 && grant.wins < 3) {
-      while (grantPoints > 0 && userPoints > 0) {
+  function quitGame() {
+    document.getElementById("start-button").style.display="block";
+    document.getElementById("game-container").style.display="none";
+  }
 
-      }
-      if (grantPoints <= 0) {
-        userNumberWins++;
-        grantPoints = 10;
-      }
-      if (userPoints <= 0) {
-          grantNumberWins++;
-        }
-      }
-      chooseWinner(user, grant);
-    }
 })
