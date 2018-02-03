@@ -34,6 +34,7 @@ window.addEventListener("load", () => {
   document.getElementById("attack-button").addEventListener("click", /*function*/);
   document.getElementById("heal-button").addEventListener("click", /*function*/);
   document.getElementById("quit-button").addEventListener("click", /*function*/);
+  document.
 
   function chooseWinner(user, grant) {
     if (user.wins >= 5) {
@@ -47,11 +48,20 @@ window.addEventListener("load", () => {
     return document.getElementById("first-input").value;
   }
 
+  function attack() {
+    user.health = user.health - grant.getDamage;
+    grant.health = grant.health - user.getDamage;
+  }
+
+  function heal() {
+    user.health = user.health + grant.getHeal;
+    grant.health = grant.health + user.getHeal;
+  }
+
   function startCombat(player, enemy) {
     while (player.wins < 3 && grant.wins < 3) {
       while (grantPoints > 0 && userPoints > 0) {
-        user.health = user.health - grant.getDamage;
-        grant.health = grant.health - user.getDamage;
+
       }
       if (grantPoints <= 0) {
         userNumberWins++;
@@ -61,6 +71,6 @@ window.addEventListener("load", () => {
           grantNumberWins++;
         }
       }
-      chooseWinner(grantNumberWins, userNumberWins);
+      chooseWinner(user, grant);
     }
 })
