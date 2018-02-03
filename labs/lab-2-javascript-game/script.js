@@ -50,19 +50,8 @@ window.addEventListener("load", () => {
     const user = new Character(name, initUserHP);
     const grant = new Character("Grant the Mighty Chicken", initEnemyHP);
     document.getElementById("intro").style.display = "none";
+    document.getElementById("battle").style.display = "flex";
     startCombat(user, grant);
-  }
-
-  function battleResults(user, quit) {
-    if (quit === true) {
-      console.log(user.name + " has quit the game.");
-    } else if (user.health <= 0 && user.winCount === 3) {
-      console.log("The game ends in a draw.");
-    } else if (user.health <= 0) {
-      console.log(user.name + " has lost the game.");
-    } else if (user.winCount === 3) {
-      console.log(user.name + " has defeated " + enemy.name + "!");
-    }
   }
 
   function startCombat(user, enemy) { //using 'enemy' instead of 'grant' allows me to use other enemies
@@ -81,13 +70,20 @@ window.addEventListener("load", () => {
 
     //attack button click
     document.getElementById("attack").addEventListener("click", attack);
-    document.getElementById("heal").addEventListener("click", attack);
-    document.getElementById("quit").addEventListener("click", attack);
+    document.getElementById("heal").addEventListener("click", heal);
+    document.getElementById("quit").addEventListener("click", quit);
 
     function attack() {
       user.health = user.health - enemy.generateAttackDamage();
       enemy.health = enemy.health - user.generateAttackDamage();
       checkHealth();
+    }
+
+    function heal() {
+      if (user.healsRemaining > 0) {
+        user.heal();
+        checkHealth();
+      }
     }
 
     function checkHealth() {
@@ -110,6 +106,18 @@ window.addEventListener("load", () => {
         document.getElementsByClassName("remaining-health")[1].style.backgroundColor = "rgb(255, 228, 84)";
       } else {
         document.getElementsByClassName("remaining-health")[1].style.backgroundColor = "rgb(254, 42, 42)";
+      }
+    }
+
+    function battleResults(user, quit) {
+      if (quit === true) {
+        console.log(user.name + " has quit the game.");
+      } else if (user.health <= 0 && user.winCount === 3) {
+        console.log("The game ends in a draw.");
+      } else if (user.health <= 0) {
+        console.log(user.name + " has lost the game.");
+      } else if (user.winCount === 3) {
+        console.log(user.name + " has defeated " + enemy.name + "!");
       }
     }
   }
