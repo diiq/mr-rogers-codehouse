@@ -1,5 +1,3 @@
-damage = 1;
-
 class Player {
     constructor(name, health, healsRemaining, wins) {
         this.name = name;
@@ -8,19 +6,23 @@ class Player {
         this.wins = wins;
     }
 
-    generateAttackDamage(damage) {
-        damage = Math.round(Math.random() * 3);   
-        this.health = this.health - damage;
-        console.log(this.name, "is now at", this.health, "HP!"); 
-        return this.health;     
+    generateAttackDamage() {
+        var damage = Math.round(Math.random() * 3);      
         return damage;
     }
 
+    hitPlayer(damage) {
+        this.health = this.health - damage;
+    }
+
     heal() {
-        heal = Math.round(Math.random() * 10);  
+        var heal = Math.round(Math.random() * 10);  
+        return heal;   
+    }
+
+    healPlayer(heal) {
         this.health = this.health + heal;
-        this.healsRemaining - 1;   
-        return this.health;   
+        this.healsRemaining = this.healsRemaining - 1;   
     }
 }
 
@@ -36,8 +38,12 @@ function startGame() {
 
     function oneDeath() {
         while((grant.health > 0) && (user.health > 0 )) {
-            user.generateAttackDamage();
-            grant.generateAttackDamage();
+            var userDamage = user.generateAttackDamage();
+            var grantDamage = grant.generateAttackDamage();
+            user.hitPlayer(grantDamage);
+            grant.hitPlayer(userDamage);
+            console.log(user.name, "has", user.health, "health remaining!");  
+            console.log(grant.name,  "has", grant.health,  "health remaining!");          
         }
     }
 
@@ -63,6 +69,13 @@ function startGame() {
             console.log("The battle has ended.");
         } else {
             grant.health = 10;
+            var playerHeal = confirm("Would you like to heal?");
+            if((playerHeal === true) && (user.healsRemaining !== 0)) {
+                var userHeal = user.heal();
+                user.healPlayer(userHeal);
+                console.log("You have", user.healsRemaining, "heals remaining.");
+            }
+
         }
     } 
 }
