@@ -48,6 +48,8 @@ function userName() {
   return document.getElementById("first-input").value;
 }
 
+
+
 function startCombat(userName) {
   var grantPoints = 10;
   var userPoints = 40;
