@@ -68,19 +68,48 @@ window.addEventListener("load", () => {
   function startCombat(user, enemy) { //using 'enemy' instead of 'grant' allows me to use other enemies
     var quit = false;
     var choice;
+    var percentEnemyHealth;
+    var percentPlayerHealth;
 
+    function calcPlayerPercentHealth() {
+      return 100 * (user.health / initUserHP);
+    }
+
+    function calcEnemyPercentHealth() {
+      return 100 * (enemy.health / initEnemyHP);
+    }
+
+    //attack button click
     document.getElementById("attack").addEventListener("click", attack);
+    document.getElementById("heal").addEventListener("click", attack);
+    document.getElementById("quit").addEventListener("click", attack);
+
     function attack() {
       user.health = user.health - enemy.generateAttackDamage();
       enemy.health = enemy.health - user.generateAttackDamage();
       checkHealth();
-      console.log(user.health);
     }
 
     function checkHealth() {
-      if (enemy.health <= 0) {
-        user.wins(enemy);
-        enemy.health = 10;
+      percentEnemyHealth = (calcEnemyPercentHealth()).toString() + "%";
+      percentPlayerHealth = (calcPlayerPercentHealth()).toString() + "%";
+      document.getElementsByClassName("remaining-health")[0].style.width = percentEnemyHealth;
+      document.getElementsByClassName("remaining-health")[1].style.width = percentPlayerHealth;
+
+      // Changes the color of the health bar depending on percent.
+      if (calcEnemyPercentHealth() > 59) {
+        document.getElementsByClassName("remaining-health")[0].style.backgroundColor = "rgb(61, 242, 57)";
+      } else if (calcEnemyPercentHealth() > 29) {
+        document.getElementsByClassName("remaining-health")[0].style.backgroundColor = "rgb(255, 228, 84)";
+      } else {
+        document.getElementsByClassName("remaining-health")[0].style.backgroundColor = "rgb(254, 42, 42)";
+      }
+      if (calcPlayerPercentHealth() > 59) {
+        document.getElementsByClassName("remaining-health")[1].style.backgroundColor = "rgb(61, 242, 57)";
+      } else if (calcPlayerPercentHealth() > 29) {
+        document.getElementsByClassName("remaining-health")[1].style.backgroundColor = "rgb(255, 228, 84)";
+      } else {
+        document.getElementsByClassName("remaining-health")[1].style.backgroundColor = "rgb(254, 42, 42)";
       }
     }
   }
