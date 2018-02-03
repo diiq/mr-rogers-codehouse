@@ -6,8 +6,16 @@ var enemyName = "Grant";
 var playerName = "";
 var roundCount = 1;
 
+class characterCreate {
+  constructor(playerName) {
+    this.name = playerName;
+    this.playerHealth = 40;
+    this.healsRemaining = 2;
+  }
+}
+
 function getDamage() {
-    return Math.floor(Math.random() * 5) + 1;
+  return Math.floor(Math.random() * 5) + 1;
 }
 
 function getHeal() {
@@ -16,11 +24,11 @@ function getHeal() {
   } else {
     document.getElementById("statusText").innerText = "You have no heals left"
   }
-
 }
 
 function loadGame() {
-  playerName = prompt("What is your name?")
+  playerName = document.getElementById("playerNameInput").value
+  const player = new characterCreate(playerName);
   document.getElementById("mainContainer").style.display = "flex";
   document.getElementById("startContainer").style.display = "none";
   document.getElementById("playerName").innerText = playerName;
@@ -96,10 +104,10 @@ function heal() {
     calPlayerHealth();
     checkWin();
   } else if (playerHealth === 40) {
-    document.getElementById("statusText").innerText = "Your health is full."
+    document.getElementById("statusMessage").innerText = "Your health is full."
     return
   } else if (healsRemaining === 0) {
-    document.getElementById("statusText").innerText = "You have no heals left."
+    document.getElementById("statusMessage").innerText = "You have no heals left."
     return
   }
 }
@@ -117,7 +125,7 @@ function calPlayerHealth() {
     document.getElementById("playerHealthBar").style.backgroundColor = "yellow";
   } else if (playerHealthPercentage < 40) {
     document.getElementById("playerHealthBar").style.backgroundColor = "red";
-}
+  }
 }
 
 function calEnemyHealth() {
@@ -143,43 +151,3 @@ window.addEventListener("load", () => {
   document.getElementById("heal").addEventListener("click", heal);
   document.getElementById("quit").addEventListener("click", quitGame);
 })
-
-// function startGame() {
-//   var play = prompt("Would you like to play?");
-//
-//   if (play === "Yes") {
-//     var playerName = prompt("What is your name?");
-//     while (winCount < 3) {
-//         var continueGame = prompt("Do you want to attack again? (Attack or Quit)")
-//         if (continueGame === "Attack") {
-//           startCombat();
-//           if (grantHealth <= 0 && winCount < 3) {
-//             winCount++;
-//             grantHealth = 10;
-//             console.log("You have defeated Grant ", winCount,"times.");
-//           } else if (playerHealth <= 0) {
-//             console.log("You have been defeated.");
-//             return;
-//           } else if (winCount === 3) {
-//             console.log("You have won the game!");
-//             return;
-//           }
-//         }
-//       }
-//     }
-//   }
-
-// function startCombat() {
-//
-//   const playerDmg = getDamage();
-//   const grantDmg = getDamage();
-//
-//    console.log("You took ", playerDmg, "damage!");
-//    playerHealth = playerHealth - playerDmg;
-//    console.log("You have health ", playerHealth, "left.");
-//
-//    console.log("Grant took ", grantDmg, "damage!");
-//    grantHealth = grantHealth - grantDmg;
-//    console.log("Grant has health ", grantHealth, "left.");
-//
-// }
