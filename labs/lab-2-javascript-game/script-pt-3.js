@@ -1,9 +1,10 @@
 // debugger;
 
+var enemy;
+var user;
+
 window.addEventListener("load", () => {
   document.getElementById("start-button").addEventListener("click", startGame);
-  // document.getElementById("attack-button").addEventListener("click", startCombat);
-  // document.getElementById("heal-button").addEventListener("click", userHeal);
 });
 
 class Character {
@@ -27,29 +28,25 @@ class Character {
   }
 }
 
-function startGame(user, enemy) {
+function startGame() {
   console.log("BUTTON PRESSED!!!"); // REMOVE LATER
-  var user = new Character("Bree", 40, 2, 0); // CANNOT GET THESE TO LEAVE FUNCTION >> But instructions say to make startGame function generate user
-  var enemy = new Character("The Almighty Grant", 10);
+  user = new Character("Bree", 40, 2, 0);
+  enemy = new Character("The Almighty Grant", 10);
   document.getElementById("attack-button").addEventListener("click", startCombat);
   document.getElementById("heal-button").addEventListener("click", userHeal);
-//  startCombat(user, enemy);
 }
 
-// var user = new Character("Bree", 40, 2, 0);
-// var enemy = new Character("The Almighty Grant", 10);
-
-function startCombat(user, enemy) {
+function startCombat() {
   console.log("Combat Started"); // REMOVE LATER
-    user.health = user.health - enemy.generateAttackDamage(); // generateAttackDamage is reading fine when I just call the startCombat function from the startGame funciton, but says 'Cannot read property 'generateAttackDamage' of undefined HTML  Button Element' when I try to call from button press
-    enemy.health = enemy.health - user.generateAttackDamage();
-    console.log(enemy.health, user.health);
+  user.health = user.health - enemy.generateAttackDamage();
+  enemy.health = enemy.health - user.generateAttackDamage();
+  console.log(enemy.health, user.health);
 }
 
-function userHeal(user, enemy) {
+function userHeal() {
   console.log("Combat Started"); // REMOVE LATER
-    user.healsRemaining = user.healsRemaining - 1;
-    console.log(user.healsRemaining); // REMOVE LATER
+  user.healsRemaining = user.healsRemaining - 1;
+  console.log(user.healsRemaining); // REMOVE LATER
 }
 
 
