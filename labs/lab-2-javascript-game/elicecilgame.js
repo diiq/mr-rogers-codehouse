@@ -43,12 +43,13 @@ function startGame() {
             user.hitPlayer(grantDamage);
             grant.hitPlayer(userDamage);
             console.log(user.name, "has", user.health, "health remaining!");  
-            console.log(grant.name,  "has", grant.health,  "health remaining!");          
+            console.log(grant.name,  "has", grant.health,  "health remaining!"); 
+            var attackAgain = confirm("Attack again?");         
         }
     }
 
     function checkIfWin() {
-        if (grant.health === 0) {
+        if (grant.health <= 0) {
             user.wins = (user.wins + 1);
             console.log(user.name, "has", user.wins, "wins!");
             return user.wins;
@@ -79,3 +80,7 @@ function startGame() {
         }
     } 
 }
+
+window.addEventListener("load", () => {
+    document.getElementById("startbutton").addEventListener("click", startGame);
+});
