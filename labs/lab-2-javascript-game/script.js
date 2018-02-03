@@ -1,73 +1,86 @@
-function startGame() {
-  const play = window.prompt("Do you want to play?");
-  if (play === "yes") {
-    var name = window.prompt("Enter your name:")
-    startCombat(name);
+window.addEventListener("load", () => {
+class Character {
+  constructor(name, health) {
+    this.name = name;
+    this.health = health;
+    this.healsRemaining = healCount;
+    this.winCount = 0;
+  }
+
+  generateAttackDamage() {
+    const min = 1;
+    const max = 3;
+    return (Math.floor(Math.random() * (max - min + 1) + min));
+    test();
+  }
+
+  heal() {
+    const min = 1;
+    const max = 10;
+    this.health = this.health + (Math.floor(Math.random() * (max - min + 1) + min));
+    this.healsRemaining = this.healsRemaining - 1;
+  }
+
+  wins(enemy) {
+    this.winCount = this.winCount + 1;
+    if (this.winCount !== winsNeeded) {
+      console.log("You beat " + enemy.name + "! You need to win " + (winsNeeded - this.winCount) + " more round(s).");
+      enemy.health = initEnemyHP;
+    }
+  }
+
+  loses(enemy) {
+    console.log(user.name + " was defeated by " + enemy.name);
   }
 }
 
-class Character {
-    constructor (name, health) {
-      this.name = name;
-      this.health = health;
-      this.healsRemaining = 2;
-      this.wins = 0;
-    }
+const initUserHP = 40;
+const initEnemyHP = 10;
+const winsNeeded = 5;
+const healCount = 2;
 
-    generateAttackDamage() {
-      const min = 1;
-      const max = 3;
-      return (Math.floor(Math.random() * (max - min + 1) + min));
-    }
+var name = "Vikram";
+const user = new Character(name, initUserHP);
+const grant = new Character("Grant the Mighty Chicken", initEnemyHP);
+document.getElementById("start").addEventListener("click", test);
 
-    heal() {
-      const min = 1;
-      const max = 10;
-      this.health = this.health + (Math.floor(Math.random() * (max - min + 1) + min));
-      this.healsRemaining = this.healsRemaining - 1;
-    }
+function test() {
+  console.log("Testing");
 }
 
-const user = new Character(name, 40);
-const grant = new Character("Grant the Mighty Chicken", 10);
+return document.getElementById("input").value
 
 function battleResults(user, quit) {
   if (quit === true) {
     console.log(user.name + " has quit the game.");
-  } else if (user.health <= 0 && user.wins === 3) {
+  } else if (user.health <= 0 && user.winCount === 3) {
     console.log("The game ends in a draw.");
   } else if (user.health <= 0) {
     console.log(user.name + " has lost the game.");
-  } else if (user.wins === 3) {
-    console.log(user.name + " has defeated Grant the Mighty Chicken!");
+  } else if (user.winCount === 3) {
+    console.log(user.name + " has defeated " + enemy.name + "!");
   }
 }
 
-function winRound(user) {
-  if (user.wins !== 3) { // Note: Does not show if game has finished.
-    console.log("You beat Grant! You need to win " + (3 - user.wins) + " more round(s).");
-  }
-}
-
-function startCombat(name) {
+function startCombat(user, enemy) { //using 'enemy' instead of 'grant' allows me to use other enemies
   var quit = false;
   var choice;
 
-  while ((winCount < 3) && (userHP > 0) && (quit === false)) {
+  while ((user.winCount < 3) && (user.health > 0) && (quit === false)) {
     choice = window.prompt("Would you like to attack or quit?");
     if (choice === "attack") {
-      userHP = userHP - getDamage();
-      grantHP = grantHP - getDamage();
-      console.log(name + " has " + userHP + " health left.");
-      console.log("Grant the Mighty Chicken has " + grantHP + " health left.");
+      user.health = user.health - enemy.generateAttackDamage();
+      enemy.health = enemy.health - user.generateAttackDamage();
+      console.log(user.name + " has " + user.health + " health left.");
+      console.log(enemy.name + " has " + enemy.health + " health left.");
     } else if (choice === "quit") {
       quit = true;
     }
-    if (grantHP <= 0) {
-      winCount = winCount + 1;
-      winRound(winCount);
-      grantHP = 10;
+    if (enemy.health <= 0) {
+      user.wins(enemy);
+      enemy.health = 10;
     }
   }
-  battleResults(name, userHP, winCount, quit);
+  battleResults(user, quit);
 }
+})

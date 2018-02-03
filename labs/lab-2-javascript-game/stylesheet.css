@@ -1,0 +1,60 @@
+body {
+  background-color: rgb(68, 129, 189);
+  margin: auto;
+  color: rgb(255, 255, 255);
+}
+
+.intro, .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.enemy {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.user {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10%;
+  border: solid rgb(0, 0, 0) 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 4px;
+}
+
+.enemy, .user {
+  padding: 5px;
+}
+
+.warrior {
+
+}
+
+.commands {
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  margin: 10px;
+  font-size: 20px;
+  background-color: rgb(76, 145, 213);
+  border-color: rgb(76, 145, 213);
+}
+
+div {
+  border: solid black 1px;
+}
