@@ -1,11 +1,33 @@
 <!doctype html>
+<html>
+<head>
+	<link href="stylesheet.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src="javascript.js"></script>
+</head>
 
 <body>
 
-Lets play a game!
-<script type="text/javascript" src="javascript.js"></script>
+	<nav>
+		<button id="initialize">Shall we battle?</button>
+		<label>Enter Player Name: <input type="text" id="first-input" /></label>
+		<label>Enter Enemy Name: <input type="text" id="second-input" /></label>
+	</nav>
 
+	<div class="actions">
+		<button class="attack">Attack?</button>
+		<button class="heal">Heal?</button>
+		<button class="retreat">Retreat?</input>
+	</div>
+
+	<div class="results">
+		<div class="player-health"></div>
+		<div class="heal-count"></div>
+		<div class="player-wins"></div>
+	</div>
 
 
 </body>
+
+
+
 </html>

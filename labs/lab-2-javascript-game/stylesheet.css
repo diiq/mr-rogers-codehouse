@@ -1,0 +1,82 @@
+nav {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   margin: 10px 0;
+}
+
+label {
+	 font-size: 18px;
+	 display: flex;
+	 flex-direction: column;
+	 margin: 10px;
+
+}
+
+#first-input {
+	min-width: 300px;
+	min-height: 30px;
+	border-radius: 2px;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+	background-color: #ccc3bd;
+}
+
+#second-input {
+	min-width: 300px;
+	min-height: 30px;
+	border-radius: 2px;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+	background-color: #ccc3bd;
+
+}
+.initialize {
+	disply: flex;
+	margin: 50px 0;
+}
+
+.actions {
+	display: flex;
+	justify-content: center;
+	margin-top: 100px;
+
+}
+button {
+  display: block;
+  min-width: 300px;
+  margin: 0 5px;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+  background-color: #3a1c07;
+  color: #fff;
+  font-size: 18px;
+}
+
+.results {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	max-width: 900px;
+  margin: auto;
+
+}
+
+.results div {
+	display: flex;
+	margin: 20px 0px;
+	background-color: #718c89;
+  border: 1px solid black;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+	height: 10px;
+	width: 100%
+}
+
+/* .enemy-health {
+	display: flex;
+	margin: 20px 20px;
+	background-color: #718c89;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+	height: 10px;
+	width: 100%
+} */
