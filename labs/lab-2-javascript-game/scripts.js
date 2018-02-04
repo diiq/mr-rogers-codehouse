@@ -27,7 +27,7 @@ window.addEventListener("load", () => {
   const enemyHP = 10;
   const maxPoints = 40;
   const healCount = 2;
-  const winsNeeded = 5;
+  const wins = 0;
 
   var grant;
   var user;
@@ -44,7 +44,7 @@ window.addEventListener("load", () => {
     hideStart();
     userName();
     grant = new Character("Grant", enemyHP);
-    user = new Character(userName(), playerHP, healCount, winsNeeded);
+    user = new Character(userName(), playerHP, healCount, wins);
 
     document.getElementById("player-name").innerText=userName();
     document.getElementById("attack-button").addEventListener("click", attack);
@@ -102,9 +102,8 @@ window.addEventListener("load", () => {
     } else if (user.health <= 0) {
       quitGame();
       document.getElementById("player-update-note").innerText = "You have lost!";
-    }else if (enemy.health === 0 && winCount < 3){
+    }else if (grant.health === 0 && wins < 3){
       wins++;
-      newRound++;
       roundReset();
       return;
     }
