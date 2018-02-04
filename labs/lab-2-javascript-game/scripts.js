@@ -54,7 +54,7 @@ window.addEventListener("load", () => {
     function attack() {
       user.health = user.health - grant.getDamage();
       grant.health = grant.health - user.getDamage();
-      console.log("hello", user.health, grant.health, user.healsRemaining);
+      console.log("hello", user.health, grant.health, user.healsRemaining, user.wins);
     }
 
     function heal() {
@@ -65,7 +65,7 @@ window.addEventListener("load", () => {
         document.getElementById("player-update-note").innerText = "You have no heals left.";
       }
       // updateHealth();
-      console.log("hello", user.health, grant.health, user.healsRemaining);
+      console.log("hello", user.health, grant.health, user.healsRemaining, user.wins);
     }
 
     function quitGame() {
