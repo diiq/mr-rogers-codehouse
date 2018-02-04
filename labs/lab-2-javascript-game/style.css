@@ -42,10 +42,10 @@ input[type=text] {
   border: 4px solid #509640;
 }
 
-#player-update-note {
+/* #player-update-note {
   text-align: center;
   margin: 15px auto;
-}
+} */
 
 .stats-summary-container h2 {
   text-align: center;
@@ -58,4 +58,21 @@ input[type=text] {
 
 .stats-summary-container {
   margin: 20px 20px;
+  padding: 20px;
+}
+
+#player-health-count, #player-heal-count,
+#player-win-goal, #grant-health-count {
+  margin: 0 auto;
+  height: 15px;
+  width: 300px;
+  background-color: white;
+  border: 2px solid #509640;
+  border-radius: 5px;
+}
+
+#player-health-remaining, #grant-health-remaining {
+  height: 15px;
+  width: 100%;
+  background-color: #509640;
 }

@@ -8,7 +8,7 @@
 <body>
 
 	<div class="input-container">
-    <label>Your name: <input type="text" id="first-input" /></label>
+    <label id="input">Your name: <input type="text" id="first-input" /></label>
 	</div>
 	<div>
 		<button id="start-button">Start</button>
@@ -20,9 +20,8 @@
 			<button id="heal-button">Heal</button>
 			<button id="quit-button">Quit</button>
 		</div>
-		<div id="player-update-note">
-			User has # health left. Grant has # health left.
-			<!-- How to get this to pull info from current stats.-->
+		<div>
+			<p id="player-update-note"></p>
 		</div>
 
 		<div class="stats-summary-container">
@@ -31,20 +30,29 @@
 				<div>
 					<p>Name</p>
 					<div>
-						<p id="player-name">Player Name</p>
+						<p id="player-name"></p>
 					</div>
 				</div>
 				<div>
 					<p>Health</p>
-					<div id="player-health-count"></div>
+					<div id="player-health-count">
+						<div id="player-health-remaining">
+						</div>
+					</div>
 				</div>
 				<div>
 					<p>Heal Count</p>
-					<div id="player-heal-count"></div>
+					<div id="player-heal-count">
+						<div id="player-heals-remaining">
+						</div>
+					</div>
 				</div>
 				<div>
 					<p>Wins</p>
-					<div id="player-win-count"></div>
+					<div id="player-win-goal">
+						<div id="player-wins-gotten">
+						</div>
+					</div>
 				</div>
 			</div>
 			<div>
@@ -55,7 +63,10 @@
 				</div>
 				<div>
 					<p>Health</p>
-					<div id="grant-health-count"></div>
+					<div id="grant-health-count">
+						<div id="grant-health-remaining">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
