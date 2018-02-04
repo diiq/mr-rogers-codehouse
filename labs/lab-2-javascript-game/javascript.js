@@ -15,11 +15,10 @@ class Player {
   }
   attackDamage() {
     this.score = this.score - getDamage();
-    console.log(this.score);
   }
   healing() {
     this.score = this.score + getHealing();
-    alert(this.score);
+
   }
 }
 var enemy;
@@ -28,10 +27,13 @@ var user;
 function startGame() {
   var name = document.getElementById("first-input").value;
   var enemyName = document.getElementById("second-input").value;
-  user = new Player(name, 40);
+  user = new Player(name, 60);
   enemy = new Player(enemyName, 10);
   console.log(user);
   console.log(enemy);
+  enemyResults();
+  userResults();
+  hideBattle();
 }
 
 
@@ -43,7 +45,7 @@ function userResults(){
 }
 
 function enemyResults(){
-  // document.getElementById("enemy-health").style.width = (enemyHealthRemain()).toString() + "%";
+  document.getElementById("enemy-health").style.width = (enemyHealthRemain()).toString() + "%";
   document.getElementById("second-input").value;
   document.getElementById("enemy-name").innerText = enemy.name + " has " + enemy.score + " health";
 }
@@ -51,9 +53,9 @@ function enemyResults(){
 function attack() {
   user.attackDamage();
   enemy.attackDamage();
+  battleTally();
   enemyResults();
   userResults();
-  battleTally();
 }
 
 function heal() {
@@ -77,11 +79,27 @@ function userHealsRemain() {
 }
 
 function userWins() {
-  return (user.wins/5)/.10;
+  return (user.wins/5)/.01;
 }
 
 function retreat() {
-  alert(user.name + " has retreated!");
+  document.getElementById("main").style.display = "none";
+  document.getElementById("end-game").style.display = "block";
+}
+
+function userWon() {
+  document.getElementById("main").style.display = "none";
+  document.getElementById("user-won").style.display = "block";
+}
+
+function enemyWon() {
+  document.getElementById("main").style.display = "none";
+  document.getElementById("enemy-won").style.display = "block";
+}
+
+function hideBattle() {
+  document.getElementById("nav").style.display = "none";
+  document.getElementById("main-game").style.display = "block";
 }
 
 getDamage = () => { return Math.floor(Math.random() * 3) + 1 };
@@ -90,14 +108,10 @@ getHealing = () => { return Math.floor(Math.random() * 10) + 1} ;
 
 
 function battleTally() {
-  if (enemy.score <= 0 && user.wins < 5){
+ if (enemy.score <= 0 && user.wins < 5){
     user.wins++;
     enemy.score = 10;
-    console.log("User wins " + user.wins);
-    console.log(enemy.score);
     document.getElementById("player-wins").style.width = (userWins()).toString() + "%";
-    console.log(user.wins);
-  } else if (user.health < 0){
-    console.log("You lose! Try again");
-  }
+  } else
+    enemyWon();
 }
