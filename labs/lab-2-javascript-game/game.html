@@ -10,28 +10,29 @@
     <link href="https://fonts.googleapis.com/css?family=Jaldi" rel="stylesheet">
 </head>
 <body>
-    <div class = "startscreen">
-        <button id = "startbutton">Start Game</button>
+    <div class="startscreen">
+        <button id="startbutton">Start Game</button>
     </div>
-    <section class = "secondscreen">
-        <div class = "optionbuttons">
-            <button class = "attack">Attack</button>
-            <button class = "heal">Heal</button>
-            <button class = "quit">Quit</button>
+    <section class="secondscreen">
+        <div class="optionbuttons">
+            <button id="attack">Attack</button>
+            <button id="heal">Heal</button>
+            <button class="quit">Quit</button>
         </div>
-        <p>Adam has health</p>
-        <div class = "playerstats">
+        <p id="healthcounter"></p>
+        <div class="playerstats">
             <p>Player Stats</p>
-            <div class = "userstats">
+            <div id="userstats">
                 <p>Name<p>
                 <p>Health</p>
                 <p>Heal Count</p>
                 <p>Wins</p>
             </div>
-            <div class = "statbars">
-                <div class = "healthbar"></div>
-                <div class = "healthbar"></div>
-                <div class = "winbar"></div>
+            <div class="statbars">
+                <p id="statsName"></p>
+                <div id="healthbar"></div>
+                <div id="healthbar"></div>
+                <div id="winbar"></div>
             </div>            
         </div>
     </section>
