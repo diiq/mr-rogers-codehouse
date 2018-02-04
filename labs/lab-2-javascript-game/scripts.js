@@ -95,14 +95,14 @@ window.addEventListener("load", () => {
     grantHealthPercentage();
   }
 
-  function checkWin() {
+  function checkWin() { // Having trouble getting grant's health to not go below 0 and round to reset
     if (wins === 3) {
       quitGame();
       document.getElementById("player-update-note").innerText = "You have won!";
-    } else if (user.health <= 0) {
+    } else if (user.health <= 0 && grant.health === 0) {
       quitGame();
       document.getElementById("player-update-note").innerText = "You have lost!";
-    }else if (grant.health === 0 && wins < 3){
+    }else if (grant.health === 0 && wins < 3) {
       wins++;
       roundReset();
       return;
