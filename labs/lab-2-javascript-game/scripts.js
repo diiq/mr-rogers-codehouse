@@ -12,14 +12,9 @@ window.addEventListener("load", () => {
       return(Math.floor(Math.random() * (max - min + 1) + min));
     }
     getHeal() {
-      if (this.healsRemaining > 0) {
         const min = 1;
         const max = 10;
         return (Math.floor(Math.random() * (max - min + 1) + min));
-        this.healsRemaining = this.healsRemaining - 1;
-      } else {
-        document.getElementById("player-update-note").innerText = "You have no heals left.";
-      }
     }
   }
 
@@ -64,6 +59,11 @@ window.addEventListener("load", () => {
 
     function heal() {
       user.health = user.health + grant.getHeal();
+      if (user.healsRemaining > 0) {
+        user.healsRemaining = user.healsRemaining - 1;
+      } else {
+        document.getElementById("player-update-note").innerText = "You have no heals left.";
+      }
       // updateHealth();
       console.log("hello", user.health, grant.health, user.healsRemaining);
     }
