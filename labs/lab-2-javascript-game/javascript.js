@@ -3,6 +3,7 @@ window.addEventListener("load", () => {
   document.getElementById("initialize").addEventListener("click", startGame);
   document.getElementById("attack").addEventListener("click", attack);
   document.getElementById("heal").addEventListener("click", heal);
+  document.getElementById("retreat").addEventListener("click", retreat);
 });
 
 class Player {
@@ -18,7 +19,7 @@ class Player {
   }
   healing() {
     this.score = this.score + getHealing();
-    console.log(this.heals);
+    alert(this.score);
   }
 }
 var enemy;
@@ -35,11 +36,14 @@ function startGame() {
 
 
 function userResults(){
+  document.getElementById("player-health").style.width = (playerHealthRemain()).toString() + "%";
+  document.getElementById("heal-count").style.width = (userHealsRemain()).toString() + "%";
   document.getElementById("first-input").value;
   document.getElementById("player-name").innerText = user.name + " has " + user.score + " health";
 }
 
 function enemyResults(){
+  // document.getElementById("enemy-health").style.width = (enemyHealthRemain()).toString() + "%";
   document.getElementById("second-input").value;
   document.getElementById("enemy-name").innerText = enemy.name + " has " + enemy.score + " health";
 }
@@ -49,89 +53,51 @@ function attack() {
   enemy.attackDamage();
   enemyResults();
   userResults();
+  battleTally();
 }
 
 function heal() {
-  user.healing();
+  if (user.heals > 0) {
+    user.healing();
+    user.heals = user.heals - 1;
+    document.getElementById("heal-count").style.width = (userHealsRemain()).toString() + "%";
+  }
+}
+
+function playerHealthRemain() {
+  return (user.score/40)/.01;
+}
+
+function enemyHealthRemain() {
+  return (enemy.score/10)/.01;
+}
+
+function userHealsRemain() {
+  return (user.heals/2)/.01;
+}
+
+function userWins() {
+  return (user.wins/5)/.10;
+}
+
+function retreat() {
+  alert(user.name + " has retreated!");
 }
 
 getDamage = () => { return Math.floor(Math.random() * 3) + 1 };
 
 getHealing = () => { return Math.floor(Math.random() * 10) + 1} ;
 
-function lifeRemaining() {
-  console.log(enemy.score);
-}
-
-
-function startCombat() {
-  if (playGame === true) {
-
-
-  } else alert("Return when you have obtained the courage to battle!!");
-}
-
-
-function battleTitle() {
-  return document.getElementById("first-input").value;
-}
-
-function enemyTitle() {
-  return document.getElementById("second-input").value;
-}
-
-
-
-
-function battleLog() {
-  console.log(battleName + " now has " + userHealth + " health");
-  console.log("Grant now has " + grantHealth + " health");
-}
 
 function battleTally() {
-  if (grantHealth <= 0 ){
-    wins++;
-    grantHealth = enemyHealth;
-    console.log(battleName + " won round " + wins);
-  } else if (userHealth <= 0){
-    playGame = false;
+  if (enemy.score <= 0 && user.wins < 5){
+    user.wins++;
+    enemy.score = 10;
+    console.log("User wins " + user.wins);
+    console.log(enemy.score);
+    document.getElementById("player-wins").style.width = (userWins()).toString() + "%";
+    console.log(user.wins);
+  } else if (user.health < 0){
     console.log("You lose! Try again");
-  }
-}
-
-function battleRound() {
-  attack();
-  battleLog();
-  battleTally();
-}
-
-function battleOutput() {
-  if (wins === 3) {
-    console.log(battleName + " beat Grant 3 times, and won the game!");
-    break;
-  } else {
-    alert("You have retreated!");
-    console.log("You have retreated!");
-    break;
-  }
-}
-
-function startCombat() {
-  while (playGame === true) {
-    var battleAnswer = confirm("OK for attack, Cancel for retreat");
-    if (battleAnswer === true) {
-
-      if (wins === 3) {
-        console.log(battleName + " beat Grant 3 times, and won the game!");
-        break;
-      } else {
-        battleRound();
-      }
-
-    } else {
-      alert("You have retreated!");
-      console.log("You have retreated!");
-      break;
-    }
   }
 }
