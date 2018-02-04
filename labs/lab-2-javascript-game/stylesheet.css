@@ -1,7 +1,8 @@
 body {
-  background-color: rgb(68, 129, 189);
+  background-color: rgb(47, 115, 181);
   margin: auto;
   color: rgb(255, 255, 255);
+  margin: 0;
 }
 
 #intro {
@@ -61,7 +62,6 @@ img {
   min-width: 300px;
   height: 20px;
   border: solid #000 1px;
-  border-radius: 20px;
   background-color: #FFF;
 }
 .remaining-health {
@@ -69,7 +69,15 @@ img {
   margin-left: 0px;
   background-color: rgb(61, 242, 57);
   width: 100%;
-  border-radius: 20px;
+  border-bottom: solid 1px black;
+  border-right: solid 1px black;
+  transition: width 1s, background-color 1s;
+  box-shadow: inset 0 -10px 40px -10px #000000;
+}
+#battle-message {
+  border: solid black 1px;
+  padding: 5px;
+  height: 1rem;
 }
 
 .commands {
@@ -85,18 +93,28 @@ img {
   }
 }
 
+#battle-message {
+  text-align: center;
+}
 
 button {
   width: 150px;
   height: 50px;
   margin: 10px;
   font-size: 20px;
-  background-color: rgb(79, 152, 223);
-  border-color: rgb(107, 167, 227);
-  border-radius: 40%;
+  background: linear-gradient(rgb(79, 152, 223), rgb(56, 121, 184));
+  box-shadow: 5px 5px 20px -5px;
+  border: none;
+  border-radius: 20px;
   width: 150px;
 }
 
+#player-data, #enemy-data {
+  padding: 0, 5px;
+}
+#result-text {
+
+}
 div {
   /* border: solid black 1px; */
 }
