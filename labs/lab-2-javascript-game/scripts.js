@@ -70,10 +70,9 @@ window.addEventListener("load", () => {
       updateHealth();
       console.log("hello", user.health, grant.health, user.healsRemaining, user.wins);
     }
-
-
-
     newRound();
+    updateHealth();
+    updateHeals();
   }
 
   function playerHealthPercentage() {
@@ -91,19 +90,20 @@ window.addEventListener("load", () => {
     document.getElementById("grant-health-remaining").style.width=percentEnemyHealth;
   }
 
-  function playerHealPercntage() {
+  function playerHealPercentage() {
     return 100 * (user.heals / user.healCount);
   }
 
   function updateHeals() {
     var percentPlayerHeals = (playerHealPercentage()).toString() + "%";
-    document.getElementbyId("player-heals-remaining").style.width=percentHealPercentage;
+    document.getElementById("player-heals-remaining").style.width=percentPlayerHeals;
   }
 
   function newRound(){
     grant.health = enemyHP;
-    playerHealthPercentage();
-    grantHealthPercentage();
+    updateHealth();
+    updateHeals();
+    checkWin();
   }
 
   function checkWin() { // Having trouble getting grant's health to not go below 0 and round to reset
@@ -119,7 +119,7 @@ window.addEventListener("load", () => {
       return;
     }
   }
-  
+
   function quitGame() {
     document.getElementById("start-button").style.display="block";
     document.getElementById("game-container").style.display="none";
