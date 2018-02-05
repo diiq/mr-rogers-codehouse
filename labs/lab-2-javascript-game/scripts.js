@@ -99,6 +99,15 @@ window.addEventListener("load", () => {
     document.getElementById("player-heals-remaining").style.width=percentPlayerHeals;
   }
 
+  function playerWinsPercentage() {
+    return 100 * (user.wins / 3);
+  }
+
+  function updateWins() {
+    var percentPlayerWins = (playerWinsPercentage()).toString() + "%";
+    document.getElementById("player-wins-gotten").style.width=percentPlayerWins;
+  }
+
   function newRound(){
     grant.health = enemyHP;
     updateHealth();
