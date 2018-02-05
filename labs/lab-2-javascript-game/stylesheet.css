@@ -1,8 +1,16 @@
 body {
   background-color: rgb(47, 115, 181);
-  margin: auto;
   color: rgb(255, 255, 255);
   margin: 0;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+#page {
+  display: flex;
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
 }
 
 #intro {
@@ -12,97 +20,11 @@ body {
   align-items: center;
 }
 
-#battle {
-  display: none;
-  flex-direction: column;
-}
 .text {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.enemy {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-}
-
-.user {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-}
-
-img {
-  width: 150px;
-  height: 150px;
-  border-radius: 10%;
-  border: solid rgb(0, 0, 0) 5px;
-  background-color: rgb(255, 255, 255);
-  padding: 4px;
-}
-
-.enemy-section {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-.player-section {
-  display: flex;
-  flex-direction: row;
-}
-
-.enemy-icon, .player-icon {
-  padding: 5px;
-}
-
-.health-bar {
-  min-width: 300px;
-  height: 20px;
-  border: solid #000 1px;
-  background-color: #FFF;
-}
-.remaining-health {
-  height: 20px;
-  margin-left: 0px;
-  background-color: rgb(61, 242, 57);
-  width: 100%;
-  border-bottom: solid 1px black;
-  border-right: solid 1px black;
-  transition: width 1s, background-color 1s;
-  box-shadow: inset 0 -10px 40px -10px #000000;
-}
-
-.commands {
-  display: flex;
-  align-content: space-around;
-  justify-content: center;
-  flex-direction: row;
-}
-
-@media (max-width: 768px) {
-.commands {
-    flex-direction: column;
-  }
-}
-
-.message-container {
-  font-size: 20px;
-  margin-top: 10px;
-  height: 4em;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(rgb(47, 115, 181), rgb(79, 152, 223), rgb(47, 115, 181));
-}
-
-#battle-message {
-  margin: 0;
-  padding: 5px;
-  text-align: center;
 }
 
 button {
@@ -117,12 +39,139 @@ button {
   width: 150px;
 }
 
-#player-data, #enemy-data {
-  padding: 0, 5px;
+#battle {
+  margin-top: 25px;
+  display: none;
+  flex-direction: column;
 }
-#result-text {
 
+.enemy-section {
+  display: flex;
+  flex-direction: row-reverse;
+  text-align: right;
 }
-div {
-  /* border: solid black 1px; */
+
+.player-section {
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+}
+
+.battle-info {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+
+.enemy-icon, .player-icon {
+  padding: 5px;
+}
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10%;
+  border: solid rgb(0, 0, 0) 5px;
+  background-color: rgb(255, 255, 255);
+  padding: 4px;
+}
+
+#enemy-name, #player-name {
+  font-size: 20px;
+}
+
+.health-bar {
+  min-width: 300px;
+  height: 20px;
+  background-color: #FFF;
+  margin: 0px;
+}
+
+.remaining-health-bar {
+  height: 20px;
+  margin: 0px;
+  background-color: rgb(61, 242, 57);
+  width: 100%;
+  transition: width 1s, background-color 1s;
+  box-shadow: inset 0 -10px 40px -10px #000000;
+}
+
+#wins-bar {
+  flex: 1;
+  height: 20px;
+  background-color: #FFF;
+  margin: 0px;
+}
+
+#wins {
+  flex: 1;
+  height: 20px;
+  margin: 0px;
+  background-color: rgb(242, 186, 57);
+  width: 0%;
+  transition: width 1s, background-color 1s;
+  box-shadow: inset 0 -10px 40px -10px #000000;
+}
+
+#heals-bar {
+  flex: 1;
+  height: 20px;
+  background-color: #FFF;
+  margin: 0px;
+}
+
+#heals {
+  flex: 1;
+  height: 20px;
+  margin: 0px;
+  background-color: rgb(18, 217, 226);
+  width: 100%;
+  transition: width 1s, background-color 1s;
+  box-shadow: inset 0 -10px 40px -10px #000000;
+}
+
+.win-heal-box {
+  display: flex;
+  flex-direction: row;
+}
+
+.player-wins, .player-heals {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.player-wins {
+  margin-right: 2px;
+}
+
+.player-heals {
+  margin-left: 2px;
+}
+
+#enemy-name, #player-name, #enemy-health-text, #player-health-text {
+  margin-bottom: 5px;
+}
+
+.commands {
+  display: flex;
+  align-content: space-around;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.message-container {
+  font-size: 20px;
+  margin-top: 30px;
+  height: 4em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgb(47, 115, 181), rgb(79, 152, 223), rgb(47, 115, 181));
+}
+
+#battle-message {
+  margin: 0;
+  padding: 5px;
+  text-align: center;
 }

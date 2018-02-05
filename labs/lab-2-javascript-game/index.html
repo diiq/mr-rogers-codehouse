@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
   <link rel="stylesheet" href="stylesheet.css">
   <title>
     Lab 3 - Vikram Badarinath
@@ -11,9 +11,7 @@
 </head>
 
 <body>
-  <div class="page">
-
-
+  <div id="page">
     <div id="intro">
       <div class="text">
         <h1>The Ultimate Battle</h1>
@@ -27,22 +25,60 @@
         <div class="enemy-icon">
           <img src="images/chicken.jpg" alt="Chicken">
         </div>
-        <div class="health-bar">
-          <div class="remaining-health">
+        <div class="battle-info">
+          <div id="enemy-name">
           </div>
-        </div>
-        <div id="enemy-data">
+          <div class="health-label">
+            Health:
+          </div>
+          <div class="health-bar">
+            <div class="remaining-health-bar">
+            </div>
+          </div>
+          <div id="enemy-health-text">
+          </div>
         </div>
       </div>
       <div class="player-section">
         <div class="player-icon">
           <img src="images/warrior.jpg" alt="warrior">
         </div>
-        <div class="health-bar">
-          <div class="remaining-health">
+        <div class="battle-info">
+          <div id="player-name">
           </div>
-        </div>
-        <div id="player-data">
+          <div class="health-label">
+            Health:
+          </div>
+          <div class="health-bar">
+            <div class="remaining-health-bar">
+            </div>
+          </div>
+          <div id="player-health-text">
+          </div>
+          <div class="win-heal-box">
+            <div class="player-wins">
+              <div class="wins-label">
+                Wins:
+              </div>
+              <div id="wins-bar">
+                <div id="wins">
+                </div>
+              </div>
+              <div id="wins-text">
+              </div>
+            </div>
+            <div class="player-heals">
+              <div class="heals-label">
+                Heals Remaining:
+              </div>
+              <div id="heals-bar">
+                <div id="heals">
+                </div>
+              </div>
+              <div id="heals-text">
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="commands">
@@ -55,7 +91,6 @@
           Welcome to the battle field!
         </div>
       </div>
-
     </div>
   </div>
 

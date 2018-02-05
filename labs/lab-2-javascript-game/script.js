@@ -1,4 +1,10 @@
 window.addEventListener("load", () => {
+  // Global variables. Change these to alter the game.
+  const initUserHP = 40;
+  const initEnemyHP = 10;
+  const winsNeeded = 5;
+  const healCount = 2;
+
   class Character {
     constructor(name, health) {
       this.name = name;
@@ -6,7 +12,6 @@ window.addEventListener("load", () => {
       this.maxHealth = health;
       this.healsRemaining = healCount;
       this.winCount = 0;
-      this.message;
     }
 
     generateAttackDamage() {
@@ -21,25 +26,38 @@ window.addEventListener("load", () => {
       this.health = this.health + (Math.floor(Math.random() * (max - min + 1) + min));
       this.health = Math.min(this.health, this.maxHealth);
       this.healsRemaining = this.healsRemaining - 1;
+      var healPercent = (100 * this.healsRemaining / healCount).toString() + "%"
+      document.getElementById("heals").style.width = healPercent;
+      document.getElementById("heals-text").innerText = this.healsRemaining + " / " + healCount;
     }
 
     wins(enemy, quit, disableButtons) {
       this.winCount = this.winCount + 1;
-      if (this.winCount !== winsNeeded) {
-        this.message = this.name + " beat " + enemy.name + "! You need to win " + (winsNeeded - this.winCount) + " more round(s)."
-        document.getElementById("battle-message").innerText = this.message;
+      var winPercent = (100 * this.winCount / winsNeeded).toString() + "%"
+      document.getElementById("wins").style.width = winPercent;
+      document.getElementById("wins-text").innerText = this.winCount + " / " + winsNeeded;
+      if (this.health === 0) {
+        this.loses(enemy, quit, disableButtons);
+      } else if (this.winCount !== winsNeeded) {
+        document.getElementById("battle-message").innerText = this.name + " beat " + enemy.name + "! You need to win " + (winsNeeded - this.winCount) + " more round(s).";
         enemy.health = initEnemyHP;
       } else {
-        this.message = this.name + " has defeated " + enemy.name + "! Peace has been restored upon the land. (The game will restart automatically in 10 seconds.)"
-        document.getElementById("battle-message").innerText = this.message;
+        document.getElementById("battle-message").innerText = this.name + " has defeated " + enemy.name + "! Peace has been restored upon the land. \n(The game will restart automatically in 10 seconds.)";
         setTimeout(quit, 10000);
         disableButtons();
       }
     }
 
-    loses(enemy) {
-      this.message = this.name + " beat " + enemy.name + "! You need to win " + (winsNeeded - this.winCount) + " more round(s)."
-      document.getElementById("battle-message").innerText = this.message;
+    loses(enemy, quit, disableButtons) {
+      if (this.health === 0 && this.winCount === winsNeeded) {
+        document.getElementById("battle-message").innerText = "The battle ended in a draw! (The game will restart automatically in 10 seconds.)";
+        setTimeout(quit, 10000);
+        disableButtons();
+      } else {
+        document.getElementById("battle-message").innerText = this.name + " has been defeated by " + enemy.name + "! All hope is lost. \n(The game will restart automatically in 10 seconds.)";
+        setTimeout(quit, 10000);
+        disableButtons();
+      }
     }
 
     percentHealth() {
@@ -48,6 +66,14 @@ window.addEventListener("load", () => {
 
     percentHealthStr() { // Needed for health-bar width
       return this.percentHealth().toString() + "%";
+    }
+
+    percentHeals() {
+      return (100 * this.healsRemaining / healCount);
+    }
+
+    percentWinStr() {
+      return this.percentHeals().toString() + "%";
     }
 
     setHealthColor() {
@@ -61,30 +87,25 @@ window.addEventListener("load", () => {
     }
   }
 
-  const initUserHP = 40;
-  const initEnemyHP = 10;
-  const winsNeeded = 5;
-  const healCount = 2;
+  // Start Button click
+  document.getElementById("start").addEventListener("click", startGame);
 
-  document.getElementById("start").addEventListener("click", prepareForCombat);
-
-  function test() {
-    console.log("Testing");
-  }
-
-  function prepareForCombat() {
+  function startGame() {
     var name = document.getElementById("input").value;
     if (name === "") {
       name = "The Unknown Warrior";
     }
-    var user = new Character(name, initUserHP);
+    var player = new Character(name, initUserHP);
     var grant = new Character("Grant the Mighty Chicken", initEnemyHP);
     document.getElementById("intro").style.display = "none";
     document.getElementById("battle").style.display = "flex";
-    startCombat(user, grant);
+    document.getElementById("page").style.display = "block";
+    startCombat(player, grant);
   }
 
-  function startCombat(user, enemy) { //using 'enemy' instead of 'grant' allows me to use other enemies
+  // This function wraps around the rest of the code.
+  function startCombat(player, enemy) {
+    setDisplay();
     checkHealth();
 
     // Button clicks
@@ -92,23 +113,29 @@ window.addEventListener("load", () => {
     document.getElementById("heal").addEventListener("click", heal);
     document.getElementById("quit").addEventListener("click", quit);
 
+    function setDisplay() {
+      document.getElementById("enemy-name").innerText = enemy.name;
+      document.getElementById("player-name").innerText = player.name;
+      document.getElementById("heals-text").innerText = player.healsRemaining + " / " + healCount;
+      document.getElementById("wins-text").innerText = player.winCount + " / " + winsNeeded;
+    }
+
     function attack() {
-      user.health = Math.max(0, user.health - enemy.generateAttackDamage());
-      enemy.health = Math.max(0, enemy.health - user.generateAttackDamage());
-      var attackText = user.name + " and " + enemy.name + " swap attacks! " + user.name + "  " + user.health + " HP remaining. " + enemy.name + " has " + enemy.health + " HP remaining.";
+      player.health = Math.max(0, player.health - enemy.generateAttackDamage());
+      enemy.health = Math.max(0, enemy.health - player.generateAttackDamage());
+      var attackText = player.name + " and " + enemy.name + " swap attacks! " + player.name + " has " + player.health + " HP remaining. " + enemy.name + " has " + enemy.health + " HP remaining.";
       document.getElementById("battle-message").innerText = attackText;
       checkHealth();
       checkWin();
     }
 
     function heal() {
-
-      if (user.healsRemaining === 0) {
+      if (player.healsRemaining === 0) {
         document.getElementById("battle-message").innerText = "You do not have any heals remaining.";
-      } else if (user.health === user.maxHealth) {
+      } else if (player.health === player.maxHealth) {
         document.getElementById("battle-message").innerText = "You already have max health.";
-      } else if (user.healsRemaining > 0) {
-        user.heal();
+      } else if (player.healsRemaining > 0) {
+        player.heal();
         checkHealth();
       }
     }
@@ -117,37 +144,25 @@ window.addEventListener("load", () => {
       location.reload(true);
     }
 
+    function checkHealth() {
+      document.getElementById("enemy-health-text").innerText = enemy.health.toString() + " / " + enemy.maxHealth.toString();
+      document.getElementById("player-health-text").innerText = player.health.toString() + " / " + player.maxHealth.toString();
+      document.getElementsByClassName("remaining-health-bar")[0].style.width = enemy.percentHealthStr();
+      document.getElementsByClassName("remaining-health-bar")[1].style.width = player.percentHealthStr();
+      document.getElementsByClassName("remaining-health-bar")[0].style.background = enemy.setHealthColor();
+      document.getElementsByClassName("remaining-health-bar")[1].style.background = player.setHealthColor();
+    }
+
     function checkWin() {
-      if (user.health === 0 && user.winCount === winsNeeded) {
-        document.getElementById("battle-message").innerText = "The battle ended in a draw! (The game will restart automatically in 10 seconds.)";
-        setTimeout(quit, 10000);
-        disableButtons();
-      } else if (user.health === 0) {
-        user.loses(enemy);
-        document.getElementById("battle-message").innerText = user.name + " has been defeated by " + enemy.name + "! All hope is lost. (The game will restart automatically in 10 seconds.)";
-        setTimeout(quit, 10000);
-        disableButtons();
-      } else if (enemy.health === 0) {
-        user.wins(enemy, quit, disableButtons);
-        setTimeout(checkHealth, 2000);
+      if (enemy.health === 0) {
+        player.wins(enemy, quit, disableButtons);
+        setTimeout(checkHealth, 2000); // Refills enemy health bar on restore.
+      } else if (player.health === 0) {
+        player.loses(enemy, quit, disableButtons);
       }
     }
 
-    function checkHealth() {
-      var enemyPercentHealth = enemy.percentHealthStr();
-      var playerPercentHealth = user.percentHealthStr();
-      var enemyHealthColor = enemy.setHealthColor();
-      var playerHealthColor = user.setHealthColor();
-      var enemyHealthString = enemy.health.toString() + " / " + enemy.maxHealth.toString();
-      var playerHealthString = user.health.toString() + " / " + user.maxHealth.toString();
-      document.getElementById("enemy-data").innerText = enemyHealthString;
-      document.getElementById("player-data").innerText = playerHealthString;
-      document.getElementsByClassName("remaining-health")[0].style.width = enemyPercentHealth;
-      document.getElementsByClassName("remaining-health")[1].style.width = playerPercentHealth;
-      document.getElementsByClassName("remaining-health")[0].style.background = enemyHealthColor;
-      document.getElementsByClassName("remaining-health")[1].style.background = playerHealthColor;
-    }
-
+    // Used when game is over
     function disableButtons() {
       document.getElementById("attack").disabled = true;
       document.getElementById("heal").disabled = true;
