@@ -74,11 +74,6 @@ img {
   transition: width 1s, background-color 1s;
   box-shadow: inset 0 -10px 40px -10px #000000;
 }
-#battle-message {
-  border: solid black 1px;
-  padding: 5px;
-  height: 1rem;
-}
 
 .commands {
   display: flex;
@@ -93,7 +88,20 @@ img {
   }
 }
 
+.message-container {
+  font-size: 20px;
+  margin-top: 10px;
+  height: 4em;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgb(47, 115, 181), rgb(79, 152, 223), rgb(47, 115, 181));
+}
+
 #battle-message {
+  margin: 0;
+  padding: 5px;
   text-align: center;
 }
 
