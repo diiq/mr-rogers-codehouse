@@ -64,7 +64,8 @@ window.addEventListener("load", () => {
       } else {
         document.getElementById("player-update-note").innerText = "You have no heals left.";
       }
-      // updateHealth();
+      updateHealth();
+      newRound();
       console.log("hello", user.health, grant.health, user.healsRemaining, user.wins);
     }
 
@@ -82,12 +83,12 @@ window.addEventListener("load", () => {
   function grantHealthPercentage() {
     return 100 * (grant.health / grant.enemyHP);
   }
-  // function updateHealth() {
-  //   percentEnemyHealth = (grantHealthPercentage()).toString() + "%";
-  //   percentPlayerHealth = (playerHealthPercentage()).toString() + "%";
-  //   document.getElementsByClassName("player-health-remaining").style.width=playerHealthPercentage;
-  //   document.getElementsByClassName("grant-health-remaining").style.width=enemyHealthPercentage;
-  // }
+  function updateHealth() {
+    percentEnemyHealth = (grantHealthPercentage()).toString() + "%";
+    percentPlayerHealth = (playerHealthPercentage()).toString() + "%";
+    document.getElementsByClassName("player-health-remaining").style.width=percentPlayerHealth;
+    document.getElementsByClassName("grant-health-remaining").style.width=percentEnemyHealth;
+  }
 
   function newRound(){
     grant.health = enemyHP;
@@ -96,14 +97,14 @@ window.addEventListener("load", () => {
   }
 
   function checkWin() { // Having trouble getting grant's health to not go below 0 and round to reset
-    if (wins === 3) {
+    if (user.wins === 3) {
       quitGame();
       document.getElementById("player-update-note").innerText = "You have won!";
     } else if (user.health <= 0 && grant.health <= 0) {
       quitGame();
       document.getElementById("player-update-note").innerText = "You have lost!";
-    }else if (grant.health <= 0 && wins < 3) {
-      wins++;
+    } else if (grant.health <= 0 && user.wins < 3) {
+      user.wins++;
       newRound();
       return;
     }
