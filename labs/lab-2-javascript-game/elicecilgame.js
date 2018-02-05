@@ -23,7 +23,7 @@ class Player {
     healPlayer(heal) {
         this.health = this.health + heal;
         this.healsRemaining = this.healsRemaining - 1;   
-    }
+    }    
 }
 
 
@@ -42,16 +42,19 @@ function startGame() {
     document.getElementById("statsName").innerText = userName;
 
     document.getElementById("attack").addEventListener("click", combatSequence);
+    document.getElementById("heal").addEventListener("click", healSequence);
     function combatSequence() {
         if((grant.health > 0) && (user.health > 0 )) {
             var userDamage = user.generateAttackDamage();
             var grantDamage = grant.generateAttackDamage();
             user.hitPlayer(grantDamage);
             grant.hitPlayer(userDamage); 
-            updateHealth(user, grant);
-        } else {
+        } else if ((user.health > 0) && (user.wins !== 3)) {
             checkIfWin();
+            var playAgain = confirm("Would you like to attack again or quit?");
+            grant.health = 10; 
         }
+        updateHealth(user, grant);
     }
 
     function checkIfWin() {
@@ -64,18 +67,13 @@ function startGame() {
         }
     }
 
-    if((user.health > 0) && (user.wins !== 3)) {
-        combatSequence();
-        } else {
-            grant.health = 10;            
-            // var playerHeal = document.getElementById("heal").addEventListener("click", healPlayer);
-            // if((playerHeal === true) && (user.healsRemaining !== 0)) {
-            //     var userHeal = user.heal();
-            //     user.healPlayer(userHeal);
-            //     console.log("You have", user.healsRemaining, "heals remaining.");
-            // }
-
-        } 
+    function healSequence() {
+        if(user.healsRemaining !== 0) {
+            var userHeals = user.heal();
+            user.healPlayer(userHeals);
+            updateHealth(user, grant);
+        }
+    }    
 }
 
 window.addEventListener("load", () => {
