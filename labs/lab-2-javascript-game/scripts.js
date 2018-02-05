@@ -71,11 +71,7 @@ window.addEventListener("load", () => {
       console.log("hello", user.health, grant.health, user.healsRemaining, user.wins);
     }
 
-    function quitGame() {
-      document.getElementById("start-button").style.display="block";
-      document.getElementById("game-container").style.display="none";
-      document.getElementById("input").style.display="block";
-    }
+
 
     newRound();
   }
@@ -122,6 +118,12 @@ window.addEventListener("load", () => {
       newRound();
       return;
     }
+  }
+  
+  function quitGame() {
+    document.getElementById("start-button").style.display="block";
+    document.getElementById("game-container").style.display="none";
+    document.getElementById("input").style.display="block";
   }
 
 })
