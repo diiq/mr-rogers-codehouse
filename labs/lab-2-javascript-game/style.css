@@ -1,0 +1,82 @@
+body {
+  background-color: #000000;
+  padding: 50px;
+}
+
+h1 {
+  font-size: 25pt;
+  font-family: 'VT323', monospace;
+  color: #00ffe1;
+  text-align: center;
+}
+
+h2 {
+  font-size: 15pt;
+  font-family: 'VT323', monospace;
+  color: #00ffe1;
+  text-align: center;
+}
+
+h3 {
+  font-size: 12pt;
+  font-family: 'VT323', monospace;
+  color: #00ffe1;
+  text-align: left;
+}
+
+p {
+  font-size: 12pt;
+  font-family: 'VT323', monospace;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+hr {
+  border-color: #00ffe1;
+}
+
+button {
+  background-color: #00ffe1;
+  color: #000000;
+  width: 200px;
+  margin: 20px;
+  padding: 15px;
+  border: none;
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+}
+
+#game-console {
+  display: flex;
+  align-content: center;
+}
+
+/* Need to get these to wrap.....  */
+#stats {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.player-stats {
+  width: 50%;
+  margin-top: 75px;
+}
+
+.enemy-stats {
+  width: 50%;
+  margin-top: 75px;
+}
+
+#user-health-bar {
+  display: block;
+  width: auto;
+  background-color: #00ffe1;
+}
+
+#enemy-health-bar {
+  display: block;
+  width: auto;
+  background-color: #00ffe1;
+}
