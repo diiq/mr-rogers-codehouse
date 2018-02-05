@@ -27,7 +27,7 @@ var user;
 function startGame() {
   var name = document.getElementById("first-input").value;
   var enemyName = document.getElementById("second-input").value;
-  user = new Player(name, 60);
+  user = new Player(name, 40);
   enemy = new Player(enemyName, 10);
   console.log(user);
   console.log(enemy);
@@ -108,10 +108,18 @@ getHealing = () => { return Math.floor(Math.random() * 10) + 1} ;
 
 
 function battleTally() {
- if (enemy.score <= 0 && user.wins < 5){
+
+  if (enemy.score <= 0 && user.wins < 5) {
     user.wins++;
     enemy.score = 10;
+    console.log("User wins " + user.wins);
+    console.log(enemy.score);
     document.getElementById("player-wins").style.width = (userWins()).toString() + "%";
-  } else
+    console.log(user.wins);
+  } else if (user.score <= 0) {
+    console.log("You lose! Try again");
     enemyWon();
+  } else if (user.wins >= 5){
+    userWon();
+  }
 }
