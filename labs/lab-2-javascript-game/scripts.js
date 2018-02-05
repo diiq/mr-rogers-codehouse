@@ -38,6 +38,7 @@ window.addEventListener("load", () => {
   function startCombat() {
     hideStart();
     userName();
+
     grant = new Character("Grant", enemyHP);
     user = new Character(userName(), playerHP, healCount, wins);
 
@@ -55,6 +56,8 @@ window.addEventListener("load", () => {
       user.health = user.health - grant.getDamage();
       grant.health = grant.health - user.getDamage();
       console.log("hello", user.health, grant.health, user.healsRemaining, user.wins);
+      updateHealth();
+      checkWin();
     }
 
     function heal() {
@@ -65,7 +68,6 @@ window.addEventListener("load", () => {
         document.getElementById("player-update-note").innerText = "You have no heals left.";
       }
       updateHealth();
-      newRound();
       console.log("hello", user.health, grant.health, user.healsRemaining, user.wins);
     }
 
@@ -74,6 +76,8 @@ window.addEventListener("load", () => {
       document.getElementById("game-container").style.display="none";
       document.getElementById("input").style.display="block";
     }
+
+    newRound();
   }
 
   function playerHealthPercentage() {
@@ -83,11 +87,21 @@ window.addEventListener("load", () => {
   function grantHealthPercentage() {
     return 100 * (grant.health / grant.enemyHP);
   }
+
   function updateHealth() {
-    percentEnemyHealth = (grantHealthPercentage()).toString() + "%";
-    percentPlayerHealth = (playerHealthPercentage()).toString() + "%";
-    document.getElementsByClassName("player-health-remaining").style.width=percentPlayerHealth;
-    document.getElementsByClassName("grant-health-remaining").style.width=percentEnemyHealth;
+    var percentEnemyHealth = (grantHealthPercentage()).toString() + "%";
+    var percentPlayerHealth = (playerHealthPercentage()).toString() + "%";
+    document.getElementById("player-health-remaining").style.width=percentPlayerHealth;
+    document.getElementById("grant-health-remaining").style.width=percentEnemyHealth;
+  }
+
+  function playerHealPercntage() {
+    return 100 * (user.heals / user.healCount);
+  }
+
+  function updateHeals() {
+    var percentPlayerHeals = (playerHealPercentage()).toString() + "%";
+    document.getElementbyId("player-heals-remaining").style.width=percentHealPercentage;
   }
 
   function newRound(){

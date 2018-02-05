@@ -71,7 +71,7 @@ input[type=text] {
   border-radius: 5px;
 }
 
-#player-health-remaining, #grant-health-remaining {
+#player-health-remaining, #grant-health-remaining, #player-heals-remaining {
   height: 15px;
   width: 100%;
   background-color: #509640;
