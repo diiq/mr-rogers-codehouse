@@ -2,14 +2,38 @@
 <html>
 
   <head>
-    <title>Lab 2 "The great battle"</title>
+    <title>Lab 2 "The Great Battle"</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="script.js"></script>
     
   </head>
 
   <body>
-     
+     <div id ="start-div"> 
+     	<p class ='title-for-start'> Enter Your Players Name, Then Press Start!</p>
+     	<input type ="text" id = 'players-name'>
+     	<button id ="start-button"> Start</button>
+     </div>
+     <div id="main-div"> 
+     	<div class="three-buttons">
+     		<button id="attack-button">Attack</button>
+     		<button id="heal-button">Heal</button>
+     		<button id="quit-button">Quit</button>
+     	</div>
+     	<div id="player-status">
+     		<p id="users-name"></p>
+     		<div id="player-text"></div>
+     		<div id="heals-remaining"></div>
+     		<div id="win-count"></div>
+     		<div id="players-health"></div>
+     	</div>
+     	<div id="grant-status">
+     		<p id="grants-name"></p>
+     		<div id="grant-text"></div>
+     		<div id="grants-health"></div>
+     	</div>
+     </div>
   </body>
 
 </html>

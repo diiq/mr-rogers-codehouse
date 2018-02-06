@@ -1,0 +1,206 @@
+body {
+	background-color: #3F3F3F;
+	color: #3f3f3f;
+	width: auto;
+	height: 700px;
+	display: flex;
+	justify-content: center;
+
+}
+
+button:hover {
+	border: 10px double #3F3F3F;
+}
+/* start page */
+
+#start-div {
+	display: flex;
+	align-self: center;
+	flex-direction: column;
+}
+
+.title-for-start {
+	color: #E58E1E;
+	padding: 7px;
+	font-size: 20px;
+}
+
+#start-button {
+	width: auto ;
+	height: 50px;
+	background-color: #E58E1E;
+	border-radius: 1em;
+	font-size: 25px;
+	margin-top:30px ;
+
+}
+
+#players-name {
+	height: 30px;
+	color: #E58E1E;
+	font-size: 20px;
+	border: 3px solid #E58E1E;
+	border-radius: 1em;
+	padding: 7px;
+	background-color: #3f3f3f;
+	text-align: center;
+
+}
+
+/* main page */
+
+#main-div {
+	display: none;
+	flex-direction: column;
+	width: 70%;
+	align-items: center;
+}
+
+/* first box (buttons)*/
+
+.three-buttons {
+	display: flex;
+	width: auto;
+	margin-bottom: 35px;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-around;
+
+}
+
+#attack-button {
+	width: 200px ;
+	height: 50px;
+	background-color: #E58E1E;
+	border-radius: 1em;
+	font-size: 25px;
+	margin-top:30px;
+}
+
+#heal-button {
+	width: 200px;
+	height: 50px;
+	background-color: #E58E1E;
+	border-radius: 1em;
+	font-size: 25px;
+	margin-top:30px ;
+}
+
+#quit-button {
+	width: 300px;
+	height: 50px;
+	background-color: #E58E1E;
+	border-radius: 1em;
+	font-size: 25px;
+	margin-top:30px ;
+}
+
+/* second box (round text status) */
+
+
+/*third box (players status) */
+
+#player-status {
+	display: flex; 
+	width: auto; 
+	border: 3px solid #E58E1E;
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: space-around;
+	margin-bottom: 30px;
+
+
+}
+
+#users-name {
+	width: 100%;
+	height: 25px;
+	color: #E58E1E;
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#player-text {
+	width: 75%;
+	color: #E58E1E;
+	font-size: 20px;
+	border: 2px solid #E58E1E;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+#heals-remaining {
+	width: 150px;
+	height: 40px;
+	border: 2px solid #E58E1E;
+	margin: 10px 5px;
+	color: #E58E1E;
+	text-align: center;
+	font-size: 20px;
+}
+
+#win-count {
+	width: 150px;
+	height: 40px;
+	border: 2px solid #E58E1E;
+	margin: 10px;
+	color: #E58E1E;
+	text-align: center;
+	font-size: 20px;
+}
+
+#players-health {
+	width: 100%;
+	height: 30px;
+	border: 2px solid #E58E1E;
+	margin: 10px;
+	background-color: green;
+	margin: 10px 15px 20px 15px;
+}
+
+/* fourth box (grants status) */
+
+#grant-status {
+	display: flex; 
+	width: auto; 
+	border: 3px solid #E58E1E;
+	justify-content: space-between;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#grants-name {
+	width: 100%;
+	height: 25px;
+	color: #E58E1E;
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#grant-text {
+	width: 300px;
+	color: #E58E1E;
+	font-size: 20px;
+	border: 2px solid #E58E1E;
+	margin: 0px 15px 20px 15px;
+	align-self: center;
+	text-align: center;
+}
+
+#grants-health {
+	width: 100%;
+	height: 30px;
+	border: 2px solid #E58E1E;
+	background-color: green;
+	margin: 0px 15px 20px 15px;
+	align-self: center;
+}
+
+
+
+
+
+
+

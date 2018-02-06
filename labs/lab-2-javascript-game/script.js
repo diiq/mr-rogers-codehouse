@@ -1,119 +1,123 @@
-var playerHP = 40;
-var grantHP = 10;
-var playersName = "";
-var grantDeaths = 0;
+var userPlayer;
+var grant;
+
+window.addEventListener("load", () => {
+	document.getElementById('start-button').addEventListener('click', startGame);
+	document.getElementById('attack-button').addEventListener('click', attack);
+	document.getElementById('heal-button').addEventListener('click', heal);
+	document.getElementById('quit-button').addEventListener('click', quit);
+});
 
 function startGame() {
-	wouldYou = prompt("Would you like to play?");
-
-	if (wouldYou === "yes") {
-	playersName = prompt("What would you like to name your hero?");
-		
-	startCombat();
-	}
+	const playersName = document.getElementById('players-name').value;
+	userPlayer = new Player(playersName, 40);
+	grant = new Player('Grant', 10);
+	document.getElementById('start-div').style.display = 'none';
+	document.getElementById('main-div').style.display = 'flex';
+	document.getElementById('users-name').innerText = playersName;
+	document.getElementById('grants-name').innerText = 'Grant The Almighty Chicken';
+	document.getElementById('heals-remaining').innerText = 'Heals Left: ' + userPlayer.numberOfHeals + '/2';
+	document.getElementById('win-count').innerText = 'Wins: ' + userPlayer.wins + '/5'
 }
 
-function startCombat() {
-	playerHP = 40;
-	grantDeaths = 0;
-	while (grantDeaths <= 3 && playerHP >= 0) {
-		battle();
+function attack() {
+	userPlayer.damageDone();
+	document.getElementById('player-text').innerText = 'Grant The Almighty Chicken attacks! ' + userPlayer.name + ' now has ' + userPlayer.health + ' health left.';
+	grant.damageDone();
+	document.getElementById('grant-text').innerText = userPlayer.name + ' attacks! Grant The Almighty Chicken now has ' + grant.health + ' health left.';
+
+	var playerHealthBar = (userPlayer.health / 40) * 100;
+	document.getElementById('players-health').style.width = playerHealthBar + '%';
+	var grantHealthBar = (grant.health / 10) * 100;
+	document.getElementById('grants-health').style.width = grantHealthBar + '%';
+
 	
-	if (grantDeaths === 3) {
-		declareWinner();
-
-  } else if (playerHP <= 0) {
-		declareWinner();
+	if (playerHealthBar < 75 && playerHealthBar > 45) {
+		document.getElementById('players-health').style.backgroundColor = "yellow";
+	} else if (playerHealthBar < 45) {
+		document.getElementById('players-health').style.backgroundColor = "red";
 	}
-}
-}
 
-function battle() {
-	grantHP = 10;
-	while (grantHP >= 0 && playerHP >= 0) {
-		round();
+	if (grantHealthBar < 75 && grantHealthBar > 40) {
+		document.getElementById('grants-health').style.backgroundColor = "yellow";
+	} else if (grantHealthBar < 40) {
+		document.getElementById('grants-health').style.backgroundColor = "red";
 	}
- 	if (grantHP <= 0) {
-		grantDeaths = grantDeaths + 1;
-		console.log(playersName + ' has won a round');
+
+	if (grant.health <= 0 && userPlayer.wins <= 5) {
+		winCount();
 	}
-}
 
-function round() {
-	attack = prompt('Do you want to attack? or quit?')
-	if (attack === 'attack') {
-
-			playerHP = playerHP - getDamage();
-			console.log(playersName + " " + "has" + " " + playerHP + " " + "health left");
-
-			grantHP = grantHP - getDamage();
-			console.log("Grant the Mighty Chicken has" + " " + grantHP + " " + "heath left");
-
- } else if (attack === 'quit') {
-		console.log(playersName + "quit :(");
-		playerHP = 0;
+	if (userPlayer.health <= 0) {
+		grantWinner();
+	} else if (userPlayer.wins === 5 & grant.health <= 0) {
+		userWinner();
 	}
 }
 
-function declareWinner() {
-	if (grantDeaths === 3) {
-		console.log(playersName + ' has won!!!');
-		playerHP = 40;
-		grantDeaths = 0;
-		startGame();
-	} else if (playerHP <= 0) {
-		console.log('Grant the Almighty has won ');
-		playerHP = 40;
-		grantDeaths = 0;
-		startGame();
+function heal() {
+	if (userPlayer.numberOfHeals > 0 && userPlayer.health <= 40) {
+		userPlayer.healPlayer();
+		document.getElementById('player-text').innerText = userPlayer.name + ' has healed. Now has ' + userPlayer.health + ' health.';
+		document.getElementById('heals-remaining').innerText = 'Heals Left: ' + userPlayer.numberOfHeals + '/2';
+		var playerHealthBar = (userPlayer.health / 40) * 100;
+		document.getElementById('players-health').style.width = playerHealthBar + '%';
 	}
 }
 
+function winCount() {
+	userPlayer.winRound();
+	document.getElementById('player-text').innerText = userPlayer.name + ' has won a round!';
+	document.getElementById('win-count').innerText = 'Wins: ' + userPlayer.wins + '/5';
+	grant.health = 10;
+}
 
-function getDamage() {
-	var max = 5;
-	var min = 1;
+function userWinner() {
+	document.getElementById('player-text').innerText = userPlayer.name + ' has won!!!';
+	document.getElementById('grant-text').innerText = userPlayer.name + ' has won!!!';
+	document.getElementById('attack-button').style.display = 'none';
 
+}
+
+function grantWinner() {
+	document.getElementById('grant-text').innerText = 'Grant has won! You suck!';
+	document.getElementById('player-text').innerText = 'Grant has won! You suck!';
+	document.getElementById('attack-button').style.display = 'none';
+
+}
+
+function quit() {
+	document.getElementById('player-text').innerText = userPlayer.name + ' has quit :(';
+	location.reload();
+}
+
+function getRandom(min, max) {
+	
 	return  Math.floor(Math.random() * max) + min;
 }
 
 
+class Player {
+	constructor(name , health) {
+		this.name = name;
+		this.health = health;
+		this.wins = 0;
+		this.numberOfHeals = 2;
+	}
 
-// var grantHealth;
-// var grantDeaths;
-// var userHealth;
-// var userName;
-	
-// function playGame 
-// 	ask if wanted to play and name
+	damageDone() {
+		this.health = this.health - getRandom(1, 3);
+	}
 
-// 	startCombat 
+	winRound() {
+		this.wins = this.wins + 1;
 
+	}
 
-// 	declare winner 
+	healPlayer() {
+		this.health = this.health + getRandom(1 , 10);
+		this.numberOfHeals = this.numberOfHeals - 1 ;
 
-
-//  StarCombat 
-// 	battle till grand dies 3 times or you die once
-
-//  battle 
-// 	grand gets health
-// 	skirmish till one players dead (health = 0)
-// 	record winner
-
-//  round  
-// 	ask if want to attack
-// 	if attack deal damage 
-// 	if quit, end battle
-
-
-
-
-
-
-
-
-
-
-
+	}
+}
 
