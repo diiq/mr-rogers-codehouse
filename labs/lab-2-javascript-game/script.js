@@ -10,10 +10,10 @@ class CharacterCreate {
 
   heal() {
     if (this.healsRemaining > 0){
-      return Math.floor(Math.random() * 10) + 1;
       this.healsRemaining--;
+      return Math.floor(Math.random() * 10) + 1;
     } else {
-      document.getElementById("statusText").innerText = "You have no heals left";
+      document.getElementById("playerStatusText").innerText = "You have no heals left";
     }
   }
 }
@@ -34,6 +34,7 @@ function loadGame() {
   document.getElementById("mainContainer").style.display = "flex";
   document.getElementById("startContainer").style.display = "none";
   document.getElementById("playerName").innerText = player.name;
+  document.getElementById("playerNameInputContainer").style.display = "none";
 }
 
 function quitGame(){
