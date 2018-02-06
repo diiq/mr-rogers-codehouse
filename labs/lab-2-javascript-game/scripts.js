@@ -4,6 +4,8 @@ window.addEventListener("load", () => {
       this.name = name;
       this.health = health;
       this.healsRemaining = healCount;
+      this.healCount = healCount;
+      this.maxHealth = health;
       this.wins = wins;
     }
     getDamage() {
@@ -76,18 +78,18 @@ window.addEventListener("load", () => {
   }
 
   function playerHealthPercentage() {
-    return 100 * (user.health / user.playerHP);
+    return 100 * (user.health / user.maxHealth);
   }
 
   function grantHealthPercentage() {
-    return 100 * (grant.health / grant.enemyHP);
+    return 100 * (grant.health / grant.maxHealth);
   }
 
   function updateHealth() {
     var percentEnemyHealth = (grantHealthPercentage()).toString() + "%";
     var percentPlayerHealth = (playerHealthPercentage()).toString() + "%";
     document.getElementById("player-health-remaining").style.width=percentPlayerHealth;
-    document.getElementById("grant-health-remaining").style.width=percentEnemyHealth;
+    document.getElementById("grant-health-remaining").style.width=percentEnemyHealth; 
   }
 
   function playerHealPercentage() {
