@@ -28,12 +28,24 @@
         <h2>Player Stats</h2>
         <hr>
         <div id="health-status">
+
           <h3>Health:</h3>
           <div id="user-health-bar"></div>
+          <div id="user-health-number">
+            <p>40/40</p>
+            <!-- Not sure why this number shifts up when I start attack -->
+          </div>
+
           <h3>Heals Remaining:</h3>
-          <p>0/3</p>
+          <div id="user-heals-remaining">
+            <p>0/2</p>
+          </div>
+
           <h3>Wins:</h3>
-          <p>0/5</p>
+          <div id="user-win-count">
+            <p>0/5</p>
+          </div>
+        </div>
       </div>
 
       <div class="enemy-stats">
@@ -41,6 +53,11 @@
         <hr>
         <h3>Health:</h3>
         <div id="enemy-health-bar"></div>
+
+        <div id="enemy-health-number">
+          <p>10/10</p>
+        </div>
+
       </div>
     </div>
   </div>

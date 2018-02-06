@@ -46,13 +46,23 @@ button {
   font-size: 20px;
 }
 
+/* Had trouble getting things exactly in the center */
+
 #game-console {
   display: flex;
-  align-content: center;
+  align-items: center;
 }
 
-/* Need to get these to wrap.....  */
-#stats {
+#action-buttons {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -60,23 +70,63 @@ button {
 }
 
 .player-stats {
-  width: 50%;
+  width: 45%;
   margin-top: 75px;
 }
 
 .enemy-stats {
-  width: 50%;
+  width: 45%;
   margin-top: 75px;
 }
 
 #user-health-bar {
-  display: block;
-  width: auto;
+  height: 10px;
+  width: 100%;
   background-color: #00ffe1;
 }
 
 #enemy-health-bar {
-  display: block;
+  margin-bottom: 10px;
+  height: 10px;
+  width: 100%;
+  background-color: #00ffe1;
+}
+
+#enemy-health-bar {
+  margin-bottom: 10px;
+  height: 10px;
   width: auto;
   background-color: #00ffe1;
+}
+
+#user-win-count, #user-heals-remaining, #user-health-number, #enemy-health-number {
+  font-size: 12pt;
+  font-family: 'VT323', monospace;
+  color: #FFFFFF;
+  text-align: left;
+}
+
+#start-container {
+  display: flex;
+}
+
+#start-button {
+  justify-content: space-around;
+}
+
+@media (max-width: 720px) {
+  .stats {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .player-stats {
+    width: 100%;
+  }
+
+  .enemy-stats {
+    width: 100%;
+  }
 }

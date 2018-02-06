@@ -2,6 +2,8 @@
 
 var enemy;
 var user;
+var userHealthPercent;
+var enemyHealthPercent;
 
 window.addEventListener("load", () => {
   document.getElementById("game-console").style.display = 'none';
@@ -45,12 +47,26 @@ function startCombat() {
   user.health = user.health - enemy.generateAttackDamage();
   enemy.health = enemy.health - user.generateAttackDamage();
   console.log("Grant Health = " + enemy.health, "User Health = " + user.health);
+  percentHealthRemaining();
+  console.log(userHealthPercent);
+  document.getElementById("user-health-bar").style.width = userHealthPercent;
+  document.getElementById("enemy-health-bar").style.width = enemyHealthPercent;
+  document.getElementById("user-health-number").innerText = user.health + "/40";
+  document.getElementById("enemy-health-number").innerText = enemy.health + "/10";
   checkWins();
+}
+
+function percentHealthRemaining() {
+  userHealthPercent = ((user.health / 40) * 100) + "%";
+  enemyHealthPercent = ((enemy.health / 10) * 100) + "%";
+  return userHealthPercent;
+  return enemyHealthPercent;
 }
 
 function checkWins() {
   if ((enemy.health <= 0) && (user.winCount < 5)) {
     user.winCount = user.winCount + 1;
+    document.getElementById("user-win-count").innerText = user.winCount + "/5";
     console.log("You have won this round! " + "You need to win " + (5 - user.winCount) + " more battles."); // REMOVE LATER
     enemy.health = 10;
   } else if ((user.winCount === 5) || (user.health <= 0)) {
@@ -64,6 +80,11 @@ function userHeal() {
     user.healsRemaining = user.healsRemaining - 1;
     user.health = user.health + user.heal();
     console.log("Heals Remaining " + user.healsRemaining); // REMOVE LATER
+    document.getElementById("user-heals-remaining").innerText = user.healsRemaining + "/2";
+    percentHealthRemaining();
+    document.getElementById("user-health-bar").style.width = userHealthPercent;
+    document.getElementById("user-health-number").innerText = user.health + "/40";
+
   } else {
     console.log("User has no heals Reamaining"); // REMOVE LATER
   }
