@@ -46,7 +46,7 @@ button {
   font-size: 20px;
 }
 
-/* Had trouble getting things exactly in the center */
+/* Had trouble getting things exactly in the center, think it has something to do with how the display is set in Java, but couldn't spend any more time figuring it out */
 
 #game-console {
   display: flex;
