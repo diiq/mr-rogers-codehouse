@@ -13,11 +13,11 @@
     <div class="startscreen">
         <button id="startbutton">Start Game</button>
     </div>
-    <section class="secondscreen">
+    <section id="secondscreen">
         <div class="optionbuttons">
             <button id="attack">Attack</button>
             <button id="heal">Heal</button>
-            <button class="quit">Quit</button>
+            <button id="quit">Quit</button>
         </div>
         <p id="healthcounter"></p>
         <div class="playerstats">
@@ -29,7 +29,9 @@
                 <p>Wins</p>
             </div>
             <div class="statbars">
-                <div id="healthbar"></div>
+                <div class="barholder">
+                    <div id="userhealthbar" class="healthbar"></div>
+                </div>
                 <div id="healsbar"></div>
                 <div id="winbar"></div>
             </div>      
@@ -38,8 +40,8 @@
                 <p>Name<p><span id="enemyName"></span>
                 <p>Health</p>
             </div>
-            <div class="enemystats">
-                <div id="enemyhealth"></div>
+            <div class="barholder">
+                <div id="enemyhealthbar" class="healthbar"></div>
             </div>         
         </div>
     </section>

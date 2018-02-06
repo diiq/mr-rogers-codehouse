@@ -4,6 +4,7 @@ class Player {
         this.health = health;
         this.healsRemaining = healsRemaining;
         this.wins = wins;
+        this.maxHealth = health;
     }
 
     generateAttackDamage() {
@@ -35,8 +36,22 @@ function startGame() {
     var user = new Player(userName, 40, 2, 0);
     const grant = new Player("Grant", 10, 0, 0);
 
+    function updateHealthBar(player, healthbar) {
+        if(player.health >= player.MaxHealth) {
+            healthbar.style.width = "200px";
+        } else {
+            var barWidth = (200 / player.maxHealth) * (player.health);
+            healthbar.style.width = barWidth + "px";            
+        }
+    }
+
     function updateHealth(user, grant) {
+        var userHealthBar = document.getElementById("userhealthbar");
+        var enemyHealthBar = document.getElementById("enemyhealthbar");
+
         document.getElementById("healthcounter").innerText = user.name + " has " + user.health + " health left. Grant has " + grant.health + " health left. ";
+        updateHealthBar(user, userHealthBar);
+        updateHealthBar(grant, enemyHealthBar);
     }
     
     document.getElementById("statsName").innerText = userName;
@@ -74,8 +89,14 @@ function startGame() {
             updateHealth(user, grant);
         }
     }    
+
+    function quitGame() {
+        document.getElementById("secondscreen").style.display = "none";
+    }
+    document.getElementById("quit").addEventListener("click", quitGame);
 }
 
 window.addEventListener("load", () => {
-    document.getElementById("startbutton").addEventListener("click", startGame);
+    var startButton = document.getElementById("startbutton");
+    startButton.addEventListener("click", startGame);  
 });

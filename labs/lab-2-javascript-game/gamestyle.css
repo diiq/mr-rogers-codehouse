@@ -32,7 +32,7 @@
     margin: 10px 15px;
 }
 
-.quit {
+#quit {
     color: white;
     font-size: 20px;
     background-color: #375982;
@@ -59,17 +59,36 @@
     margin: 0 180px;
 }
 
+#statsname {
+    font-weight: bold;
+}
+
 .statbars {
     display: flex;
     justify-content: center;
 }
 
-.statbars div {
+.statbars .barholder {
     display: inline;
+}
+
+.barholder {
     border: 1px solid #E55379;
     height: 10px;
     width: 200px;
     margin: 10px 10px;
+}
+
+#userhealthbar {
+    background-color: black;
+    height: 10px;
+    width: 200px;
+}
+
+#enemyhealthbar {
+    background-color: black;
+    height: 10px;
+    width: 200px;    
 }
 
 #grantstats {
