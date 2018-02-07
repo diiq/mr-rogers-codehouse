@@ -31,6 +31,7 @@ class Board {
   }
 
   render(parent) {
+    parent.innerHTML = "";
     const grid = document.createElement("div");
     grid.className = "grid";
     grid.style.gridTemplateColumns = `repeat(${this.width}, ${this.cellSize}px)`;

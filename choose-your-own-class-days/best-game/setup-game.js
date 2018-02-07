@@ -15,24 +15,26 @@ function setupGame() {
 }
 
 function renderAll() {
-  const gameElt = document.getElementById("grid-container");
-  gameElt.innerHTML = "";
-  board.render(gameElt);
+  board.render(document.getElementById("grid-container"));
 }
 
 function move(x, y) {
   const newPoint = player.peekAtMove(x, y);
-  if (board.validPoint(newPoint)) {
-    const pickups = board.whatElseIsHere(newPoint);
-    if (pickups) {
-      pickups.forEach(pickup => {
-        player.addItem(pickup);
-        board.removeItem(pickup);
-        board.addNewItem();
-      });
-    }
-    player.location = newPoint;
+
+  // Don't do anything if the player can't go there
+  if (!board.validPoint(newPoint)) {
+    return;
   }
+
+  board.whatElseIsHere(newPoint).forEach(pickup => {
+    player.addItem(pickup);
+    board.removeItem(pickup);
+    board.addNewItem();
+  });
+
+  player.location = newPoint;
+
+  renderAll();
 }
 
 function handleKeyboardInput(e) {
@@ -50,7 +52,6 @@ function handleKeyboardInput(e) {
       move(-1, 0);
       break;
   }
-  renderAll();
 }
 
 function closeModals() {
