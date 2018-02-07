@@ -8,9 +8,8 @@ function setupGame() {
   const rows = Math.floor((window.innerHeight - 36 * 2) / cellSize);
   board = new Board(columns, rows, cellSize);
   player = new Player(new Point(5, 2));
-  const item = new Item(new Point(8, 8));
-  board.addItem(item);
   board.addItem(player);
+  board.addNewItem();
   board.render(document.getElementById("grid-container"));
 }
 
@@ -23,6 +22,14 @@ function renderAll() {
 function move(x, y) {
   const newPoint = player.peekAtMove(x, y);
   if (board.validPoint(newPoint)) {
+    const pickups = board.whatElseIsHere(newPoint);
+    if (pickups) {
+      pickups.forEach(pickup => {
+        player.addItem(pickup);
+        board.removeItem(pickup);
+        board.addNewItem();
+      });
+    }
     player.location = newPoint;
   }
 }

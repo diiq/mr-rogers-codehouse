@@ -13,8 +13,21 @@ class Board {
 
   validPoint(point) {
     const outcome = (point.x > 0 && point.x <= this.width) && (point.y > 0 && point.y <= this.height);
-    console.log(outcome, point.y, 0, this.height);
     return outcome;
+  }
+
+  whatElseIsHere(point) {
+    return this.items.filter(item => item.location.samePoint(point));
+  }
+
+  removeItem(item) {
+    this.items = this.items.filter(i => i !== item);
+    return item;
+  }
+  
+  addNewItem() {
+    const item = new Item(makeRandomPoint(1, this.width, 1, this.height));
+    this.addItem(item);
   }
 
   render(parent) {

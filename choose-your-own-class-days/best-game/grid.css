@@ -11,6 +11,10 @@
 
 .player {
   background-color: brown;
+  text-align: center;
+  line-height: 0;
+  padding: 25px 0;
+  color: #fff;
 }
 
 .item {
