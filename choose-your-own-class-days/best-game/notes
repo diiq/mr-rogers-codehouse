@@ -1,0 +1,33 @@
+
+What information is necessary to represent the game at any moment?
+State representation
+
+
+Grid width
+grid height
+player location (x, y)
+goal location (x, y)
+won?
+
+Point:
+  x
+  y
+makeRandomPoint()
+
+Player:
+  location: Point // note: don't initialize to goal point
+  goals: []
+
+Board:
+  width
+  height
+  items: []
+
+Goal:
+  location: Point
+
+Player moves left
+   change player location
+   check new player location against Board
+   check new player location agains board items
+   re-display game state
