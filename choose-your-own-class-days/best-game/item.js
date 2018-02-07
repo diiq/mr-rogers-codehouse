@@ -1,16 +1,14 @@
-class Player {
-  constructor(location) {
+class Item {
+  constructor(location, name, humanName) {
     this.location = location;
+    this.name = name;
+    this.humanName = humanName;
     // id of the parent container
   }
-
-  peekAtMove(x, y) {
-    return new Point(this.location.x + x, this.location.y + y);
-  }
-
+  
   render(parent) {
     const player = document.createElement("div");
-    player.className = "player";
+    player.className = `item item-${this.name}`;
     player.style.gridColumn = `${this.location.x} / span 1`;
     player.style.gridRow = `${this.location.y} / span 1`;
     parent.appendChild(player);

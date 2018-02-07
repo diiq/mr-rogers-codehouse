@@ -8,6 +8,8 @@ function setupGame() {
   const rows = Math.floor((window.innerHeight - 36 * 2) / cellSize);
   board = new Board(columns, rows, cellSize);
   player = new Player(new Point(5, 2));
+  const item = new Item(new Point(8, 8));
+  board.addItem(item);
   board.addItem(player);
   board.render(document.getElementById("grid-container"));
 }
@@ -18,19 +20,26 @@ function renderAll() {
   board.render(gameElt);
 }
 
+function move(x, y) {
+  const newPoint = player.peekAtMove(x, y);
+  if (board.validPoint(newPoint)) {
+    player.location = newPoint;
+  }
+}
+
 function handleKeyboardInput(e) {
   switch(e.keyCode) {
     case 38:  
-      player.move(0, -1);
+      move(0, -1);
       break;
     case 39:  
-      player.move(1, 0);
+      move(1, 0);
       break;
     case 40:  
-      player.move(0, 1);
+      move(0, 1);
       break;
     case 37:  
-      player.move(-1, 0);
+      move(-1, 0);
       break;
   }
   renderAll();

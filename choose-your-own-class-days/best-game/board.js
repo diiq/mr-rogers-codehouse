@@ -11,6 +11,12 @@ class Board {
     this.items.push(item);
   }
 
+  validPoint(point) {
+    const outcome = (point.x > 0 && point.x <= this.width) && (point.y > 0 && point.y <= this.height);
+    console.log(outcome, point.y, 0, this.height);
+    return outcome;
+  }
+
   render(parent) {
     const grid = document.createElement("div");
     grid.className = "grid";
