@@ -4,6 +4,11 @@ class Player {
     // id of the parent container
   }
 
+  move(x, y) {
+    this.location.x += x;
+    this.location.y += y;
+  }
+  
   render(parent) {
     const player = document.createElement("div");
     player.className = "player";
