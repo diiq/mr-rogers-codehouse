@@ -1,0 +1,53 @@
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  background-color: aqua;
+}
+
+.game-container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#grid-container {
+  border: 1px solid red;
+}
+
+.player {
+  background-color: brown;
+  text-align: center;
+  line-height: 0;
+  padding: 25px 0;
+  color: #fff;
+}
+
+.item {
+  background-color: darkolivegreen;
+}
+
+.modal-background {
+  position: fixed;
+  display: none; /*  flex, normally */
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal {
+  min-width: 33%;
+  min-height: 100px;
+  padding: 36px;
+  background-color: #fff;
+  border-radius: 5px;
+}
