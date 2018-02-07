@@ -20,3 +20,23 @@
 .item {
   background-color: darkolivegreen;
 }
+
+.modal-background {
+  position: fixed;
+  display: none; /*  flex, normally */
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal {
+  min-width: 33%;
+  min-height: 100px;
+  padding: 36px;
+  background-color: #fff;
+  border-radius: 5px;
+}

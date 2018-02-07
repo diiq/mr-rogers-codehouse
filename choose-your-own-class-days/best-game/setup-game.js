@@ -11,6 +11,7 @@ function setupGame() {
   board.addItem(player);
   board.addNewItem();
   board.render(document.getElementById("grid-container"));
+  document.getElementById("close-win-modal").addEventListener("click", closeModals);
 }
 
 function renderAll() {
@@ -50,6 +51,10 @@ function handleKeyboardInput(e) {
       break;
   }
   renderAll();
+}
+
+function closeModals() {
+  Array.from(document.getElementsByClassName("modal-background")).forEach(m => m.style.display = "none");
 }
 
 window.addEventListener("load", setupGame);

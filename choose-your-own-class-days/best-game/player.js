@@ -7,8 +7,16 @@ class Player {
 
   addItem(item) {
     this.items.push(item);
+    this.maybeWin();
   }
 
+  maybeWin() {
+    if (this.items.length >= 10) {
+      document.getElementById("win-modal").style.display = "flex";
+      this.items = [];
+    }
+  }
+ 
   peekAtMove(x, y) {
     return new Point(this.location.x + x, this.location.y + y);
   }
