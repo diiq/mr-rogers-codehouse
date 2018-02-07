@@ -14,6 +14,3 @@ class Item {
     parent.appendChild(player);
   }
 }
-
-
-

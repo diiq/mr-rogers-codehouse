@@ -39,7 +39,3 @@ class Board {
     this.items.forEach(item => item.render(grid));
   }
 }
-
-
-// Temporary
-

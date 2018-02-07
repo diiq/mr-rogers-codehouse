@@ -2,7 +2,6 @@ class Player {
   constructor(location) {
     this.location = location;
     this.items = [];
-    // id of the parent container
   }
 
   addItem(item) {
@@ -30,6 +29,3 @@ class Player {
     parent.appendChild(player);
   }
 }
-
-
-
