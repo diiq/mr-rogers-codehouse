@@ -1,10 +1,14 @@
 .grid {
   display: grid;
   background-color: aqua;
-  min-height: 100px;
 }
 
 #grid-container {
-  margin: 36px;
+  margin: 36px auto;
+  width: auto;
   border: 1px solid red;
+}
+
+.player {
+  background-color: brown;
 }

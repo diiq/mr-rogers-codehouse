@@ -1,18 +1,23 @@
 class Board {
-  constructor(width, height, selector) {
+  constructor(width, height, cellSize) {
     this.width = width;
     this.height = height;
-    // Selector should be the ID of an element on the page.
-    this.selector = selector;
+    this.cellSize = cellSize;
+    this.items = [];
   }
 
-  render() {
+  addItem(item) {
+    // item must have render(parent) method.
+    this.items.push(item);
+  }
+
+  render(parent) {
     const grid = document.createElement("div");
     grid.className = "grid";
-    grid.style.gridTemplateColumns = `repeat(${this.width}, 1fr)`;
-    grid.style.gridTemplateRows = `repeat(${this.height}, 1fr)`;
-    const container = document.getElementById(this.selector);
-    container.appendChild(grid);
+    grid.style.gridTemplateColumns = `repeat(${this.width}, ${this.cellSize}px)`;
+    grid.style.gridTemplateRows = `repeat(${this.height}, ${this.cellSize}px)`;
+    parent.appendChild(grid);
+    this.items.forEach(item => item.render(grid));
   }
 }
 
