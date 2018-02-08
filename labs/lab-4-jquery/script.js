@@ -1,26 +1,45 @@
-//make new branch. get out of master, whoops
 
 class Restaurant {
 	constructor(height, width) {
-		this.table = [];
+		this.tables = [];
 		this.height = height;
 		this.width = width;
-	}
 
+		for (var tableIndex = 0; tableIndex < height * width; tableIndex++ ) {
+			 this.tables[tableIndex] = new Table(tableIndex);
+		}
+
+		function tableNumber() {
+			return this.tables.length
+		}
+	}
 }
 
+
+
 class Table {
-	constructor(tableNumber, party) {
+	constructor(tableNumber) {
 		this.tableNumber = tableNumber;
-		this.party = party;
+		this.party = null;
 		this.status = 'avalible';
+	}
+
+	changeStatus() {
+		this.status = 'reserved'
 	}
 
 	changeColor() {
 		if (this.status = 'reserved') {
-			
+
+		}	
 	}
+
+	addParty() {
+		//this will be inputs from the form
+		this.party = new Party('Cusack', 4, 1234567);
+		console.log(this.party);
 	}
+
 }
 
 class Party {
@@ -29,4 +48,8 @@ class Party {
 		this.partySize = partySize;
 		this.phoneNumber = phoneNumber;
 	}
+
+
 }
+
+
