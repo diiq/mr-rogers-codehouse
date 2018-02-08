@@ -1,3 +1,33 @@
+State representation:
+  Indicate to cursor if table is available or cannot
+    - certain html pieces react differently than others
+  Server needs to know:
+    How many tables are there?/ where are the tables(layout)
+    Which tables are available/unavailable?
+    If table is reserved:
+      Who are they?
+      What's their contact info?
+      How many are in their party
+
+Restaurant
+  dimensions(x, y)
+  tables
+
+Table:
+  reserved/unreserved
+  Number
+  position
+  party:?
+
+party:
+  Name
+  phone number
+  size
+
+
+
+
+
 What do I need to include:
 
 Representation of the room:
