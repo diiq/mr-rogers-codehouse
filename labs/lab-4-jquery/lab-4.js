@@ -10,11 +10,15 @@ class Table {
   constructor(status, number, position, party){
     this.status = status;
     this.number = number;
-    this.number = position;
+    this.position = position;
     this.party = party;
   }
   reserveTable() {
-
+    if (this.status = true) {
+      $(".table").on("click") function() {
+        $(".form").css("display", "block");
+      }
+    }
   }
 }
 
