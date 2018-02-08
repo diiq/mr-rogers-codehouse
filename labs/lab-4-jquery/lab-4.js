@@ -14,9 +14,12 @@ class Table {
     this.party = party;
   }
   reserveTable() {
-    if (this.status = true) {
-      $(".table").on("click") function() {
-        $(".form").css("display", "block");
+just create a party and change status
+
+
+    // if (this.status = true) {
+    //   $(".table").on("click") function() {
+    //     $(".form").css("display", "block");
       }
     }
   }
@@ -24,7 +27,7 @@ class Table {
 
 class Restaurant  {
   constructor(height, width){
-  this.height = height;
-  this.width = width;
+    this.height = height;
+    this.width = width;
   }
 }
