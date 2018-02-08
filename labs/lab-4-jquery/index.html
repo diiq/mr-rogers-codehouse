@@ -4,9 +4,16 @@
     <meta charset="utf-8">
     <title></title>
     <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
-    <div class="floor-plan"></div>
+    <form id="reserve-form">
+        <input id="party-name" type="text" name="Party Name">
+        <input id="party-contact" type="text" name="Phone Number">
+        <input id="party-size" type="text" name="Party Size">
+        <button id="submit-button" type="button">Reserve</button>
+    </form>
+    <div id="floor-plan">
       <div class="table"></div>
       <div class="table"></div>
       <div class="table"></div>
@@ -16,5 +23,6 @@
       <div class="table"></div>
       <div class="table"></div>
       <div class="table"></div>
+    </div>
   </body>
 </html>
