@@ -7,20 +7,20 @@ class Party {
 }
 
 class Table {
-  constructor(status, number, position, party){
-    this.status = status;
+  constructor(available, number, position, party){
+    this.available = true;
     this.number = number;
     this.position = position;
-    this.party = party;
+    this.party = null;
   }
   reserveTable() {
-just create a party and change status
-
-
-    // if (this.status = true) {
-    //   $(".table").on("click") function() {
-    //     $(".form").css("display", "block");
+    // just create a party and change status
+    this.party = new Party(name, contact, size);
+    this.available = false;
       }
+  render() {
+    
+  }
     }
   }
 }
