@@ -6,7 +6,6 @@
 }
 
 .floor {
-  z-index: 1;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -18,6 +17,8 @@
 }
 
 .table {
+  flex-wrap: wrap;
+  flex: 1 1 auto;
   width: 120px;
   height: 120px;
   margin: 5px;
@@ -27,7 +28,6 @@
 }
 
 .pop-up {
-  z-index: 2;
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -76,7 +76,6 @@ input {
 #cancel {
   background-color: rgb(230, 55, 0);
 }
-
 
 div {
   /* border: solid 1px black; */

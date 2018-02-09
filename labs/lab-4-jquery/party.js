@@ -10,18 +10,11 @@
   // Show Reservation
 
 class Party {
-  constructor(name, phoneNumber, size) {
+  constructor(name, phoneNumber, partySize, tableNumber) {
     this.name = name;
     this.phoneNumber = phoneNumber;
-    this.size = size;
-    this.reservation = false;
-    this.reservedTableNumber = undefined;
-  }
-
-  reserve(table) {
-    this.name = $("")
-    this.reservation = true;
-    this.reservedTableNumber = table.number;
+    this.partySize = partySize;
+    this.reservedTableNumber = tableNumber;
   }
 
   showReservation() {
@@ -29,6 +22,12 @@ class Party {
   }
 }
 
-const tables = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-$buttons("button:")
-const vic = new Party("Vikram", "269-555-5555", 6);
+var party = [];
+
+$("#save").click(function() {
+  var name = $('#name').val();
+  var phoneNumber = $('#phone-number').val();
+  var partySize = $('#party-size').val();
+  party.push(new Party(name, phoneNumber, partySize, currentTable));
+  $(".pop-up").slideUp();
+});
