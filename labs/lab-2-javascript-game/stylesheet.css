@@ -1,0 +1,157 @@
+body {
+  font-family: 'VT323', monospace;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+#main-game {
+  display: none;
+}
+
+label {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+input {
+  font-family: 'VT323', monospace;
+  font-size: 20px;
+  min-width: 300px;
+  min-height: 30px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+  background-color: #ccc3bd;
+
+}
+.initialize {
+  disply: flex;
+  margin: 50px 0;
+}
+
+#actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+}
+button {
+  font-family: 'VT323', monospace;
+  display: block;
+  min-width: 300px;
+  margin: 20px 5px;
+  padding: 10px;
+  border-radius: 2px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+  background-color: #3a1c07;
+  color: #fff;
+  font-size: 18px;
+}
+
+#results {
+  display: flex;
+  justify-content: center;
+}
+
+#results div {
+  height: auto;
+  width: 200px;
+  margin: 25px 50px;
+}
+.output {
+  margin: 200px 0;
+
+}
+.sliders {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 10px 50px;
+}
+
+.sliders .output {
+  position: relative;
+  margin: auto;
+  border: 1px solid black;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+  width: 100%
+}
+
+.sliders #player-health {
+  position: absolute;
+  display: flex;
+  background-color: #718c89;
+  height: 10px;
+  width: 0%;
+
+}
+.sliders #heal-count {
+  position: absolute;
+  display: flex;
+  background-color: #718c89;
+  height: 10px;
+  width: 0%;
+
+}
+.sliders #player-wins {
+  position: absolute;
+  display: flex;
+  background-color: #718c89;
+  height: 10px;
+  width: 0%;
+}
+
+#enemy-health {
+  position: absolute;
+  display: flex;
+  background-color: #718c89;
+  height: 10px;
+  width: 0%;
+}
+
+#end-game {
+  display: flex;
+  margin: 200px;
+  justify-content: center;
+  display: none;
+}
+
+#end-game p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  font-size: 30px;
+}
+
+#user-won {
+  display: none;
+}
+
+#user-won p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 200px;
+  font-size: 30px;
+}
+#enemy-won {
+  display: none;
+}
+
+#enemy-won p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 200px;
+  font-size: 30px;
+}
