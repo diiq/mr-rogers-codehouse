@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Lab 2</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <script type="text/javascript" src="script-pt-3.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet">
+</head>
+
+<body>
+  <h1>Defeat the Almighty Grant!</h1>
+  <hr>
+  <div id="start-container">
+    <button id="start-button">Start</button></br>
+  </div>
+
+  <div id="game-console">
+    <div id="action-buttons">
+      <button id="attack-button">Attack</button>
+      <button id="heal-button">Heal</button>
+      <button id="quit-button">Quit</button>
+      <br><br>
+    </div>
+
+    <div class="stats">
+      <div class="player-stats">
+        <h2>Player Stats</h2>
+        <hr>
+        <div id="health-status">
+
+          <h3>Health:</h3>
+          <div id="user-health-bar"></div>
+          <div id="user-health-number">
+            <p>40/40</p>
+            <!-- Not sure why this number shifts up when I start attack -->
+          </div>
+
+          <h3>Heals Used:</h3>
+          <div id="user-heals-remaining">
+            <p>0/2</p>
+          </div>
+
+          <h3>Wins:</h3>
+          <div id="user-win-count">
+            <p>0/5</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="enemy-stats">
+        <h2>Enemy Stats</h2>
+        <hr>
+        <h3>Health:</h3>
+        <div id="enemy-health-bar"></div>
+
+        <div id="enemy-health-number">
+          <p>10/10</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>
