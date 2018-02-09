@@ -21,4 +21,8 @@ class Table {
     this.reserver = new Party(name, size, phoneNumber);
     this.status = "reserved";
   }
+
+  render() {
+      $(".table").append(`<div>${this.number}</div>`);
+    }
 }
