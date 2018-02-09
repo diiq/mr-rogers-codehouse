@@ -17,6 +17,9 @@ class Table {
     this.party = new Party(name, contact, size);
     this.available = false;
   }
+  render() {
+    $(".table").append("<div></div>");
+  }
 }
 
 class Restaurant  {
@@ -27,10 +30,16 @@ class Restaurant  {
     this.createTables();
   }
   createTables() {
-    for (var i = 0; i < (this.height * this.width); i++) {
-      this.tables.push(new Table(true, i, ""));
+    for (var x = 0; x < this.width; x++) {
+      for (var y = 0; y < this.height; y++) {
+        var number = (x * this.height + y) + 1;
+          this.tables.push(new Table(true, number, ""));
+      }
+
+
     }
   }
-
-
+  // render() {
+  //   this.createTables().style.display("grid");
+  // }
 }
