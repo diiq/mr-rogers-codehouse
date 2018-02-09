@@ -7,10 +7,10 @@ class Party {
 }
 
 class Table {
-  constructor(available, number, position){
+  constructor(available, number){ // removed position as constructor method
     this.available = true;
     this.number = number;
-    this.position = position;
+    // this.position = position;
     this.party = null;
   }
   reserveTable(name, contact, size) {
@@ -33,13 +33,11 @@ class Restaurant  {
     for (var x = 0; x < this.width; x++) {
       for (var y = 0; y < this.height; y++) {
         var number = (x * this.height + y) + 1;
-          this.tables.push(new Table(true, number, ""));
+          this.tables.push(new Table(true, number));
       }
-
-
     }
   }
-  // render() {
-  //   this.createTables().style.display("grid");
-  // }
 }
+
+var height = 3;
+var width = 3;
