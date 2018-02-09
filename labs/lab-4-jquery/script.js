@@ -6,12 +6,16 @@ class Restaurant {
 		this.width = width;
 
 		for (var tableIndex = 0; tableIndex < height * width; tableIndex++ ) {
-			 this.tables[tableIndex] = new Table(tableIndex);
+			 this.tables[tableIndex] = new Table(tableIndex + 1);
 		}
 
 		function tableNumber() {
 			return this.tables.length
 		}
+	}
+
+	render() {
+		this.tables.forEach(table => table.render());
 	}
 }
 
@@ -24,20 +28,15 @@ class Table {
 		this.status = 'avalible';
 	}
 
-	changeStatus() {
-		this.status = 'reserved'
-	}
-
-	changeColor() {
-		if (this.status = 'reserved') {
-
-		}	
-	}
-
-	addParty() {
+	addParty(name, partySize, phoneNumber) {
 		//this will be inputs from the form
-		this.party = new Party('Cusack', 4, 1234567);
+		this.party = new Party(name, partySize, phoneNumber);
+		this.status = 'reserved';
 		console.log(this.party);
+	}
+
+	render() {
+		$(".main-div").append(`<div>${this.tableNumber}</div>`)
 	}
 
 }
