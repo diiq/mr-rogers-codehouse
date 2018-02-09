@@ -5,18 +5,14 @@ class Table {
         this.reserver = reserver;
     }
 
-    checkTableStatus(status) {
-        if (status === "available") {
-            status = "available";
-            return status;
-        } else {
-            status = "reserved";
-            return status;
-        }
+    reserveTable(name, phoneNum, peopleNum) {
+        this.reserver = new Party(name, phoneNum, peopleNum);
+        this.status = "reserved";
     }
 
-    changeStatus(status) {
-        
+    openTable() {
+        this.status = "available";
+        console.log(this.status);        
     }
 }
 

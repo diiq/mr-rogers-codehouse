@@ -1,6 +1,8 @@
-/* .grid {
+.grid {
     display: grid;
-    background-color: #cccccc;
+    background-color: aqua;
+    height: 600px;
+    width: 600px;
 }
 
 .table-container {
@@ -10,8 +12,8 @@
 }
 
 #table-plan { 
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -22,4 +24,4 @@
     height: 50px;
     margin: 10px;
     background-color: #cccccc;
-} */
+}

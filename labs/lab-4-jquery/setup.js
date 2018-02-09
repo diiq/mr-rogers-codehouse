@@ -1,8 +1,14 @@
-const cellSize = 30;
-var newRest = new Restaurant(600, 600, 200, 9);
+const cellSize = 200; //in px
+var table;
+var party;
+var restaurant;
 
 function setup() {
-    newRest.render("table-plan");
+   var tableplan = document.getElementById("table-plan");
+   const columns = tableplan.innerWidth / cellSize; 
+   const rows = tableplan.innerHeight / cellSize;
+   restaurant = new Restaurant(columns, rows, cellSize);
+   restaurant.render(document.getElementById("table-plan"));
 }
 
 window.addEventListener("load", setup);
