@@ -1,3 +1,6 @@
+const numberOfTables = 9;
+var tableIndex; // Used for table selector
+
 class Table {
   constructor(number) {
     this.number = number;
@@ -14,21 +17,45 @@ class Table {
   }
 }
 
-const numberOfTables = 9;
-var tables = [];
-var currentTable;
-
 $(document).ready(function() {
+
+  //CREATES TABLES
+  const tables = [];
   for (i = 0; i < numberOfTables; i++) {
     tables.push(new Table(i));
     tables[i].render();
   }
 
-  // Clicking on the table
+  // DISPLAY TABLE INFO
+  function showTableInfo(index) { // Shows only when there is a reservation.
+    if (tables[index].name !== undefined) {
+      $(".info").css("display", "flex");
+      $(".name-info").text(`Name: ${tables[index].name}`);
+      $(".phone-info").text(`Phone: ${tables[index].phoneNumber}`);
+      $(".size-info").text(`Size: ${tables[index].partySize}`);
+    }
+  }
+
+  // HOVER OVER TABLE
+  $(".table").hover(function() {
+      showTableInfo($(".table").index(this))
+    },
+    function() {
+      $(".info").hide();
+    }
+  );
+
+  // CLICK ON TABLE
   $(".table").click(function() {
-    // `this` is the DOM element that was clicked
-    currentTable = $(".table").index(this) + 1;
-    $(".table-number").text(`Table #${currentTable}`);
+    $(".requirements").hide(); // Clear any remaining error messages
+    tableIndex = $(".table").index(this);
+    $(".table-number").text(`Table #${tableIndex+ 1}`);
+
+    // Recalls entry for editing
+    $("#name").val(tables[tableIndex].name);
+    $("#phone-number").val(tables[tableIndex].phoneNumber);
+    $("#party-size").val(tables[tableIndex].partySize);
+
     $(".pop-up").slideDown();
   });
 });

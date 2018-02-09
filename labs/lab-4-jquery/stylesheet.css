@@ -1,8 +1,15 @@
-.restaurant {
+body {
+  font-family: "oxygen"
+}
+
+
+/* Restaraunt Diagram */
+.page {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 600px;
+  height: 700px;
 }
 
 .floor {
@@ -12,21 +19,24 @@
   width: 400px;
   height: 400px;
   background-color: rgb(205, 172, 115);
-  justify-content: space-around;
   align-items: center;
+  justify-content: space-around;
+  overflow: auto;
 }
 
 .table {
   flex-wrap: wrap;
-  flex: 1 1 auto;
-  width: 120px;
-  height: 120px;
+  width: 100px;
+  height: 100px;
   margin: 5px;
   border: none;
   border-radius: 100%;
   background-color: rgb(241, 217, 188);
+  font-size: 25px;
 }
 
+
+/* Form Section*/
 .pop-up {
   display: flex;
   flex-direction: column;
@@ -43,11 +53,15 @@
   box-shadow: 0px 0px 50px 3px rgba(0, 0, 0, 0.5);
 }
 
+.title {
+  font-family:
+}
+
 input {
   border-top: none;
   border-left: none;
   border-right: none;
-  width: 200px;
+  width: 240px;
   padding: 0px;
   margin: 15px;
 }
@@ -56,16 +70,27 @@ input {
   color: rgb(215, 215, 215);
 }
 
+.requirements-container {
+  height: 10px;
+  margin: 5px;
+}
+
+.requirements {
+  display: none;
+  color: rgb(230, 55, 0);
+}
+
 .form-buttons {
   display: flex;
   flex-direction: row;
+  margin-top: 15px;
 }
 
-#save, #cancel {
+#save, #cancel, #clear {
   border: none;
-  width: 100px;
-  height: 50px;
-  margin: 10px;
+  width: 75px;
+  height: 30px;
+  margin: 5px;
   color: #FFF;
 }
 
@@ -77,6 +102,25 @@ input {
   background-color: rgb(230, 55, 0);
 }
 
-div {
-  /* border: solid 1px black; */
+#clear {
+  background-color: rgb(25, 135, 249);
+}
+
+
+/* Info Section */
+.info {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 550px;
+  margin-top: 15px;
+  width: 400px;
+  height: 100px;
+  align-items: flex-start;
+}
+
+.name-info, .phone-info, .size-info {
+  margin: 5px;
+  text-align: left;
+  font-size: 20px;
 }
