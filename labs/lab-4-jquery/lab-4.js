@@ -18,7 +18,7 @@ class Table {
     this.available = false;
   }
   render() {
-    $(".table").append(`<div>${this.number}</div>`);
+    $(".table").append(`<button>${this.number}</button>`);
   }
 }
 
