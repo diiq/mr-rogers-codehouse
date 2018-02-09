@@ -37,7 +37,13 @@ class Restaurant  {
       }
     }
   }
+  render() {
+    document.getElementByClassName("room-container");
+    createTables();
+  }
 }
 
 var height = 3;
 var width = 3;
+
+// be able to reserve a table through the UI
