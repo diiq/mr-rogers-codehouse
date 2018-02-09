@@ -18,7 +18,7 @@ class Table {
     this.available = false;
   }
   render() {
-    $(".table").append("<div></div>");
+    $(".table").append(`<div>${this.number}</div>`);
   }
 }
 
@@ -38,8 +38,16 @@ class Restaurant  {
     }
   }
   render() {
-    document.getElementByClassName("room-container");
-    createTables();
+    this.tables.forEach(table => table.render());
+    // $(".room-container");
+    // this.createTables();
+    // *****this.tables.forEach(createTables()); //Should this be
+// Use class example below to figure out how to render to the screen:
+// function fetchStudents() {
+// $.get(apiUrl + "students.json").then(
+// r => console.log(r)
+// )
+// }
   }
 }
 
