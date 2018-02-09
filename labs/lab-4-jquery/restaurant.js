@@ -3,9 +3,9 @@ class Restaurant {
     this.width = width;
     this.height = height;
     this.tables = [];
-    for (var x = 0; x < width; x++) {
-      for (var y = 0; y < height; y++) {
-        this.tables.push(new Table(x * height + y + 1, x + 1, y + 1))
+    for (var y = 0; y < height; y++) {
+      for (var x = 0; x < width; x++) {
+        this.tables.push(new Table(y * width + x + 1, x + 1, y + 1))
       }
     }
   }
