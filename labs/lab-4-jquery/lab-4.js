@@ -51,8 +51,12 @@ class Restaurant  {
 var height = 3;
 var width = 3;
 
-$( document ).ready(function() {
+
+$(document).ready(function() {
   $(".form").hide();
+  var cafe = (new Restaurant(height, width));
+  var table = new Table(true, createTables());
+  table.render();
 });
 
 // Goal by end of day be able to reserve a table through the UI
