@@ -1,0 +1,25 @@
+/* .grid {
+    display: grid;
+    background-color: #cccccc;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#table-plan { 
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.table {
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+    background-color: #cccccc;
+} */
