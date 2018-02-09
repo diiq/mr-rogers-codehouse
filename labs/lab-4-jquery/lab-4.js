@@ -39,19 +39,16 @@ class Restaurant  {
   }
   render() {
     this.tables.forEach(table => table.render());
-    // $(".room-container");
-    // this.createTables();
-    // *****this.tables.forEach(createTables()); //Should this be
-// Use class example below to figure out how to render to the screen:
-// function fetchStudents() {
-// $.get(apiUrl + "students.json").then(
-// r => console.log(r)
-// )
-// }
   }
 }
 
 var height = 3;
 var width = 3;
 
-// be able to reserve a table through the UI
+// Goal by end of day be able to reserve a table through the UI
+
+// Add .ready 'listener' to create restaurant floor once DOM is ready
+// ***$( document ).ready(function() {
+  // ***Handler for .ready() called.
+//***});
+// Add .ready to room-container? To tables render? Both?
