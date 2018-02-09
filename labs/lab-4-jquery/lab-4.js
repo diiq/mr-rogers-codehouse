@@ -23,7 +23,8 @@ class Table {
     // $(".room-container").append(`<button class="table">${this.number}</button>`);
     button.click(function() {
       $(".form").show();
-      console.log("I have been clicked on! I am table" + this.number);
+      $(".table-number").text(`Table Number: ${this.number}`); // table number fills in as undefined
+      // console.log("I have been clicked on! I am table" + this.number);
 });
   }
 }
@@ -57,8 +58,3 @@ $(document).ready(function() {
   var cafe = (new Restaurant(height, width));
   cafe.render();
 });
-
-// Goal by end of day be able to reserve a table through the UI
-
-// Add .ready 'listener' to create restaurant floor once DOM is ready
-// Add .ready to room-container? To tables render? Both?
