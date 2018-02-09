@@ -1,0 +1,69 @@
+.table {
+  border-radius: 50%;
+  border: 1px solid #999;
+  margin: 12px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.table.available {
+  background-color: #ccc;
+}
+
+.table.unavailable {
+  background-color: #eee;
+  opacity: 0.5;
+}
+
+.reservation-form {
+  padding: 36px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid #999;
+}
+
+.reservation-form h2 {
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.reservation-form label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.reservation-form input {
+  display: block;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.reservation-buttons {
+  display: flex;
+  justify-content: stretch;
+  margin: 0 -5px;
+}
+
+.reservation-buttons button {
+  flex: 1;
+  margin: 5px;
+  padding: 10px;
+  border: 0;
+  font-size: 18px;
+}
+
+.cancel {
+  background-color: #eee;
+  color: #333;
+}
+
+.clear {
+  background-color: rgb(136, 34, 34);
+  color: #fff;
+}
+
+.save {
+  background-color: rgb(47, 128, 40);
+  color: #fff;
+}

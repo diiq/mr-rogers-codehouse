@@ -1,0 +1,7 @@
+.party {
+  padding: 10px 0;
+}
+
+.party > div {
+  margin-bottom: 10px;
+}
