@@ -18,7 +18,13 @@ class Table {
     this.available = false;
   }
   render() {
-    $(".room-container").append(`<button class="table">${this.number}</button>`);
+    var button = $(`<button class="table">${this.number}</button>`);
+    $(".room-container").append(button);
+    // $(".room-container").append(`<button class="table">${this.number}</button>`);
+    button.click(function() {
+      $(".form").show();
+      console.log("I have been clicked on! I am table" + this.number);
+});
   }
 }
 
@@ -45,10 +51,11 @@ class Restaurant  {
 var height = 3;
 var width = 3;
 
+$( document ).ready(function() {
+  $(".form").hide();
+});
+
 // Goal by end of day be able to reserve a table through the UI
 
 // Add .ready 'listener' to create restaurant floor once DOM is ready
-// ***$( document ).ready(function() {
-  // ***Handler for .ready() called.
-//***});
 // Add .ready to room-container? To tables render? Both?
