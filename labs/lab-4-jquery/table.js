@@ -36,9 +36,9 @@ class Table {
             }
         });
         $table.hover(function () {
-          $(_this).append( $("<span>asdfgd</span>") );
+          $($table).append($(`<span class='mouseover'>Name: ${partyName} Size of Party: ${peopleNumber} </span>`));
         }, function() {
-          $(_this).find("span:last").remove();
+          $($table).find(".mouseover").remove();
         });
     }
 }
