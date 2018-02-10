@@ -28,11 +28,19 @@ class Table {
 		this.status = 'avalible';
 	}
 
-	addParty() {
-		this.party = new Party(name, partySize, phoneNumber);
-		this.status = 'reserved';
-		
+	createParty() {
+		if ($("#save-button").click()) {
+			this.party = new Party(); 
+			this.status = 'reserved';
+			this.hideForm();
+		}
 	}
+
+	//addParty() {
+	//	this.party = new Party();
+	//	this.status = 'reserved';
+		
+	//}
 
 	render() {
 		var button = $(`<button class="tables">${this.tableNumber}</button>`);
@@ -48,14 +56,10 @@ class Table {
 }
 
 class Party {
-	constructor(name, partySize, phoneNumber ) {
-		//this.name = name;
-		//this.partySize = partySize;
-		//this.phoneNumber = phoneNumber;
-
-		this.name = $("#reserver-name").value();
-		this.partySize = $("#reserver-party-size").value();
-		this.phoneNumber = $("#reserver-phone-number").value();
+	constructor() {
+		this.name = $("#reserver-name").val();
+		this.partySize = $("#reserver-party-size").val();
+		this.phoneNumber = $("#reserver-phone-number").val();
 	}
 
 
