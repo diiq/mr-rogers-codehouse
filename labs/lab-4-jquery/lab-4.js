@@ -6,13 +6,6 @@ class Party {
   }
 }
 
-$(".save-button").click(function() {
-  var name = $(".name").value;
-  var contact = $(".contact").value;
-  var size = $(".party-number").value;
-  // How to create array of new parties once info is gathered?
-})
-
 class Table {
   constructor(available, number){ // removed position as constructor method
     this.available = true;
@@ -58,7 +51,19 @@ class Restaurant  {
 
 var height = 3;
 var width = 3;
+var partyListItems = [];
 
+$(".save-button").click(function() {
+  var name = $(".name").value;
+  var contact = $(".contact").value;
+  var size = $(".party-number").value;
+  $(".form").hide();
+  partyListItems.push(new Party(name, contact, size));
+
+  // How to create array of new parties once info is gathered?
+  //Form isn't hiding when button is clicked.
+  // How to test if array is being created?
+})
 
 $(document).ready(function() {
   $(".form").hide();
