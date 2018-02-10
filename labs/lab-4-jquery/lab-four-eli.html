@@ -6,6 +6,7 @@
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="lab-four-style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:600,800" rel="stylesheet">
     <script src="restaraunt.js"></script>
     <script src="party.js"></script>
     <script src="table.js"></script>
@@ -13,8 +14,31 @@
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 </head>
 <body>
+    <h1 class="title">Table Finder</h1>
+    <p class="sub-title">Pick your table now</p>
     <section class="table-container">
-        <div id="table-plan"></div>
+        <div id="table-plan">
+            <div id="table1" class="table">1</div>
+            <div id="table2" class="table">2</div>
+            <div id="table3" class="table">3</div>
+            <div id="table4" class="table">4</div>
+            <div id="table5" class="table">5</div>
+            <div id="table6" class="table">6</div>
+            <div id="table7" class="table">7</div>
+            <div id="table8" class="table">8</div>
+            <div id="table9" class="table">9</div>
+        </div>
+    </section>
+    <section id="modal-background">
+        <div class="form-bg">
+            <div class="close-modal">&#10006;</div>
+            <h2>New Reservation</h2>
+            <p class="tab-num"></p>
+            <p contenteditable="true" class="name"></p>
+            <p contenteditable="true" class="phone-num"></p>
+            <p contenteditable="true" class="people-num"></p>
+            <button class="save">SAVE</button>
+        </div>
     </section>
     
 </body>

@@ -1,27 +1,132 @@
-.grid {
-    display: grid;
-    background-color: aqua;
-    height: 600px;
-    width: 600px;
+body {
+    background-color: #F9D6B7;
+    font-family: "Raleway", sans-serif;
+    position: relative;
+}
+
+.title {
+    color: #C6450C;
+    font-weight: 800;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.sub-title {
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
 }
 
 .table-container {
     display: flex;
     justify-content: center;
     align-content: center;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    width: 640px;
+    padding: 20px;
 }
 
 #table-plan { 
-    width: 600px;
-    height: 600px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-areas: "a b c"
+                         "d e f"
+                         "g h i";
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
 }
 
 .table {
-    width: 50px;
+    border-radius: 100px;
+    background-color: #cccccc;
+    padding: 75px;
+    margin: 20px;
+    color: #73767a;
+}
+
+#table1 {
+    grid-area: a;
+}
+
+#table2 {
+    grid-area: b;
+}
+
+#table3 {
+    grid-area: c;
+}
+
+#table4 {
+    grid-area: d;
+}
+
+#table5 {
+    grid-area: e;
+}
+
+#table6 {
+    grid-area: f;
+}
+
+#table7 {
+    grid-area: g;
+}
+
+#table8 {
+    grid-area: h;
+}
+
+#table9 {
+    grid-area: i;
+}
+
+#modal-background {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.form-bg {
+    background-color: #FFFFFF;
+    width: 640px;
+    height: 500px;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.form-bg h2 {
+    color: #C6450C;
+    font-weight: 800;
+}
+
+.name {
+    border-bottom: 2px solid #cccccc;
+    padding: 10px;
+    width: 550px;
+}
+
+.phone-num {
+    border-bottom: 2px solid #cccccc;
+    padding: 10px;
+    width: 550px;
+}
+
+.people-num {
+    border-bottom: 2px solid #cccccc;
+    padding: 10px;
+    width: 550px;
+}
+
+.save {
+    width: 500px;
     height: 50px;
     margin: 10px;
-    background-color: #cccccc;
+    background-color: #326802;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
 }
