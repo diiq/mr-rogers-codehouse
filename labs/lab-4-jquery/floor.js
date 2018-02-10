@@ -14,13 +14,13 @@ class Floor {
     }
   }
 
-  render() {
-    const grid = document.createElement("div");
-    grid.className = "grid";
-    grid.style.gridTemplateColumns = `repeat(${this.width}, ${this.cellSize}px)`;
-    grid.style.gridTemplateRows = `repeat(${this.height}, ${this.cellSize}px)`;
-    // parent.appendChild(grid);
-    this.tables.forEach(item => item.render(grid));
+  render(parent) {
+
+    const table = document.createElement("div");
+    table.className = "table";
+    table.style.gridTemplateColumns = `repeat(${this.width}, ${this.cellSize}px)`;
+    table.style.gridTemplateRows = `repeat(${this.height}, ${this.cellSize}px)`;
+    this.tables.forEach(item => item.render(table));
   }
 
 }
