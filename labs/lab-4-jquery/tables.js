@@ -6,11 +6,6 @@ class Table {
     this.number = number;
   }
 
-  reserveTable(name, partySize) {
-    this.reservationName = name;
-    this.partySize = partySize;
-  }
-
   render() {
     var button = $(`<button class="table" id=table-${this.number}>${this.number + 1}</button>`)
     $(".floor").append(button);
