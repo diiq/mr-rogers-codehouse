@@ -1,11 +1,19 @@
-.table {
+/* .table {
   width: 75px;
   height: 75px;
   background-color: #d66f6f;
   border-radius: 50%;
   display: none;
+} */
+
+.form {
+  display: block;
 }
 
-#reserve-form {
-  display: block;
+button {
+  width: 75px;
+  height: 75px;
+  background-color: #000000;
+  border-radius: 50%;
+  /* display: none; */
 }

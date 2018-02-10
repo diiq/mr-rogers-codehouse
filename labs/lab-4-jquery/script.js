@@ -1,5 +1,13 @@
 var party;
 var width;
+// var table;
+
+$(document).ready(function() { // not able to get this to quite work with jQuery
+   $(".form").hide();
+   var resturant = new FloorPlan(3, 3);
+   FloorPlan.render();
+   Table.render();
+});
 
 class Party {
   constructor(partyName, partySize, partyContact) {
@@ -18,14 +26,23 @@ class Table {
     this.available = true;
   }
 
-  reserve() {
+  reserve(partyName, partySize, partyContact) {
     if (this.status = true) { // make this happen on click
     this.party = new Party(partyName, partySize, partyContact); // placeholder info
     this.status = false; // working on this
+    }
   }
 
-  // the form display should be a method on the table class BECAUSE it is a form for that specific table (show/hide)
-}
+    render() {
+    table = $(`<button class="table">${this.tableNum}</button>`);
+    $(".floorplan").append(button);
+    button.click(function() {
+      $(".form").show();
+      console.log("Table clicks" + this.tableNum);
+    });
+  }
+} // the form display should be a method on the table class BECAUSE it is a form for that specific table (show/hide)
+
 
 class FloorPlan {  // TEST IN CONSOLE... const resturant = new FloorPlan(3,3)
   constructor(width, height) {
@@ -40,17 +57,7 @@ class FloorPlan {  // TEST IN CONSOLE... const resturant = new FloorPlan(3,3)
       }
     }
   }
+  render() {
+    this.tables.forEach(table => table.render());
+  }
 }
-
-
-
-
-
-
-
-
-
-// function createParty() {
-//   var party = new Party();
-//   Party.partyName = document.getElementById("party-name").innerText;
-// }
