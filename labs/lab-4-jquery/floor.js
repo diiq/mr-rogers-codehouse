@@ -10,11 +10,17 @@ class Floor {
 
   makeTables() {
     for (var i = 0; i < this.tables.length; i++) {
-    console.log(this.tables[i]);
+      console.log(this.tables[i]);
     }
   }
 
   render() {
-    this.tables.forEach(table => table.render())
-}
+    const grid = document.createElement("div");
+    grid.className = "grid";
+    grid.style.gridTemplateColumns = `repeat(${this.width}, ${this.cellSize}px)`;
+    grid.style.gridTemplateRows = `repeat(${this.height}, ${this.cellSize}px)`;
+    // parent.appendChild(grid);
+    this.tables.forEach(item => item.render(grid));
+  }
+
 }
