@@ -83,6 +83,10 @@ body {
     grid-area: i;
 }
 
+.mouseover {
+    display: none;
+}
+
 #modal-background {
     display: none;
     position: absolute;

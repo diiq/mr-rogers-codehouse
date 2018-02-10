@@ -35,6 +35,11 @@ class Table {
                 $table.css("background-color", "#cccccc");
             }
         });
+        $table.hover(function () {
+          $(_this).append( $("<span>asdfgd</span>") );
+        }, function() {
+          $(_this).find("span:last").remove();
+        });
     }
 }
 
