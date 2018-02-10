@@ -10,10 +10,10 @@ class Floor {
 
   makeTables() {
     for (var i = 0; i < this.tables.length; i++) {
-    render();
-
+    console.log(this.tables[i]);
     }
   }
+
   render() {
     this.tables.forEach(table => table.render())
 }
