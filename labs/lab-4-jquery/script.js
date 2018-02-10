@@ -10,18 +10,21 @@ class Party {
 }
 
 class Table {
-  constructor(tableNum, status) {
+  constructor(tableNum, status, party, available) {
     this.tableNum = tableNum;
     this.status = status;
     // this.position = position;
     this.party = null;
+    this.available = true;
   }
 
-  // reserve() {
-  //   // if (this.status = true) { // make this happen on click
-  //   this.party = new Party(partyName, partySize, partyContact); // placeholder info
-  //   this.status = "reserved"; // working on this
-  // }
+  reserve() {
+    if (this.status = true) { // make this happen on click
+    this.party = new Party(partyName, partySize, partyContact); // placeholder info
+    this.status = false; // working on this
+  }
+
+  // the form display should be a method on the table class BECAUSE it is a form for that specific table (show/hide)
 }
 
 class FloorPlan {  // TEST IN CONSOLE... const resturant = new FloorPlan(3,3)
