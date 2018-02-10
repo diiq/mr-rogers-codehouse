@@ -7,10 +7,9 @@ class Party {
 }
 
 class Table {
-  constructor(available, number){ // removed position as constructor method
+  constructor(available, number){
     this.available = true;
     this.number = number;
-    // this.position = position;
     this.party = null;
   }
   reserveTable(name, contact, size) {
@@ -20,12 +19,10 @@ class Table {
   render() {
     var button = $(`<button class="table">${this.number}</button>`);
     $(".room-container").append(button);
-    // $(".room-container").append(`<button class="table">${this.number}</button>`);
     button.click(function() {
       $(".form").show();
       $(".table-number").text(`Table Number: ${this.number}`); // table number fills in as undefined
-      // console.log("I have been clicked on! I am table" + this.number);
-});
+    });
   }
 }
 
@@ -51,18 +48,20 @@ class Restaurant  {
 
 var height = 3;
 var width = 3;
-var partyListItems = [];
+var partyList = [];
 
 $(".save-button").click(function() {
   var name = $(".name").value;
   var contact = $(".contact").value;
   var size = $(".party-number").value;
-  $(".form").hide();
-  partyListItems.push(new Party(name, contact, size));
-
-  // How to create array of new parties once info is gathered?
+  partyList.push(new Party(name, contact, size));
+  $(".form").hide(); // $(".form").css(display, none);
   //Form isn't hiding when button is clicked.
   // How to test if array is being created?
+})
+
+$(".cancel-button").click(function() {
+  $(".form").hide();
 })
 
 $(document).ready(function() {
