@@ -11,4 +11,7 @@ class Restaurant {
       }
     }
   }
+  renderRestaurant() {
+    this.tables.forEach(table => table.render())
+  }
 }

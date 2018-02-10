@@ -2,13 +2,27 @@
 <html>
 <head>
 	<title></title>
-  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
-  <script src="party.js" type=""="text/javascript"></script>
-  <script src="table.js" type=""="text/javascript"></script>
-  <script src="restaurant.js" type=""="text/javascript"></script>
-  <link rel="stylesheet" href="/css/stylesheet.css">
+	<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+	<script src="party.js" type=""="text/javascript"></script>
+	<script src="table.js" type=""="text/javascript"></script>
+	<script src="restaurant.js" type=""="text/javascript"></script>
+	<script src="script.js" type=""="text/javascript"></script>
+	<link rel="stylesheet" href="stylesheet.css">
 </head>
 <body>
-<div>
+	<div id="restaurant-wrapper">
+		<div class="modal">
+			<div class="modal-info">
+				<h1 class="formHeader">New Reservation</h1>
+				<h2 id="formTableInfo">Table Number:</h2>
+				<input type="text" name="" value="" placeholder="Name">
+				<input type="text" name="" value="" placeholder="Phone Number">
+				<input type="number" name="" value="" placeholder="Party Size">
+				<button id="reserve-table" type="button" name="button">Reserve Table</button>
+			</div>
+		</div>
+		<div class="blur"></div>
+	</div>
+</div>
 </body>
 </html>

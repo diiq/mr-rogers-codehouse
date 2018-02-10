@@ -1,0 +1,67 @@
+#restaurant-wrapper {
+  display: grid;
+  position: absolute;
+  border-radius: 15px;
+  margin: -300px 0 0 -300px;
+  left: 50%;
+  top: 50%;
+  grid-template-columns: 200px 200px 200px;
+  grid-template-rows: 200px 200px 200px;
+  background-color: #8194b4;
+}
+
+.table {
+  color: #fff;
+  width: 180px;
+  height: 180px;
+  padding: 20px;
+  border-radius: 50%;
+  border: none;
+  background-color: #03e27e;
+  font-size: 18px;
+  align-self: center;
+  justify-self: center;
+}
+
+.button-container{
+  align-self: center;
+  justify-self: center;
+}
+
+.blur {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 100, 100, 0.8);
+  filter:blur(5px);
+  z-index: 9998;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  background-color: #dbdbdb;
+  z-index: 9999;
+  height: 550px;
+  width: 400px;
+  border: solid;
+  border-color: #636363;
+  border-radius: 15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin: -275px 0 0 -200px;
+}
+
+.modal-info{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+}
+
+#reserve-table{
+
+}
