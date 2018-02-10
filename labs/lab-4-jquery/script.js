@@ -16,13 +16,21 @@ class Table {
 
   }
 
-
   addParty(name, size, phoneNumber) {
     this.reserver = new Party(name, size, phoneNumber);
     this.status = "reserved";
   }
 
+ // render(parent) {
+  //   $("#table");
+  //   parent.append(`<div>${this.number}</div>`);
+  // }
+
+
+
   render() {
-      $(".table").append(`<div>${this.number}</div>`);
+
+      $("#table").append(`<div>${this.number}</div>`);
+
     }
 }
