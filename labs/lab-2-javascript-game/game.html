@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="gamestyle.css" />
+    <script src="elicecilgame.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Jaldi" rel="stylesheet">
+</head>
+<body>
+    <div class="startscreen">
+        <button id="startbutton">Start Game</button>
+    </div>
+    <section id="secondscreen">
+        <div class="optionbuttons">
+            <button id="attack">Attack</button>
+            <button id="heal">Heal</button>
+            <button id="quit">Quit</button>
+        </div>
+        <p id="healthcounter"></p>
+        <div class="playerstats">
+            <p>Player Stats</p>
+            <div id="userstats">
+                <p>Name<p><span id="statsName"></span>
+                <p>Health</p>
+                <p>Heal Count</p>
+                <p>Wins</p>
+            </div>
+            <div class="statbars">
+                <div class="barholder">
+                    <div id="userhealthbar" class="healthbar"></div>
+                </div>
+                <div id="healsbar"></div>
+                <div id="winbar"></div>
+            </div>      
+            <p>Enemy Stats</p>
+            <div id="grantstats">
+                <p>Name<p><span id="enemyName"></span>
+                <p>Health</p>
+            </div>
+            <div class="barholder">
+                <div id="enemyhealthbar" class="healthbar"></div>
+            </div>         
+        </div>
+    </section>
+
+    </div>
+</body>
+</html>

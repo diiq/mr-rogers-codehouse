@@ -1,0 +1,111 @@
+* {
+    font-family: "Jaldi", sans-serif;
+}
+
+#startbutton {
+    margin: 20px auto;
+    color: white;
+    font-size: 20px;
+    background-color: #375982;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#attack {
+    color: white;
+    font-size: 20px;
+    background-color: #375982;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 15px;
+}
+
+#heal {
+    color: white;
+    font-size: 20px;
+    background-color: #375982;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 15px;
+}
+
+#quit {
+    color: white;
+    font-size: 20px;
+    background-color: #375982;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 15px;
+}
+
+.playerstats {
+    width: 900px;
+    border: 3px solid #E55379;
+}
+
+.playerstats > p {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+}
+
+#userstats {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 180px;
+}
+
+#statsname {
+    font-weight: bold;
+}
+
+.statbars {
+    display: flex;
+    justify-content: center;
+}
+
+.statbars .barholder {
+    display: inline;
+}
+
+.barholder {
+    border: 1px solid #E55379;
+    height: 10px;
+    width: 200px;
+    margin: 10px 10px;
+}
+
+#userhealthbar {
+    background-color: black;
+    height: 10px;
+    width: 200px;
+}
+
+#enemyhealthbar {
+    background-color: black;
+    height: 10px;
+    width: 200px;    
+}
+
+#grantstats {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 180px;    
+}
+
+.enemystats {
+    display: flex;
+    justify-content: center;
+}
+
+.enemystats div {
+    display: inline;
+    border: 1px solid #E55379;
+    height: 10px;
+    width: 200px;
+    margin: 10px 10px;
+}
