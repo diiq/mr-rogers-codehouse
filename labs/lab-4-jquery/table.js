@@ -34,12 +34,12 @@ class Table {
                 _this.openTable();
                 $table.css("background-color", "#cccccc");
             }
-        });
-        $table.hover(function () {
-          $($table).append($(`<span class='mouseover'>Name: ${partyName} Size of Party: ${peopleNumber} </span>`));
-        }, function() {
-          $($table).find(".mouseover").remove();
-        });
+            $table.hover(function () {
+                $table.append($(`<div class='mouseover'>Name: ${_this.reserver.partyName} Size of Party: ${_this.reserver.peopleNumber} </div>`));
+              }, function() {
+                $table.find(".mouseover").remove();
+              });
+        }); 
     }
 }
 
