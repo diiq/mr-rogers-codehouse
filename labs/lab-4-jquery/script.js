@@ -28,27 +28,39 @@ class Table {
 		this.status = 'avalible';
 	}
 
-	addParty(name, partySize, phoneNumber) {
-		//this will be inputs from the form
+	addParty() {
 		this.party = new Party(name, partySize, phoneNumber);
 		this.status = 'reserved';
-		console.log(this.party);
+		
 	}
 
 	render() {
-		$(".main-div").append(`<div>${this.tableNumber}</div>`)
+		var button = $(`<button class="tables">${this.tableNumber}</button>`);
+		$(".table-box").append(button);
+		button.click( showForm => { $(".form").show() });
+	}
+
+
+	hideForm() {
+		$(".form").empty().hide();
 	}
 
 }
 
 class Party {
 	constructor(name, partySize, phoneNumber ) {
-		this.name = name;
-		this.partySize = partySize;
-		this.phoneNumber = phoneNumber;
+		//this.name = name;
+		//this.partySize = partySize;
+		//this.phoneNumber = phoneNumber;
+
+		this.name = $("#reserver-name").value();
+		this.partySize = $("#reserver-party-size").value();
+		this.phoneNumber = $("#reserver-phone-number").value();
 	}
 
 
 }
+
+
 
 
