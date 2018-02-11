@@ -31,6 +31,7 @@ class Table {
   render() {
 
       $("#table").append(`<div>${this.number}</div>`);
+      $(`#table`).on(`click`, alert("You clicked a table"));
 
     }
 }
