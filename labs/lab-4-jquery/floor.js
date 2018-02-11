@@ -4,23 +4,28 @@ class Floor {
   constructor(height, width) {
     this.width = height;
     this.height = height;
-    this.tables = [new Table(1),new Table(2),new Table(3),new Table(4),new Table(5),new Table(6),new Table(7),new Table(8),new Table(9)];
+    this.tables = [];
   }
 
 
   makeTables() {
-    for (var i = 0; i < this.tables.length; i++) {
+    for (var i = 1; i < 10; i++) {
+      var table = new Table(i);
+      this.tables.push(table);
       console.log(this.tables[i]);
+
     }
   }
 
-  render(parent) {
+
+  render() {
 
     const table = document.createElement("div");
-    // table.className = "table";
-    // table.style.gridTemplateColumns = `repeat(${this.width}, ${this.cellSize}px)`;
-    // table.style.gridTemplateRows = `repeat(${this.height}, ${this.cellSize}px)`;
     this.tables.forEach(item => item.render(table));
   }
 
 }
+
+// $("button").click(function() {
+//   $(".available").addClassByClick(".reserved");
+// });
