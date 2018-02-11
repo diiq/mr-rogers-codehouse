@@ -21,17 +21,20 @@ class Table {
     this.status = "reserved";
   }
 
- // render(parent) {
-  //   $("#table");
-  //   parent.append(`<div>${this.number}</div>`);
-  // }
-
-
 
   render() {
+    const table =
+    $("#floor").append(`<button class="table">${this.number}</button>`);
+    table.click(() => alert("U clicked a table"));
 
-      $("#table").append(`<div>${this.number}</div>`);
-      $(`#table`).on(`click`, alert("You clicked a table"));
-
-    }
+  }
 }
+
+$(document).ready(function() {
+
+  $(".table").on(`click`, function() {
+
+    alert("You clicked me");
+
+  });
+});
