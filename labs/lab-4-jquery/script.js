@@ -23,18 +23,8 @@ class Table {
 
 
   render() {
-    const table =
-    $("#floor").append(`<button class="table">${this.number}</button>`);
-    table.click(() => alert("U clicked a table"));
-
+    const table = $(`<button class="table">${this.number}</button>`);
+    $("#floor").append(table);
+    table.click(() => console.log("U clicked table " + this.number));
   }
 }
-
-$(document).ready(function() {
-
-  $(".table").on(`click`, function() {
-
-    alert("You clicked me");
-
-  });
-});
