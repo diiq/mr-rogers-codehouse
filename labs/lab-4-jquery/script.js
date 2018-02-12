@@ -25,6 +25,7 @@ class Restaurant {
 
 	render() {
 		this.tables.forEach(table => table.render());
+		this.tables[tableIndex].saveTableButton();
 	}
 }
 
@@ -40,24 +41,24 @@ class Table {
 	createParty(name , partySize, phoneNumber) {
 		this.party = new Party(name, partySize, phoneNumber); 
 		this.status = 'reserved';
-		console.log(restaurant.tables[1].party);
+		
 	}
 
-
-	render() {
-		var button = $(`<button class="tables">${this.tableNumber}</button>`);
-		$(".table-box").append(button);
-		button.click( showForm => { $(".form").show() });
+	saveTableButton() {
 		$("#save-button").click( () => { 
 			this.createParty(
 			$("#reserver-name").val(),
 			$("#reserver-party-size").val(),
 			$("#reserver-phone-number").val(),
 			);
-		
+			console.log(restaurant.tables[3]);
+		});
+	}
 
-	});
-		
+	render() {
+		var button = $(`<button class="tables">${this.tableNumber}</button>`);
+		$(".table-box").append(button);
+		button.click( showForm => { $(".form").show() });
 		
 	}
 
