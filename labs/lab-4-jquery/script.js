@@ -1,4 +1,13 @@
 
+var tableIndex = 0;
+var height = 3;
+var width = 3;
+
+$(document).ready(function() {
+restaurant = (new Restaurant(height, width));
+restaurant.render();
+});
+
 class Restaurant {
 	constructor(height, width) {
 		this.tables = [];
@@ -28,14 +37,10 @@ class Table {
 		this.status = 'avalible';
 	}
 
-	createParty() {
-		$(document).ready(function() {
-			$("#save-button").click( () => {
-				this.party = new Party(); 
-				this.status = 'reserved';
-				console.log(restaurant.tables[1].party);
-			});
-		});
+	createParty(name , partySize, phoneNumber) {
+		this.party = new Party(name, partySize, phoneNumber); 
+		this.status = 'reserved';
+		console.log(restaurant.tables[1].party);
 	}
 
 
@@ -43,6 +48,17 @@ class Table {
 		var button = $(`<button class="tables">${this.tableNumber}</button>`);
 		$(".table-box").append(button);
 		button.click( showForm => { $(".form").show() });
+		$("#save-button").click( () => { 
+			this.createParty(
+			$("#reserver-name").val(),
+			$("#reserver-party-size").val(),
+			$("#reserver-phone-number").val(),
+			);
+		
+
+	});
+		
+		
 	}
 
 
@@ -52,10 +68,10 @@ class Table {
 }
 
 class Party {
-	constructor() {
-		this.name = $("#reserver-name").val();
-		this.partySize = $("#reserver-party-size").val();
-		this.phoneNumber = $("#reserver-phone-number").val();
+	constructor(name, partySize, phoneNumber) {
+		this.name = name;
+		this.partySize = partySize;
+		this.phoneNumber = phoneNumber;
 	}
 }
 
