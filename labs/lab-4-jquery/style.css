@@ -1,16 +1,55 @@
-.floor {
-  display: flex;
-  justify-content: center;
-  margin: auto;
-  border: 2px solid black;
-  width: 600px;
-  height: 600px;
 
+html, body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  background-color: gray;
+}
+
+
+.floor{
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
+  justify-content: space-between;
+  align-content: space-between;
+  margin: auto;
+  /* border: 2px solid black; */
+  padding: 20px;
+ /*  background-color: green; */
 }
 
 p {
   display: flex;
   justify-content: center;
   margin: auto;
+  padding: 10px;
 
+}
+
+.table {
+  background-color: white;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%
+}
+
+/* button {
+  border-radius: 50%
+ 
+}*/
+
+#form {
+	display: none;
+	margin: auto;
+	justify-content: center;
+	align-content: center;
+	width: 200px;
+	height: 200px;
+	background-color: #f5ecd5;
+	border: 1px solid black;
 }

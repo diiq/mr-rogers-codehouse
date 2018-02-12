@@ -4,6 +4,7 @@
 
 <head>
 
+  <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
   <link rel="stylesheet" href="style.css" />
   <script src="floor.js"></script>
   <script src="script.js"></script>
@@ -20,9 +21,34 @@
 <p> Pick your table </p>
 </nav>
 
+<div class="restaurant-container">
 <div class="floor">
-<div id="grid-container"></div>
+  <!-- <div class="table"></div> -->
 </div>
+</div>
+<div id="form">
+  
+        <label>Party Name:
+          <input type="text" id="party-name">
+        </label>
+        <label>Party size:
+          <input type="text" id="party-size">
+        </label>
+        <label>Phone Number:
+          <input type="text" id="party-contact">
+        </label>
+	<button id="save">Save</button>
+</div>
+
+<label> Category
+<select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="opel">Opel</option>
+  <option value="audi">Audi</option>
+</select>
+</label>  
+
 </body>
 
 <html>
