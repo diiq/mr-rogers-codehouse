@@ -6,7 +6,7 @@ class Restaurant {
 		this.width = width;
 
 		for (var tableIndex = 0; tableIndex < height * width; tableIndex++ ) {
-			 this.tables[tableIndex] = new Table(tableIndex + 1);
+			this.tables[tableIndex] = new Table(tableIndex + 1);
 		}
 
 		function tableNumber() {
@@ -29,18 +29,15 @@ class Table {
 	}
 
 	createParty() {
-		if ($("#save-button").click()) {
-			this.party = new Party(); 
-			this.status = 'reserved';
-			this.hideForm();
-		}
+		$(document).ready(function() {
+			$("#save-button").click( () => {
+				this.party = new Party(); 
+				this.status = 'reserved';
+				console.log(restaurant.tables[1].party);
+			});
+		});
 	}
 
-	//addParty() {
-	//	this.party = new Party();
-	//	this.status = 'reserved';
-		
-	//}
 
 	render() {
 		var button = $(`<button class="tables">${this.tableNumber}</button>`);
@@ -52,7 +49,6 @@ class Table {
 	hideForm() {
 		$(".form").empty().hide();
 	}
-
 }
 
 class Party {
@@ -61,8 +57,6 @@ class Party {
 		this.partySize = $("#reserver-party-size").val();
 		this.phoneNumber = $("#reserver-phone-number").val();
 	}
-
-
 }
 
 
