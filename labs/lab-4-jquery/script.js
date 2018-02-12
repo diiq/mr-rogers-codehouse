@@ -23,43 +23,43 @@ class Table {
     this.party = party;
   }
 
-  
+
   availableClass() {
     if (this.party) {
-     return "unavailable";
+      return "unavailable";
     } else {
       return "available";
     }
   }
 
   showForm() {
-	$(`#form`).css(`display`, `block`);
-	$("#save").click(() => { 
-		this.addParty(
+    $(`#form`).css(`display`, `block`);
+    $("#save").click(() => {
+      this.addParty(
         $("#party-name").val(),
         $("#party-size").val(),
-        $("#party-contact").val()); 
-		console.log("You clicked Save");
-		this.hideForm();
-	}); 
+        $("#party-contact").val());
+        console.log("You clicked Save");
+        this.hideForm();
+      });
 
- }
- 
-	hideForm() {
-		$(`#form`).css(`display`, `none`);
-	}
-  
+    }
+
+    hideForm() {
+      $(`#form`).css(`display`, `none`);
+    }
 
 
-  render() {
-    const table = $(`<button class="table"><div class="table-id">${this.number}</div></button>`);
-    $(".floor").append(table);
-	table.click(() => this.showForm());
-    /* table.click(() => $(`.table-id`).css("background-color", "#7e7272")); */
-    table.click(() => console.log("U clicked table " + this.number));
-	/* return table; */
+
+    render() {
+      const table = $(`<button class="table"><div class="table-id">${this.number}</div></button>`);
+      $(".floor").append(table);
+      table.click(() => this.showForm());
+      /* table.click(() => $(`.table-id`).css("background-color", "#7e7272")); */
+      table.click(() => console.log("U clicked table " + this.number));
+      /* return table; */
+    }
+
+
+
   }
-
-
-
-}

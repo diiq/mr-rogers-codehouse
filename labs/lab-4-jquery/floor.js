@@ -6,9 +6,9 @@ class Floor {
     this.width = height;
     this.height = height;
     var tableList = this.tables = [];
-	
+
   }
-	
+
 
 
   makeTables() {
@@ -16,28 +16,28 @@ class Floor {
       var table = new Table(i);
       this.tables.push(table);
       console.log(this.tables[i]);
-	  
+
     }
     return this.tables;
   }
 
 
-/*   render() {
-    const table = document.createElement("div");
-    this.tables.forEach(item => item.render(table));
-    $(`#floor`).css(`max-width`, `360px`);
-    $(`#floor`).css(`height`, `360px`);
-  }
- */
+  /*   render() {
+  const table = document.createElement("div");
+  this.tables.forEach(item => item.render(table));
+  $(`#floor`).css(`max-width`, `360px`);
+  $(`#floor`).css(`height`, `360px`);
+}
+*/
 
 
 
-  render() {
-    const floor = $(`<div class="floor"></div>`)
-    $(`.floor`).css(`max-width`, `360px`);
-    $(`.floor`).css(`height`, `360px`);
-    this.tables.forEach(table => floor.append(table.render()));
-    return floor;
-  }
-  
-  }
+render() {
+  const floor = $(`<div class="floor"></div>`)
+  $(`.floor`).css(`max-width`, `360px`);
+  $(`.floor`).css(`height`, `360px`);
+  this.tables.forEach(table => floor.append(table.render()));
+  return floor;
+}
+
+}
