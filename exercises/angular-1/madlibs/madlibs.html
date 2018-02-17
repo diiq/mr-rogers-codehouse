@@ -2,3 +2,10 @@
   <input type="text" ng-model="$ctrl.word">
   <p>You said {{ $ctrl.word }}</p>
 </div>
+<div class="madlibs">
+  <input type="text" ng-model="$ctrl.wordTwo">
+  <p>Nope, you heard wrong you actually said {{ $ctrl.wordTwo }}</p>
+</div>
+<div>
+  <button ng-click="$ctrl.changeWord()">Change Word</button>
+</div>

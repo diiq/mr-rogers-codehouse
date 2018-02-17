@@ -1,0 +1,15 @@
+<div class="coolFood">
+  <input type="text" ng-model="$ctrl.firstName">
+</div>
+<div class="coolFood">
+  <input type="text" ng-model="$ctrl.lastName">
+</div>
+<div>
+  <input type="text" ng-model="$ctrl.favFood">
+</div>
+<div class="coolFood">
+  <button ng-click="$ctrl.updateScreen()">Go</button>
+</div>
+<div ng-if="$ctrl.opinion" class="coolFood">
+  <p>Hi {{$ctrl.firstName}} {{$ctrl.lastName}}! I like {{$ctrl.favFood}} too.</p>
+</div>
