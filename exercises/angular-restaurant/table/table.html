@@ -1,0 +1,40 @@
+<button ng-click="$ctrl.showForm()" ng-class="{available: $ctrl.table.available(), unavailable: !$ctrl.table.available(), table: true}">
+  <div class="table-id">{{$ctrl.table.id}}</div>
+</button>
+
+<!-- Show when reserving a table -->
+<modal show="$ctrl.formShowing && $ctrl.table.available()">
+  <form class="reservation-form">
+    <h2>Table {{$ctrl.table.id}}</h2>
+    <label>Reserver Name:
+      <input type="text" ng-model="$ctrl.name">
+    </label>
+    <label>Party size:
+      <input type="text" ng-model="$ctrl.size">
+    </label>
+    <label>Contact info:
+      <input type="text" ng-model="$ctrl.contact">
+    </label>
+    <div class="reservation-buttons">
+      <button ng-click="$ctrl.reserve()" class="save">Save</button>
+      <button ng-click="$ctrl.cancel()" class="cancel">Cancel</button>
+    </div>
+  </form>
+</modal>
+
+<!-- Show when a table is reserved -->
+<modal show="$ctrl.formShowing && !$ctrl.table.available()">
+  <div class="reservation-form">
+    <h2>Table {{$ctrl.table.id}}</h2>
+    <label>Reserver Name: {{$ctrl.table.party.name}}
+    </label>
+    <label>Party size: {{$ctrl.table.party.size}}
+    </label>
+    <label>Contact info: {{$ctrl.table.party.contact}}
+    </label>
+    <div class="reservation-buttons">
+      <button ng-click="$ctrl.cancel()" class="cancel">Cancel</button>
+      <button ng-click="$ctrl.unreserve()" class="clear">Clear</button>  
+    </div>
+  </div>
+</modal>
