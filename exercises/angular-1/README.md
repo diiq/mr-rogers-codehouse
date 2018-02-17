@@ -7,5 +7,5 @@ npm install -g browser-sync
 ```
 3. Run
 ```
-browser-sync start --server
+browser-sync start --server --files **/*
 ```

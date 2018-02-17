@@ -1,6 +1,6 @@
 angular.module("codehouse").component("madlibs", {
   templateUrl: "madlibs/madlibs.html",
   controller: function() {
-    this.input = "foggy";
-  } 
+    this.word = "foggy";
+  }
 })
