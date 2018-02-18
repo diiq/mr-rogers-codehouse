@@ -32,7 +32,6 @@ angular.module("codehouse").component("restaurantTable", {
     }
 
     this.cancel = function() {
-      this.table.unreserveTable();
       this.hideForm();
     }
   }
