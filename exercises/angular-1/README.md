@@ -12,9 +12,9 @@ browser-sync start --server --files **/*
 
 Learning Goals for Today:
 what is
-  - mvc (model, view, controller)
-  - module
-  - component
+  - mvc (model, view, controller) - Learn more about the controller
+  - module - a way of grouping a bunch of stuff together.
+  - component - Stuff that is all angular related component on the screen that has a significant amount of functionality within it. Example, Amazon has about a dozen components on any given page
   - angular
 
   make a component that has three input boxes
