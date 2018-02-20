@@ -1,6 +1,13 @@
 budget {
   display: block;
-  margin: 36px;
+  margin: 36px auto;
+  max-width: 600px;
+}
+
+@media(max-width: 672px) {
+  budget {
+    margin: 36px;
+  }
 }
 
 budget .stat {
