@@ -1,0 +1,6 @@
+<div class="warning" ng-if="$ctrl.overSpent()">YOU HAVE RUN OUT OF MONEY O NO</div>
+
+<div>Total: {{ $ctrl.total | currency }}</div>
+<div>Remaining: {{ $ctrl.remaining() | currency }}</div>
+
+<new-item-form></new-item-form>
