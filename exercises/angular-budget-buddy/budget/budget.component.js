@@ -1,12 +1,9 @@
 angular.module("budgetBuddy").component("budget", {
   templateUrl: "budget/budget.html",
-  bindings: {
-    total: '<'
-  },
-  controller: ['BudgetService', function(BudgetService) {
-    this.$onInit = function() {
-      this.total = parseFloat(this.total)
-      BudgetService.setTotal(this.total);
+  controller: ['BudgetService', 'ItemService', function(BudgetService, ItemService) {
+
+    this.total = function() {
+      return BudgetService.total;
     }
 
     this.remaining = function() {
@@ -15,6 +12,15 @@ angular.module("budgetBuddy").component("budget", {
 
     this.overSpent = function() {
       return this.remaining() < 0;
+    }
+
+    this.items = function() {
+      console.log(ItemService.getItems())
+      return ItemService.getItems();
+    }
+
+    this.budgetSet = function() {
+      return !!BudgetService.total;
     }
   }]
 });

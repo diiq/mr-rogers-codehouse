@@ -6,12 +6,13 @@ angular.module("budgetBuddy").service("ItemService", function() {
     return this.items;
   }
 
-  this.addItem = function(cost, category, description) {
+  this.addItem = function(cost, category, name) {
     // Normally this would call to a server
-    return this.items.push({
+    this.items.push({
       cost: cost,
       category: category,
-      description: description
+      name: name
     });
+    console.log(this.items, "hi");
   }
 });

@@ -21,7 +21,13 @@
   </head>
 
   <body ng-app="codehouse">
-     <restaurant width="5" height="5"></restaurant>
+     <restaurant width="3" height="5"></restaurant>
   </body>
 
 </html>
+
+<card ng-repeat="card in $ctrl.cards" 
+      color="card.color" 
+      title="card.title">
+    {{card.content}}
+</card>

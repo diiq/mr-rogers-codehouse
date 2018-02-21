@@ -9,10 +9,9 @@ angular.module("budgetBuddy").component("percentageBar", {
     this.$onInit = function() {
       this.value = parseFloat(this.value);
       this.maxValue = parseFloat(this.maxValue);
-      this.percentWidth = this.calculatePercent();
     }
 
-    this.calculatePercent = function() {
+    this.percent = function() {
       return 100 * (this.value / this.maxValue);
     }
   }

@@ -1,5 +1,7 @@
 <div class="restaurant-container">
   <div class="restaurant" style="grid-template-columns: repeat({{$ctrl.width}}, 120px); grid-template-rows: repeat({{$ctrl.height}}, 120px);">
-    <restaurant-table table="table" ng-repeat="table in $ctrl.restaurant.tables"></restaurant-table>
+    <restaurant-table 
+      ng-repeat="frob in $ctrl.restaurant.tables"
+      table="frob"></restaurant-table>
   </div>
 </div>

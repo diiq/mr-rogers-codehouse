@@ -1,8 +1,8 @@
 angular.module("codehouse").component("restaurant", {
   templateUrl: "restaurant/restaurant.html",
   bindings: {
-    width: "<",
-    height: "<"
+    width: "@",
+    height: "@"
   },
   controller: function() {
     this.$onInit = function() {

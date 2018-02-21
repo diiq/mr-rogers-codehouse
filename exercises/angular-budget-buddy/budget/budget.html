@@ -1,6 +1,14 @@
-<div class="warning" ng-if="$ctrl.overSpent()">YOU HAVE RUN OUT OF MONEY O NO</div>
+<h1>Budget Buddy 4000</h1>
 
-<div class="stat">Total: {{ $ctrl.total | currency }}</div>
-<div class="stat">Remaining: {{ $ctrl.remaining() | currency }}</div>
+<total-budget ng-if="!$ctrl.budgetSet()"></total-budget>
 
-<new-item-form></new-item-form>
+<div ng-if="$ctrl.budgetSet()">
+
+  <div class="warning" ng-if="$ctrl.overSpent()">YOU HAVE RUN OUT OF MONEY O NO</div>
+
+  <div class="stat">Total: {{ $ctrl.total() | currency }}</div>
+  <div class="stat">Remaining: {{ $ctrl.remaining() | currency }}</div>
+  <percentage-bar value="$ctrl.remaining()" max-value="$ctrl.total()" bg-color="'green'"></percentage-bar>
+  <new-item-form></new-item-form>
+  <budget-item item="item" ng-repeat="item in $ctrl.items()"></budget-item>
+</div>
