@@ -1,0 +1,9 @@
+.item-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.item-container div {
+  height: 50px;
+  width: 200px;
+}
