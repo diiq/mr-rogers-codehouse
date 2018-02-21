@@ -1,7 +1,10 @@
-<form ng-submit="$ctrl.setBudget()">
-  <label>Total Budget
-    <input type="number" ng-model="$ctrl.total" placeholder=""/>
-  </label>
-  
-  <button>Add</button>
-</form>
+<div class="total-container">
+	<form ng-submit="$ctrl.setBudget()" class="total-form">
+		<label>
+Sláðu inn kostnaðarhámarkið
+			<input type="number" ng-model="$ctrl.total" placeholder=""/>
+		</label>
+
+		<button>Add</button>
+	</form>
+<div>
