@@ -11,7 +11,6 @@ angular.module("studentRoster").service("StudentService", ["$http", function($ht
       email: email,
       favorite_color: color,  
     });
-    borl
   }
 
   this.fetchStudents = function() {
