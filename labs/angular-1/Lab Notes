@@ -6,3 +6,28 @@ Need:
 
 
 ** will probably have a item service doc, but will not need models file
+
+component - functionality and appearance in a box on a page
+
+mvc -
+
+model - how we represent the word (in a to-do list, it's the array of list items)
+view - what it looks like (in angular, it's written in html)
+controller - how the model changes when the user interacts
+
+what is
+  - mvc (model, view, controller) - Learn more about the controller
+  - module - a way of grouping a bunch of stuff together.
+  - component - Stuff that is all angular related component on the screen that has
+    a significant amount of functionality within it. Example, Amazon has about a dozen
+    components on any given page
+
+ng-app - connects module (module name) to the main html of your app
+ng-model - is for all input elements
+ng-repeat - used to display all items in an array on the page
+  <div ng-repeat =" foop in $ctrl.foops">Hi</div> -- for each foop in foops say hi.
+dependency injection - a way of saying 'hey i need these services' and angular providing them to you
+  - its how you get the services you need
+service - allows you to share info across the app, connect functions across components
+
+For Saturday's assessment - practice writing components and services
