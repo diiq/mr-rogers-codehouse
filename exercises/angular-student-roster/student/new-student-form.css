@@ -1,0 +1,24 @@
+new-student-form {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+new-student-form input, new-student-form select {
+  display: block;
+  width: 100%;
+  font-size: 18px;
+}
+
+new-student-form select {
+  height: 42px;
+  line-height: 42px;
+  background-color: #fff;
+}
+
+new-student-form button {
+  display: block;
+  margin-left: auto;
+  margin-bottom: 24px;
+}

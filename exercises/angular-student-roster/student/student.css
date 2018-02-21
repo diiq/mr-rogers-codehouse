@@ -1,0 +1,11 @@
+student {
+  display: flex;
+}
+
+student div {
+  width: 33%;
+}
+
+student div:last-of-type {
+  text-align: right;
+}
