@@ -2,8 +2,7 @@ angular.module("budgetBuddy").component("percentageBar", {
   templateUrl: "percentage-bar/percentage-bar.html",
   bindings: {
     value: "<",
-    maxValue: "<",
-    bgColor: "<"
+    maxValue: "<"
   },
   controller: function() {
     this.$onInit = function() {
@@ -11,8 +10,18 @@ angular.module("budgetBuddy").component("percentageBar", {
       this.maxValue = parseFloat(this.maxValue);
     }
 
+    this.colorClass = function() {
+      if (this.percent() > 50) {
+        return 'ok';
+      } else if (this.percent() > 10) {
+        return 'warn';
+      } else {
+        return 'danger';
+      }
+    }
+
     this.percent = function() {
-      return 100 * (this.value / this.maxValue);
+      return Math.round(100 * (this.value / this.maxValue));
     }
   }
 });

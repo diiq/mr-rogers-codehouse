@@ -12,5 +12,7 @@ new-item-form select {
 }
 
 new-item-form button {
-  float: right;
+  display: block;
+  margin-left: auto;
+  margin-bottom: 24px;
 }

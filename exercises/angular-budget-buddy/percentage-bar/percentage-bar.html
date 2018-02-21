@@ -1,8 +1,9 @@
 <div class="bar-container">
-  <div class="remaining-bar" style="width: {{$ctrl.percent()}}%; background-color: {{$ctrl.bgColor}};">
+  <div class="remaining-bar {{$ctrl.colorClass()}}" style="width: {{$ctrl.percent()}}%">
     {{$ctrl.percent()}}%
   </div>
+  <div class="total-spent">
+    {{$ctrl.value | currency}} remaining
+  </div>
 </div>
-<div class="total-spent">
-  {{$ctrl.value}} / {{$ctrl.maxValue}}
-</div>
+

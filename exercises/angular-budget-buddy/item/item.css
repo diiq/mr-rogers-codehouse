@@ -1,9 +1,15 @@
 .item-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
 }
 
 .item-container div {
-  height: 50px;
-  width: 200px;
+  padding: 12px 0;
+}
+
+.item-container .item-cost {
+  font-weight: bold;
+  font-family: monospace;
 }
