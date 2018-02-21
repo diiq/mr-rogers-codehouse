@@ -1,6 +1,6 @@
 <form ng-submit="$ctrl.addItem()">
   <label>Name:
-    <input type="text" ng-model="$ctrl.name"/>
+    <input type="text" autocomplete="name" ng-model="$ctrl.name"/>
   </label>
   
   <label>Favorite Color:
@@ -10,7 +10,7 @@
   </label>
 
   <label>Email*:
-    <input type="email" ng-model="$ctrl.email" />
+    <input type="email" autocomplete="email" ng-model="$ctrl.email" />
   </label>
   
   <button>Add Student</button>
