@@ -24,6 +24,7 @@ function fetchStudents() {
 }
 
 
+<<<<<<< Updated upstream
 // With arrow functions, you can do it all in one go (but you don't have to)
 function fetchStudents2() {
   $.get(apiUrl + "students.json").then(students => {
@@ -46,12 +47,45 @@ function createStudent(name, email, color) {
       })
   })
 }
+=======
+// $.ajax({
+//       type: "POST",
+//       url: "https://mr-rogers-codehouse.herokuapp.com/students.json",
+//       dataType: 'json',
+//       contentType: 'application/json',
+//       data: JSON.stringify({
+//         name: "Emily",
+//         email: "em.westenbroek@gmail.com",
+//         favorite_color: "green"
+//       })
+//   })
+>>>>>>> Stashed changes
 
 // See what happens if you POST the same item twice! Then check out the
 // Networking tab in the inspector to investigate more of what's happening.
 
 
+<<<<<<< Updated upstream
 // Exercises: 
 // make a form to create new students
 // make a better-looking display of each student
 // make buttons to delete students (use DELETE on "students/{student.id}.json")
+=======
+
+// Doing the AJAX
+
+const apiUrl = "https://mr-rogers-codehouse.herokuapp.com/";
+
+function fetchStudents() {
+  $.get(apiUrl + "students.json").then(renderStudents)
+}
+
+function renderStudents(students) {
+  students.forEach(renderStudent);
+}
+
+function renderStudent(student) {
+// $("#neato").append("<div>" + student.name + " " student.email + "</div>");
+  $("#neato").append(`<div>${student.name} ${student.email}</div>`);
+}
+>>>>>>> Stashed changes
