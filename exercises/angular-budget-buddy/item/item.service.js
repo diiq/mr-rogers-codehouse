@@ -13,6 +13,5 @@ angular.module("budgetBuddy").service("ItemService", function() {
       category: category,
       name: name
     });
-    console.log(this.items, "hi");
   }
 });
