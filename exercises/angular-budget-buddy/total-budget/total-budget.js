@@ -3,6 +3,7 @@ angular.module("budgetBuddy").component("totalBudget", {
 
 	controller: ['BudgetService', function(BudgetService){
 		this.setBudget = function() {
+			if (!this.total) return;
 			this.total = parseFloat(this.total);
 			BudgetService.setTotal(this.total);
 		}

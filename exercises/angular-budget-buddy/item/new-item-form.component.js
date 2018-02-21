@@ -7,6 +7,7 @@ angular.module("budgetBuddy").component("newItemForm", {
     this.categories = BudgetService.getCategories();
 
     this.addItem = function() {
+      if (!this.cost) return;
       return ItemService.addItem(parseFloat(this.cost), this.category, this.description);
     }
   }]

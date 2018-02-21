@@ -15,7 +15,6 @@ angular.module("budgetBuddy").component("budget", {
     }
 
     this.items = function() {
-      console.log(ItemService.getItems())
       return ItemService.getItems();
     }
 
