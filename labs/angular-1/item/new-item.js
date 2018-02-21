@@ -1,6 +1,6 @@
 angular.module("toDoList").component("newItem", {
   templateUrl: "item/new-item.html",
-  controller: ['ItemService', function(ItemService) { // Need to add ItemService file
+  controller: ['ItemService', function(ItemService) {
     this.description = "";
 
     this.addItem = function() {

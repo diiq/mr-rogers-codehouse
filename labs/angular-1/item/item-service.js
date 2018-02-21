@@ -1,4 +1,3 @@
-// Example from budget buddy exercise
 angular.module("toDoList").service("ItemService", function() {
   this.items = [];
 
