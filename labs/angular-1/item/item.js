@@ -1,9 +1,15 @@
 angular.module("todoList").component("itemEntry", {
   templateUrl: "item/item.html",
+  bindings: {
+  	item: "<"
+  },
 
-  contoller: function() {
-  	this.items = [];
+  controller: function() {
+  	this.items = [],
 
+  	function(addItem) {
+  		this.items.push(this.item)
+  	}
   }
 
 });

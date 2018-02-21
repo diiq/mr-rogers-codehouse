@@ -3,5 +3,6 @@ angular.module("budgetBuddy").component("budgetItem", {
   bindings: {
     item: "<"
   },
+  
   controller: function() {}
 });

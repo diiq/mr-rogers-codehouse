@@ -1,11 +1,11 @@
 angular.module("todoList").component("addItem", {
   templateUrl: "add/add.html",
-  controller: ['itemEntry', function(itemEntry) {
+  controller: 
 
-  	addItem = function(itemEntry) {
-  		itemEntry.push()
+  	this.addItem = function() {
+  		
+  		//somehow add item component into add component. 
 
   	}
 
-  }]
 });
