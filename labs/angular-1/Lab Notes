@@ -1,0 +1,8 @@
+Need:
+1) item component
+2) add item component
+3) component that adds everything together
+  - ng-repeat to iterate all the items that are added
+
+
+** will probably have a item service doc, but will not need models file

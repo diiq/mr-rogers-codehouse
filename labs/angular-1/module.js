@@ -5,7 +5,7 @@
 // angular to find it. We do that using a module.
 
 /// Making a module:
-angular.module("lab", []);
+angular.module("toDoList", []);
 
 // REFERRING to a module:
-angular.module("lab");
+angular.module("toDoList");
