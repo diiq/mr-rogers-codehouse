@@ -1,5 +1,6 @@
 student {
   display: flex;
+  margin-bottom: 12px;
 }
 
 student div {
@@ -8,4 +9,12 @@ student div {
 
 student div:last-of-type {
   text-align: right;
+}
+
+student .delete {
+  padding: 5px;
+  line-height: 0;
+  border-radius: 50%;
+  background-color: red;
+  margin-left: 12px;
 }
