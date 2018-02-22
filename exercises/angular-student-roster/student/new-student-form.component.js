@@ -4,8 +4,8 @@ angular.module("studentRoster").component("newStudentForm", {
     this.name = "";
     this.email = "";
     this.color = "";
-    this.colors = ["black", "green", "silver", "gray", "lime", 
-    "white", "olive", "yellow", "marron", "navy", "red", 
+    this.colors = ["black", "green", "silver", "gray", "lime",
+    "white", "olive", "yellow", "marron", "navy", "red",
     "blue", "purple", "fuchsia", "teal", "aqua"];
 
     this.addItem = function() {
