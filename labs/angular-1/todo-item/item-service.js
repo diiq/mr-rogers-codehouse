@@ -1,14 +1,14 @@
 angular.module("todoListApp").service("ItemService", function() { // why is this caps again?
-  this.items = [];
+  this.todoItems = [];
 
   this.getItems = function() {
-    // Normally this would call to a server
-    return this.items;
+    // Will maybe call to a server?
+    return this.todoItems;
   }
 
   this.addItem = function(name) {
-    // Normally this would call to a server
-    this.items.push({
+    // Will maybe call to a server?
+    this.todoItems.push({
       name: name
     });
   }
