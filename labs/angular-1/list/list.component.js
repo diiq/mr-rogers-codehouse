@@ -1,13 +1,12 @@
 angular.module("app").component("list", {
   templateUrl: "list/list.html",
-  controller: ['ItemService', 'BudgetService', function(ItemService, BudgetService) {
+  controller: ['ItemService', function(ItemService) {
     this.cost = "";
     this.description = "";
     this.category = "";
-    this.categories = BudgetService.getCategories();
 
     this.addItem = function() {
-      return ItemService.addItem(parseFloat(this.cost), this.category, this.description);
+      return ItemService.addItem(name);
     }
   }]
 });
