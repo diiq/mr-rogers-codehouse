@@ -1,3 +1,5 @@
-<form ng-submit="addItem()">
+<form ng-submit="$ctrl.addItem()">
+	<input type="text" class="item-name" ng-model="$ctrl.item">
 	<button>add</button>
+	<div>{{$ctrl.showItem}}</div>
 </form>
