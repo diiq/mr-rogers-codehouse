@@ -1,6 +1,11 @@
 angular.module("studentRoster").config(["$routeProvider", function($routeProvider) {
   $routeProvider.when('/', {
-    template: '<roster />',
+    template: '<roster students="$resolve.students" />',
+    resolve: {
+      students: ["StudentService", function(StudentService) {
+        return StudentService.fetchStudents();
+      }]
+    },
   });
   $routeProvider.when('/add', {
     template: '<new-student-form />',
