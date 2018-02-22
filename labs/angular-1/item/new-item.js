@@ -4,7 +4,9 @@ angular.module("toDoList").component("newItem", {
     this.description = "";
 
     this.addItem = function() {
+      console.log("heyo", this.description);
       return ItemService.addItem(this.description);
+
     }
   }]
 });

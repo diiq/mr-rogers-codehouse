@@ -4,6 +4,8 @@ Need:
 3) component that adds everything together
   - ng-repeat to iterate all the items that are added
 
+Sam would like a second page on our app
+
 
 ** will probably have a item service doc, but will not need models file
 
