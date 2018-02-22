@@ -7,6 +7,10 @@ angular.module("studentRoster").service("StudentService", ["$http", function($ht
     });
   }
 
+  this.deleteStudent = function(studentId) {
+    return $http.delete(`https://mr-rogers-codehouse.herokuapp.com/students/${studentId}`);
+  }
+
   this.fetchStudents = function() {
     return $http.get("https://mr-rogers-codehouse.herokuapp.com/students.json").then(
       response => response.data
