@@ -6,7 +6,7 @@ angular.module("studentRoster").service("StudentService", ["$http", function($ht
   }];
 
   this.addStudent = function(name, email, color) {
-    this.students.push({
+    $http.post("https://mr-rogers-codehouse.herokuapp.com/students.json", {
       name: name,
       email: email,
       favorite_color: color,  
@@ -14,6 +14,8 @@ angular.module("studentRoster").service("StudentService", ["$http", function($ht
   }
 
   this.fetchStudents = function() {
-    return this.students;
+    return $http.get("https://mr-rogers-codehouse.herokuapp.com/students.json").then(
+      response => response.data
+    )
   }
 }]);
