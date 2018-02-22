@@ -1,6 +1,6 @@
 angular.module("todoList").component("todoList", {
   templateUrl: "todo-list/todo-list.html",
-  contoller: ['ItemService', function(ItemService) {
+  controller: ['ItemService', function(ItemService) {
 	
 	//this.items = [];
   	//this.items = ItemService.getItem();

@@ -5,9 +5,9 @@ angular.module("todoList").service("ItemService", function() {
     return this.items;
   }
 
-  this.addItem = function(item) {
+  this.addItem = function(name) {
     this.items.push({
-      item: item
+      name: name
     });
   }
 });
