@@ -1,3 +1,6 @@
 <div class="todo-list">
-	<div ng-repeat="item in $ctrl.items">{{$ctrl.items}}</div>
+	<item-entry></item-entry>
+	<add-item></add-item>
+	<item-list item="item" ng-repeat="item in $ctrl.items()">
+	</item-list>
 </div>
