@@ -5,11 +5,6 @@ angular.module("todoList").component("itemEntry", {
   },
 
   controller: function() {
-  	this.items = [],
-
-  	function(addItem) {
-  		this.items.push(this.item)
   	}
-  }
-
+  
 });
