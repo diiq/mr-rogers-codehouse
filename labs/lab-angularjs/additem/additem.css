@@ -1,0 +1,10 @@
+.todo-list {
+  border: 1px solid #ddd;
+  padding: 36px;
+}
+
+.todo-list input {
+  padding: 12px;
+  box-shadow: inset 2px 2px 2px rgba(0,0,0,0.1);
+  border: 1px solid red;
+}
