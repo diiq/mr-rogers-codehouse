@@ -10,8 +10,9 @@ angular.module("studentRoster").component("newStudentForm", {
 
     this.addItem = function() {
       if (!this.email) return;
-      StudentService.addStudent(this.name, this.email, this.color);
-      $location.url("/");
+      StudentService.addStudent(this.name, this.email, this.color).then(
+        () => $location.url("/")
+      );
     }
   }]
 });
