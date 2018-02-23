@@ -8,4 +8,8 @@ angular.module("todoApp").service("ItemService", function() {
   console.log("Hello", this.items);
   }
 
+  this.getItems = function() {
+    return this.items;
+  }
+
 });
