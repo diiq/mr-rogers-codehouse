@@ -1,6 +1,4 @@
-.todo-list {
-  display: flex;
-  width: 100px;
-  height: 100px;
-  border: 2px solid black;
+.item {
+  margin: 10px;
+  font-size: 20px;
 }

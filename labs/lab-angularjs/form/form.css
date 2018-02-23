@@ -4,3 +4,8 @@
     height: auto;
     background-color: gray;
 }
+
+.list {
+  height: 200px;
+  background-color: white;
+}

@@ -2,7 +2,9 @@
 
 <div class="todoform">
   <h1>ToDo List</h1>
-  <input class = "todolist" ng-model="$ctrl.item"/>
-  
+  <div class="list">
+    <item ng-repeat="item in $ctrl.items" item="item" class="item"></item>
+  </div>
+
   <additem></additem>
 </div>
