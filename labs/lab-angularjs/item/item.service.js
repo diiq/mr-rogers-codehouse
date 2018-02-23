@@ -1,10 +1,11 @@
 angular.module("todoApp").service("ItemService", function() {
   this.items = [];
 
-  this.addItem = function(category) {
+  this.addItem = function(item) {
     this.items.push({
-      category: category
+      item: item
     });
+  console.log("Hello", this.items);
   }
 
 });
