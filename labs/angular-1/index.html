@@ -4,6 +4,7 @@
     <title>Angular Lab 1</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-route.js"></script>
     <script src="module.js"></script>
 
     <link rel="stylesheet" href="full-list/full-list.css" />
@@ -16,8 +17,13 @@
     <script src="item/item.js"></script>
     <script src="item/item-service.js"></script>
 
+    <script src="routes.js"></script>
+
+    <link rel="stylesheet" href="total-to-do/total-to-do.css" />
+    <script src="total-to-do/total-to-do.js"></script>
+
   </head>
   <body ng-app="toDoList">
-    <full-list></full-list>
+    <ng-view></ng-view>
   </body>
   </html>

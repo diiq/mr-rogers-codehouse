@@ -3,6 +3,7 @@ angular.module("toDoList").service("ItemService", function() {
 
   this.getItems = function() {
     return this.items;
+    console.log(this.items, "i'm get items");
   }
 
   this.addItem = function(description) {

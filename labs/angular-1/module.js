@@ -5,7 +5,7 @@
 // angular to find it. We do that using a module.
 
 /// Making a module:
-angular.module("toDoList", []);
+angular.module("toDoList", ["ngRoute"]);
 
 // REFERRING to a module:
 angular.module("toDoList");

@@ -20,7 +20,7 @@ controller - how the model changes when the user interacts
 what is
   - mvc (model, view, controller) - Learn more about the controller
   - module - a way of grouping a bunch of stuff together.
-  - component - Stuff that is all angular related component on the screen that has
+  - controller - Stuff that is all angular related component on the screen that has
     a significant amount of functionality within it. Example, Amazon has about a dozen
     components on any given page
 

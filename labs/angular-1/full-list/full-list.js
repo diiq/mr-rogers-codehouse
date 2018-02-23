@@ -3,8 +3,8 @@ angular.module("toDoList").component("fullList", {
   controller: ['ItemService', function(ItemService) {
 
     this.items = function() {
-      console.log(ItemService.getItems()) // EXTRA
-      return ItemService.getItems(); // EXTRA
+      console.log(ItemService.getItems());
+      return ItemService.getItems();
     }
   }]
 });
