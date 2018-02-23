@@ -1,0 +1,29 @@
+h1 {
+    display: flex;
+    justify-content: center;
+    font-family: "Roboto", sans-serif;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    font-family: "Roboto", sans-serif;
+}
+
+.list_main {
+    margin: 0 auto;
+    width: 500px;
+    height: 600px;
+    border: 2px solid #cecece;
+    background-color: #e5e5e5;
+    font-family: "Roboto", sans-serif;
+}
+
+.search {
+    border: none;
+}
+
+.entries{
+    margin: 0;
+}

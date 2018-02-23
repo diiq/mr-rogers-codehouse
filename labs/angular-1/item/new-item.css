@@ -1,0 +1,20 @@
+.new-form {
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    margin: 10px;
+}
+
+.new-entry {
+    width: 100px;
+    border: none;
+}
+
+.new-notes {
+    width: 100px;
+    border: none;
+}
+
+hr {
+    border: 1px solid #cecece;
+}

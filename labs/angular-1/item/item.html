@@ -1,6 +1,13 @@
-<div class="item_name">
-    {{$ctrl.item.name}}
-</div>
-<div class="item_status">
-    {{$ctrl.item.status}}
+<div class="item">
+    <div class="item_name">
+        <p>Item: {{$ctrl.item.name}}</p>   
+    </div>
+    <div class="item_notes">
+        <p>Notes: {{$ctrl.item.notes}}</p>
+    </div>
+    <div>
+        <label>Completed:
+            <input class="check" type="checkbox" ng-model="$ctrl.status">
+        </label>
+    </div>
 </div>

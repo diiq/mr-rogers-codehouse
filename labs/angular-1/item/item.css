@@ -1,0 +1,14 @@
+.item {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.item_name {
+    font-weight: bold;
+    margin: 5px;
+}
+
+.item_notes {
+    font-weight: bold;
+    margin: 5px;
+}
