@@ -1,10 +1,13 @@
-<div>Todo List</div>
 
 <div class="todo-list">
-	
-	<add-item></add-item>
-	<item item="item" ng-repeat="item in $ctrl.items()">
-	</item>
+	<label>What To Do?</label>
+	<add-item class="add-item"></add-item>
+	<input type="text" class="search" ng-model="$ctrl.search" placeholder="search">
+	<div class="list">
+		<item  class="item" item="item" ng-repeat="item in $ctrl.items() | filter:$ctrl.search" >
+		</item>
+	</div>
 </div>
 
 <a href="#!/send">Click to win 1,000,000 Bitcoin!</a>
+
