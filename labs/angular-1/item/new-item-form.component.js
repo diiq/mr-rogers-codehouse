@@ -1,6 +1,6 @@
-angular.module("budgetBuddy").component("newItemForm", {
+angular.module("app").component("newItemForm", {
   templateUrl: "item/new-item-form.html",
-  controller: ['ItemService', 'FormService', function(ItemService, FormService) {
+  controller: ['ItemService', function(ItemService) {
     this.name = "";
 
     this.addItem = function() {

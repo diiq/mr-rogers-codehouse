@@ -1,16 +1,5 @@
-new-item-form input, new-item-form select {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  font-size: 18px;
-}
-
 new-item-form select {
   height: 42px;
   line-height: 42px;
   background-color: #fff;
-}
-
-new-item-form button {
-  float: right;
 }
