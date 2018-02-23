@@ -1,4 +1,5 @@
 angular.module("todoListApp").service("ItemService", function() { // why is this caps again?
+
   this.todoItems = [];
 
   this.getItems = function() {
@@ -11,5 +12,6 @@ angular.module("todoListApp").service("ItemService", function() { // why is this
     this.todoItems.push({
       name: name
     });
+    console.log(this.todoItems)
   }
 });
