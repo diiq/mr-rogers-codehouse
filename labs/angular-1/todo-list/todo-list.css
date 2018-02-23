@@ -1,3 +1,8 @@
+.count {
+  font-family: 'Lobster', cursive;
+  font-size: 30px;
+}
+
 .list-container {
   width: 75%;
   margin:2px auto;
@@ -5,8 +10,11 @@
 
 .listed-item {
   text-align: left;
-  padding: 2px;
   width: 80%;
   margin: auto;
-  padding-left: 42px;
+  padding: 5px 0px 5px 0px;
+}
+
+ul {
+  list-style-position: outside;
 }

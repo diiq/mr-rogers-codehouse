@@ -1,12 +1,15 @@
 <div class="todo-list">
-  <input ng-model="$ctrl.search" class="search" placeholder="Filter your to-dos">
+  <input ng-model="$ctrl.search" class="search" placeholder="Filter your to-do list:">
   <div "item in $ctrl.items | filter:$ctrl.search" item="item">
-    Number of to-do list items: {{$ctrl.todos.length}}
-    <div class="list-container">
-      <div class="listed-item" ng-repeat="todo in $ctrl.todos | filter: $ctrl.search">
-        {{todo}}
-      </div>
+    Number of to-do list items:
+    <div class="count">
+      {{$ctrl.todos.length}}
     </div>
+    <ul class="list-container">
+      <li class="listed-item" ng-repeat="todo in $ctrl.todos | filter: $ctrl.search">
+        {{todo}}
+      </li>
+    </ul>
   </div>
   <form name="form" ng-submit="$ctrl.addTodo()" class="add-todo">
     <input type="text" ng-model="$ctrl.todo" placeholder="Add a to-do item:" focus-me="focusInput" ng-required="true" name='input' ng-model='myName'/>
