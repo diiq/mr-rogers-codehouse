@@ -1,9 +1,9 @@
 
-
 <div class="todoform">
   <h1>ToDo List</h1>
+  <input type="text" class="filter" ng-model="$ctrl.search" placeholder="Filter">
   <div class="list">
-    <item ng-repeat="item in $ctrl.items" item="item" class="item"></item>
+    <item ng-repeat="item in $ctrl.items() | filter:$ctrl.search" item="item" class="item"></item>
   </div>
 
   <additem></additem>
