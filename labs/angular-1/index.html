@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-route.js"></script>
     <!-- will need route thing here -->
 
     <script src="module.js"></script>
+    <script src="routes.js"></script>
 
     <script src="todo-list/todo-list.component.js"></script>
 
@@ -16,10 +18,13 @@
 
     <script src="item/item.component.js"></script>
     <script src="item/item.service.js"></script>
+
+    <script src="todo-stats/todo-stats.component.js"></script>
+
   </head>
 
   <body ng-app="todoListApp">
-    <todo-list></todo-list>
+    <ng-view></ng-view>
   </body>
 
 </html>
