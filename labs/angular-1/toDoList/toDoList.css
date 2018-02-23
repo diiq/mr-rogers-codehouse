@@ -1,5 +1,13 @@
-.to-do-list-container {
-  width: 50%;
+
+
+to-do-list {
+  display: block;
+  margin: 0 auto;
+  width: 70%;
   height: 500px;
   background-color: #FFF;
+}
+
+.add-item {
+  border: solid 3px #cfcfcf;
 }

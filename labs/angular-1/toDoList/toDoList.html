@@ -1,8 +1,6 @@
-<div class="to-do-list-container">
-  <div>
-  <addItem></addItem>
-  </div>
-  <div>
-  <item></item>
-  </div>
+<div class="add-item">
+  <add-task></add-task>
+</div>
+<div>
+  <task ng-repeat="task in $ctrl.tasks()" task="task"></task>
 </div>

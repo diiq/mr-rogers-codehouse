@@ -1,0 +1,14 @@
+<div class="task-container" ng-class="{completed: $ctrl.task.completed, 'high-priority': $ctrl.hp()}">
+  <div class="taskNameContainer">
+    <h4>{{$ctrl.task.taskName}}</h4>
+  </div>
+  <div class="dueDateContainer">
+    <h4>{{$ctrl.task.dueDate | date:'MM/dd/yyyy'}}</h4>
+  </div>
+  <div class="priority-container">
+    <h5>{{$ctrl.task.priority}}</h5>
+  </div>
+  <div class="taskCompletedContainer">
+    <input class="task-checkbox" type="checkbox" value="false" ng-model="$ctrl.task.completed">
+  </div>
+</div>

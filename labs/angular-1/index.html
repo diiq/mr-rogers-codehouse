@@ -7,13 +7,16 @@
     <script src="module.js"></script>
     <link rel="stylesheet" href="stylesheet.css" />
     <link rel="stylesheet" href="toDoList/toDoList.css" />
+    <link rel="stylesheet" href="task/task.css" />
     <script src="toDoList/toDoList.component.js"></script>
-    <script src="item/item.component.js"></script>
-    <script src="addItem/addItem.component.js"></script>
-    <script src="item/item.service.js"></script>
+    <script src="task/task.component.js"></script>
+    <script src="addTask/addTask.component.js"></script>
+    <script src="task/task.service.js"></script>
     <title>To Do List</title>
   </head>
   <body ng-app="toDoList">
-    <to-do-list></to-do-list>
+    <div class="main-container">
+      <to-do-list></to-do-list>
+    </div>
   </body>
 </html>

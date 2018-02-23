@@ -1,0 +1,16 @@
+task .completed {
+  background-color: rgb(53, 236, 155);
+}
+
+task .task-container {
+  display: flex;
+  flex-direction: row;
+}
+
+task .dueDateContainer, task .taskNameContainer, task .priority-container{
+  padding: 10px;
+}
+
+task .high-priority {
+  background-color: rgb(175, 49, 27);
+}

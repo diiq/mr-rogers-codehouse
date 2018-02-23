@@ -1,6 +1,8 @@
 angular.module("toDoList").component("toDoList", {
   templateUrl: "toDoList/toDoList.html",
-  controller: function () {
-        this.tasks = [];
-  }
+  controller: ['TaskService', function (TaskService) {
+    this.tasks = function () {
+      return TaskService.fetchTasks();
+    }
+  }]
 });
