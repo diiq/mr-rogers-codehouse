@@ -1,0 +1,8 @@
+.item-container {
+  height: 500;
+  width: 75%;
+  background-color: #daf2f0;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}

@@ -1,9 +1,12 @@
-<h1>To-Do List</h1>
 
-<div>
-  <new-item></new-item>
-  <list-item item="item" ng-repeat="item in $ctrl.items()"></list-item>
-</div>
-<div>
-  <a href="#!/total">How Many Things Do You Have to Do?</a>
+<div class="full-list-container">
+  <h1 class="centered">To-Do List</h1>
+
+  <div>
+    <new-item class="centered"></new-item>
+    <list-item  class="centered" item="item" ng-repeat="item in $ctrl.items()"></list-item>
+  </div>
+  <div>
+    <a  class="centered" href="#!/total">How Many Things Do You Have to Do?</a>
+  </div>
 </div>
