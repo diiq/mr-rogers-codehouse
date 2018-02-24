@@ -2,6 +2,9 @@
 <div>
   <h1>TODOs</h1>
   <a href="#!/stats">See Class Info</a>
+  <br/><br/>
+  <input ng-model="$ctrl.search" class="search" placeholder="Search" />
+  <br/><br/>
   <add-item></add-item>
-  <todo-item todo-item="todoItem" ng-repeat="todoItem in $ctrl.todoItems()"></todo-item>
+  <todo-item todo-item="todoItem" ng-repeat="todoItem in $ctrl.todoItems() | filter:$ctrl.search"></todo-item>
 </div>

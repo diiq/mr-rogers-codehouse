@@ -14,4 +14,7 @@ angular.module("todoListApp").service("ItemService", function() { // why is this
     });
     console.log(this.todoItems)
   }
+
+  //$index? use .filter
+
 });
