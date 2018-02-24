@@ -1,16 +1,35 @@
-task .completed {
+task .completed.completed {
   background-color: rgb(53, 236, 155);
 }
 
 task .task-container {
   display: flex;
   flex-direction: row;
+  margin: 10px;
+  border-radius: 10px;
 }
 
 task .dueDateContainer, task .taskNameContainer, task .priority-container{
   padding: 10px;
 }
 
+.taskCompletedContainer {
+  display: flex;
+  align-items: center;
+}
+
+.task-checkbox {
+
+}
+
 task .high-priority {
-  background-color: rgb(175, 49, 27);
+  background-color: rgb(242, 131, 131);
+}
+
+task .medium-priority {
+  background-color: rgb(235, 174, 110);
+}
+
+task .low-priority {
+  background-color: rgba(207, 222, 150, 0.81);
 }

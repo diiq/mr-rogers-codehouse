@@ -1,13 +1,14 @@
-
-
 to-do-list {
   display: block;
   margin: 0 auto;
   width: 70%;
-  height: 500px;
+  min-height: 500px;
   background-color: #FFF;
+  border-radius: 10px;
 }
 
 .add-item {
-  border: solid 3px #cfcfcf;
+  width: 90%;
+  padding: 10px;
+
 }
