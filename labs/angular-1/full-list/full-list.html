@@ -3,8 +3,10 @@
   <h1 class="centered">To-Do List</h1>
 
   <div>
+    <input ng-model="$ctrl.search" class="search" placeholder="Filter your to-do list:">
+    <!-- <div  item="item" ng-repeat="item in $ctrl.items | filter:$ctrl.search"></div> -->
     <new-item class="centered"></new-item>
-    <list-item  class="centered" item="item" ng-repeat="item in $ctrl.items()"></list-item>
+    <list-item  class="centered" item="item" ng-repeat="item in $ctrl.items() | filter:$ctrl.search"></list-item>
   </div>
   <div>
     <a  class="centered" href="#!/total">How Many Things Do You Have to Do?</a>
