@@ -3,5 +3,10 @@ angular.module("todoApp").component("item", {
   bindings: {
     item: "<"
   },
-  controller: function() {}
+  controller: function() {
+    this.deleteItem = function() {
+      // this.items.splice(index,1);
+      console.log("deleteItem");
+    }
+  }
 });

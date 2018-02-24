@@ -14,3 +14,8 @@
   background-color: white;
   padding: 20px 0px;
 }
+
+.todoform h1 {
+  display: flex;
+  justify-content: center;
+}

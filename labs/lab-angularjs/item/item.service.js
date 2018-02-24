@@ -12,4 +12,9 @@ angular.module("todoApp").service("ItemService", function() {
   console.log("Hello", this.items);
   }
 
+  this.deleteItem = function() {
+    this.items.splice(this.$index, 1);
+    console.log("Splice");
+  }
+
 });
