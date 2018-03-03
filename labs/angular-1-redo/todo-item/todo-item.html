@@ -1,0 +1,9 @@
+<div class="todo" ng-class="{'editing-item': editing, 'complete': todo.complete}">
+    <!-- <input type="checkbox"/> -->
+  <label ng-click="editing = !editing" ng-hide="editing">{{$ctrl.todoItem.description}}</label>
+  <input ng-model="$ctrl.todoItem.description"/ ng-show="editing">
+  <button ng-click="$ctrl.deleteTodoItem()">Delete</button>
+  <button ng-click="editing = !editing" ng-hide="editing">Edit</button>
+  <button ng-click="editing = !editing" ng-show="editing">Done Editing</button>
+  <!-- // not an add to do but rather an edit to do -->
+</div>

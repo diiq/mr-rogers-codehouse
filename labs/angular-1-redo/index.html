@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <link href="style.css" rel="stylesheet" type="text/css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.9/angular-route.js"></script> -->
+
+    <script src="module.js"></script>
+
+    <script src="todo-list/todo-list.component.js"></script>
+
+    <script src="todo-item/todo-item.service.js"></script>
+    <script src="todo-item/todo-item.component.js"></script>
+    <script src="todo-item/add-todo-item.component.js"></script>
+
+  </head>
+
+  <body ng-app="todoListApp">
+    <div class="todo-list-container">
+      <div class="todo-list">
+        <div class="todo-header"><h4>My Todos:</h4></div>
+        <add-todo-item></add-todo-item>
+        <todo-list></todo-list>
+      </div>
+    </div>
+  </body>
+</html>
