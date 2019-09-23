@@ -1,0 +1,21 @@
+.todoform {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  width: 400px;
+  height: auto;
+  background-color: gray;
+  border: 2px solid black;
+}
+
+.list {
+  height: 200px;
+  background-color: white;
+  padding: 20px 0px;
+}
+
+.todoform h1 {
+  display: flex;
+  justify-content: center;
+}
